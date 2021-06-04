@@ -1,0 +1,123 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "79px",
+      "height": "42px",
+      "top": "25px",
+      "left": "107px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "79px",
+      "height": "47px",
+      "top": "22px",
+      "left": "977px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "103px",
+      "height": "47px",
+      "top": "56px",
+      "left": "685px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "85px",
+      "height": "49px",
+      "top": "91px",
+      "left": "502px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区3",
+    "style": {
+      "width": "118px",
+      "height": "56px",
+      "top": "57px",
+      "left": "307px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "126px",
+      "height": "60px",
+      "top": "208px",
+      "left": "345px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "80px",
+      "height": "41px",
+      "top": "186px",
+      "left": "534px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "80px",
+      "height": "36px",
+      "top": "227px",
+      "left": "534px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "赶路小食",
+    "style": {
+      "width": "27px",
+      "height": "54px",
+      "top": "222px",
+      "left": "633px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "41px",
+      "height": "71px",
+      "top": "204px",
+      "left": "660px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "食必鲜餐厅",
+    "style": {
+      "width": "142px",
+      "height": "73px",
+      "top": "201px",
+      "left": "700px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

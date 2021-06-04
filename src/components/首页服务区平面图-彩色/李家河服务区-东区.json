@@ -1,0 +1,156 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "75px",
+      "height": "35px",
+      "top": "284px",
+      "left": "1055px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "98px",
+      "height": "40px",
+      "top": "284px",
+      "left": "99px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "83px",
+      "height": "34px",
+      "top": "282px",
+      "left": "365px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油区",
+    "style": {
+      "width": "84px",
+      "height": "57px",
+      "top": "225px",
+      "left": "198px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "餐厅",
+    "style": {
+      "width": "87px",
+      "height": "89px",
+      "top": "128px",
+      "left": "304px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "面摊",
+    "style": {
+      "width": "23px",
+      "height": "18px",
+      "top": "145px",
+      "left": "412px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "风味小吃",
+    "style": {
+      "width": "46px",
+      "height": "66px",
+      "top": "146px",
+      "left": "460px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便利店",
+    "style": {
+      "width": "69px",
+      "height": "86px",
+      "top": "129px",
+      "left": "504px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "57px",
+      "height": "73px",
+      "top": "128px",
+      "left": "617px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "59px",
+      "height": "71px",
+      "top": "127px",
+      "left": "674px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "79px",
+      "height": "68px",
+      "top": "128px",
+      "left": "745px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "员工宿舍",
+    "style": {
+      "width": "51px",
+      "height": "64px",
+      "top": "32px",
+      "left": "798px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "72px",
+      "height": "31px",
+      "top": "258px",
+      "left": "831px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "仓库",
+    "style": {
+      "width": "36px",
+      "height": "19px",
+      "top": "131px",
+      "left": "440px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

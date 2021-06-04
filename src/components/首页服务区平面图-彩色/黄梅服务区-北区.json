@@ -1,0 +1,123 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "72px",
+      "height": "51px",
+      "top": "275px",
+      "left": "67px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "76px",
+      "height": "46px",
+      "top": "227px",
+      "left": "189px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "93px",
+      "height": "35px",
+      "top": "256px",
+      "left": "365px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "92px",
+      "height": "50px",
+      "top": "249px",
+      "left": "634px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "86px",
+      "height": "38px",
+      "top": "286px",
+      "left": "1018px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "华昊车俱乐部",
+    "style": {
+      "width": "59px",
+      "height": "118px",
+      "top": "172px",
+      "left": "918px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "61px",
+      "height": "71px",
+      "top": "105px",
+      "left": "775px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "54px",
+      "height": "73px",
+      "top": "105px",
+      "left": "833px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小吃亭",
+    "style": {
+      "width": "62px",
+      "height": "37px",
+      "top": "145px",
+      "left": "696px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "超市",
+    "style": {
+      "width": "56px",
+      "height": "68px",
+      "top": "149px",
+      "left": "458px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "食尚惠餐厅",
+    "style": {
+      "width": "91px",
+      "height": "52px",
+      "top": "137px",
+      "left": "368px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

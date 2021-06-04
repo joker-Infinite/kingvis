@@ -1,0 +1,321 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "74px",
+      "height": "36px",
+      "top": "19px",
+      "left": "112px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "84px",
+      "height": "38px",
+      "top": "28px",
+      "left": "631px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "77px",
+      "height": "39px",
+      "top": "18px",
+      "left": "972px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "80px",
+      "height": "40px",
+      "top": "58px",
+      "left": "884px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "97px",
+      "height": "42px",
+      "top": "239px",
+      "left": "318px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "办公区",
+    "style": {
+      "width": "72px",
+      "height": "117px",
+      "top": "198px",
+      "left": "596px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "精武鸭脖",
+    "style": {
+      "width": "73px",
+      "height": "50px",
+      "top": "77px",
+      "left": "384px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "44px",
+      "height": "40px",
+      "top": "151px",
+      "left": "422px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "41px",
+      "height": "43px",
+      "top": "127px",
+      "left": "384px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "马可波罗",
+    "style": {
+      "width": "21px",
+      "height": "48px",
+      "top": "80px",
+      "left": "468px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "猫屎咖啡",
+    "style": {
+      "width": "48px",
+      "height": "49px",
+      "top": "80px",
+      "left": "488px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "荆品惠",
+    "style": {
+      "width": "36px",
+      "height": "48px",
+      "top": "80px",
+      "left": "534px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "大厅",
+    "style": {
+      "width": "37px",
+      "height": "48px",
+      "top": "80px",
+      "left": "570px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "肯德基",
+    "style": {
+      "width": "49px",
+      "height": "51px",
+      "top": "80px",
+      "left": "603px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "用餐区",
+    "style": {
+      "width": "127px",
+      "height": "77px",
+      "top": "79px",
+      "left": "654px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "过道",
+    "style": {
+      "width": "78px",
+      "height": "30px",
+      "top": "128px",
+      "left": "575px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "过道2",
+    "style": {
+      "width": "155px",
+      "height": "26px",
+      "top": "127px",
+      "left": "420px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "DQ",
+    "style": {
+      "width": "32px",
+      "height": "41px",
+      "top": "152px",
+      "left": "476px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "特色小吃",
+    "style": {
+      "width": "74px",
+      "height": "35px",
+      "top": "151px",
+      "left": "508px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "54px",
+      "height": "41px",
+      "top": "159px",
+      "left": "579px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "果e站",
+    "style": {
+      "width": "24px",
+      "height": "41px",
+      "top": "160px",
+      "left": "643px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "三只松鼠",
+    "style": {
+      "width": "42px",
+      "height": "27px",
+      "top": "159px",
+      "left": "667px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "牛肉拉面",
+    "style": {
+      "width": "51px",
+      "height": "15px",
+      "top": "186px",
+      "left": "674px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "食尚惠自选餐",
+    "style": {
+      "width": "25px",
+      "height": "77px",
+      "top": "79px",
+      "left": "783px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "粥家铺子",
+    "style": {
+      "width": "27px",
+      "height": "18px",
+      "top": "159px",
+      "left": "782px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "如意馄沌",
+    "style": {
+      "width": "31px",
+      "height": "26px",
+      "top": "178px",
+      "left": "782px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "香她他",
+    "style": {
+      "width": "32px",
+      "height": "16px",
+      "top": "200px",
+      "left": "777px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "后厨",
+    "style": {
+      "width": "99px",
+      "height": "49px",
+      "top": "216px",
+      "left": "741px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "送餐过道",
+    "style": {
+      "width": "31px",
+      "height": "133px",
+      "top": "81px",
+      "left": "809px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

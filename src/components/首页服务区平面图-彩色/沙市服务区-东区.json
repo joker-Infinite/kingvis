@@ -1,0 +1,90 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "81px",
+      "height": "38px",
+      "top": "32px",
+      "left": "148px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "70px",
+      "height": "35px",
+      "top": "22px",
+      "left": "957px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "81px",
+      "height": "49px",
+      "top": "81px",
+      "left": "461px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "87px",
+      "height": "39px",
+      "top": "90px",
+      "left": "753px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "131px",
+      "height": "71px",
+      "top": "211px",
+      "left": "277px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "99px",
+      "height": "30px",
+      "top": "166px",
+      "left": "445px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "96px",
+      "height": "33px",
+      "top": "214px",
+      "left": "445px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "55px",
+      "height": "79px",
+      "top": "82px",
+      "left": "223px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

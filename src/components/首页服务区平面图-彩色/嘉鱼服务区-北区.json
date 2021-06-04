@@ -1,0 +1,123 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "81px",
+      "height": "52px",
+      "top": "270px",
+      "left": "128px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "95px",
+      "height": "45px",
+      "top": "31px",
+      "left": "554px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "115px",
+      "height": "63px",
+      "top": "263px",
+      "left": "955px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "100px",
+      "height": "71px",
+      "top": "65px",
+      "left": "812px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "88px",
+      "height": "47px",
+      "top": "176px",
+      "left": "271px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "方园一品餐厅",
+    "style": {
+      "width": "83px",
+      "height": "64px",
+      "top": "101px",
+      "left": "406px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "嘉润达便利店",
+    "style": {
+      "width": "59px",
+      "height": "31px",
+      "top": "99px",
+      "left": "486px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "武汉热干面",
+    "style": {
+      "width": "57px",
+      "height": "28px",
+      "top": "149px",
+      "left": "488px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "71px",
+      "height": "43px",
+      "top": "91px",
+      "left": "682px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "61px",
+      "height": "44px",
+      "top": "133px",
+      "left": "695px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "105px",
+      "height": "45px",
+      "top": "248px",
+      "left": "561px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

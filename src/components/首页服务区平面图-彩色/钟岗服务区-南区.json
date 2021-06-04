@@ -1,0 +1,178 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "81px",
+      "height": "51px",
+      "top": "12px",
+      "left": "107px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "79px",
+      "height": "34px",
+      "top": "58px",
+      "left": "605px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "120px",
+      "height": "54px",
+      "top": "69px",
+      "left": "843px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "61px",
+      "height": "39px",
+      "top": "26px",
+      "left": "998px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "派天下汽车服务",
+    "style": {
+      "width": "71px",
+      "height": "64px",
+      "top": "215px",
+      "left": "329px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "52px",
+      "height": "45px",
+      "top": "240px",
+      "left": "496px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "52px",
+      "height": "45px",
+      "top": "240px",
+      "left": "546px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "45px",
+      "height": "50px",
+      "top": "178px",
+      "left": "476px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汉堡王",
+    "style": {
+      "width": "46px",
+      "height": "61px",
+      "top": "117px",
+      "left": "477px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "鸡排烤串",
+    "style": {
+      "width": "28px",
+      "height": "29px",
+      "top": "116px",
+      "left": "542px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "太平洋咖啡",
+    "style": {
+      "width": "64px",
+      "height": "23px",
+      "top": "123px",
+      "left": "621px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "襄阳牛肉面",
+    "style": {
+      "width": "33px",
+      "height": "37px",
+      "top": "110px",
+      "left": "685px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "食必鲜餐厅",
+    "style": {
+      "width": "77px",
+      "height": "62px",
+      "top": "174px",
+      "left": "672px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "用餐区",
+    "style": {
+      "width": "57px",
+      "height": "64px",
+      "top": "110px",
+      "left": "718px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "绝味鸭脖",
+    "style": {
+      "width": "52px",
+      "height": "28px",
+      "top": "173px",
+      "left": "620px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "途之乐小吃",
+    "style": {
+      "width": "87px",
+      "height": "22px",
+      "top": "211px",
+      "left": "570px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

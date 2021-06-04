@@ -1,0 +1,233 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "61px",
+      "height": "52px",
+      "top": "272px",
+      "left": "162px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "68px",
+      "height": "42px",
+      "top": "256px",
+      "left": "251px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "82px",
+      "height": "42px",
+      "top": "282px",
+      "left": "520px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "89px",
+      "height": "42px",
+      "top": "277px",
+      "left": "733px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "89px",
+      "height": "44px",
+      "top": "279px",
+      "left": "965px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "42px",
+      "height": "98px",
+      "top": "139px",
+      "left": "867px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "路政",
+    "style": {
+      "width": "59px",
+      "height": "39px",
+      "top": "43px",
+      "left": "772px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "二楼客房",
+    "style": {
+      "width": "76px",
+      "height": "35px",
+      "top": "16px",
+      "left": "564px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "水电房",
+    "style": {
+      "width": "74px",
+      "height": "34px",
+      "top": "44px",
+      "left": "440px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "68px",
+      "height": "44px",
+      "top": "47px",
+      "left": "259px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "李先生牛肉面",
+    "style": {
+      "width": "55px",
+      "height": "33px",
+      "top": "158px",
+      "left": "561px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "43px",
+      "height": "65px",
+      "top": "161px",
+      "left": "635px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店仓库",
+    "style": {
+      "width": "88px",
+      "height": "35px",
+      "top": "119px",
+      "left": "632px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "77px",
+      "height": "53px",
+      "top": "156px",
+      "left": "763px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "70px",
+      "height": "52px",
+      "top": "157px",
+      "left": "694px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "缙云烧饼",
+    "style": {
+      "width": "23px",
+      "height": "32px",
+      "top": "208px",
+      "left": "782px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小派鸡排",
+    "style": {
+      "width": "34px",
+      "height": "20px",
+      "top": "208px",
+      "left": "805px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "享当当小吃",
+    "style": {
+      "width": "41px",
+      "height": "21px",
+      "top": "209px",
+      "left": "692px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "漫享果园",
+    "style": {
+      "width": "23px",
+      "height": "31px",
+      "top": "209px",
+      "left": "730px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "享当当餐厅",
+    "style": {
+      "width": "101px",
+      "height": "60px",
+      "top": "165px",
+      "left": "461px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "享当当餐厅后厨区",
+    "style": {
+      "width": "77px",
+      "height": "105px",
+      "top": "134px",
+      "left": "380px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

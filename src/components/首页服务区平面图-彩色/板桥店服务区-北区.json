@@ -1,0 +1,211 @@
+[
+  {
+    "name": "水电房",
+    "style": {
+      "width": "63px",
+      "height": "90px",
+      "top": "69px",
+      "left": "236px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "109px",
+      "height": "60px",
+      "top": "208px",
+      "left": "199px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "91px",
+      "height": "47px",
+      "top": "278px",
+      "left": "109px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "80px",
+      "height": "38px",
+      "top": "258px",
+      "left": "364px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "88px",
+      "height": "46px",
+      "top": "249px",
+      "left": "570px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区3",
+    "style": {
+      "width": "79px",
+      "height": "46px",
+      "top": "252px",
+      "left": "804px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "81px",
+      "height": "50px",
+      "top": "272px",
+      "left": "996px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "90px",
+      "height": "89px",
+      "top": "30px",
+      "left": "856px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "77px",
+      "height": "61px",
+      "top": "59px",
+      "left": "526px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "77px",
+      "height": "59px",
+      "top": "61px",
+      "left": "597px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楼梯间",
+    "style": {
+      "width": "24px",
+      "height": "53px",
+      "top": "145px",
+      "left": "695px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便仓",
+    "style": {
+      "width": "31px",
+      "height": "36px",
+      "top": "144px",
+      "left": "507px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便利店",
+    "style": {
+      "width": "64px",
+      "height": "37px",
+      "top": "143px",
+      "left": "533px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "过道",
+    "style": {
+      "width": "108px",
+      "height": "40px",
+      "top": "112px",
+      "left": "488px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "大厅",
+    "style": {
+      "width": "80px",
+      "height": "61px",
+      "top": "117px",
+      "left": "592px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置",
+    "style": {
+      "width": "32px",
+      "height": "34px",
+      "top": "145px",
+      "left": "666px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置2",
+    "style": {
+      "width": "121px",
+      "height": "68px",
+      "top": "113px",
+      "left": "713px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置3",
+    "style": {
+      "width": "154px",
+      "height": "75px",
+      "top": "104px",
+      "left": "336px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楼梯间2",
+    "style": {
+      "width": "30px",
+      "height": "52px",
+      "top": "147px",
+      "left": "483px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

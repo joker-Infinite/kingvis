@@ -1,0 +1,101 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "93px",
+      "height": "56px",
+      "top": "15px",
+      "left": "235px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "79px",
+      "height": "37px",
+      "top": "28px",
+      "left": "766px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "111px",
+      "height": "52px",
+      "top": "119px",
+      "left": "405px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "105px",
+      "height": "50px",
+      "top": "167px",
+      "left": "408px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置",
+    "style": {
+      "width": "110px",
+      "height": "59px",
+      "top": "217px",
+      "left": "405px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置2",
+    "style": {
+      "width": "67px",
+      "height": "64px",
+      "top": "211px",
+      "left": "510px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置3",
+    "style": {
+      "width": "125px",
+      "height": "96px",
+      "top": "123px",
+      "left": "552px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置5",
+    "style": {
+      "width": "107px",
+      "height": "58px",
+      "top": "218px",
+      "left": "571px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置6",
+    "style": {
+      "width": "105px",
+      "height": "154px",
+      "top": "121px",
+      "left": "673px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

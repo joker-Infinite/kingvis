@@ -1,0 +1,101 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "65px",
+      "height": "45px",
+      "top": "278px",
+      "left": "166px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "85px",
+      "height": "45px",
+      "top": "278px",
+      "left": "1024px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "96px",
+      "height": "40px",
+      "top": "269px",
+      "left": "703px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "35px",
+      "height": "77px",
+      "top": "146px",
+      "left": "390px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "32px",
+      "height": "76px",
+      "top": "147px",
+      "left": "355px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "办公区",
+    "style": {
+      "width": "49px",
+      "height": "43px",
+      "top": "147px",
+      "left": "425px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便利店",
+    "style": {
+      "width": "109px",
+      "height": "66px",
+      "top": "147px",
+      "left": "499px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "厨房",
+    "style": {
+      "width": "160px",
+      "height": "24px",
+      "top": "124px",
+      "left": "631px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "食堂",
+    "style": {
+      "width": "66px",
+      "height": "60px",
+      "top": "88px",
+      "left": "790px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

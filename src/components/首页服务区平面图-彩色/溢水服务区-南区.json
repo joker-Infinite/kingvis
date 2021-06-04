@@ -1,0 +1,79 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "82px",
+      "height": "48px",
+      "top": "21px",
+      "left": "143px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "98px",
+      "height": "48px",
+      "top": "77px",
+      "left": "535px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "96px",
+      "height": "46px",
+      "top": "24px",
+      "left": "999px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "36px",
+      "height": "87px",
+      "top": "185px",
+      "left": "460px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "43px",
+      "height": "89px",
+      "top": "184px",
+      "left": "495px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "85px",
+      "height": "42px",
+      "top": "103px",
+      "left": "817px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站生活区",
+    "style": {
+      "width": "103px",
+      "height": "55px",
+      "top": "179px",
+      "left": "798px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

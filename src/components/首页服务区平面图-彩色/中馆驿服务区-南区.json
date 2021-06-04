@@ -1,0 +1,255 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "77px",
+      "height": "49px",
+      "top": "15px",
+      "left": "114px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "83px",
+      "height": "40px",
+      "top": "22px",
+      "left": "969px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "75px",
+      "height": "35px",
+      "top": "32px",
+      "left": "233px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "82px",
+      "height": "41px",
+      "top": "16px",
+      "left": "747px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区3",
+    "style": {
+      "width": "84px",
+      "height": "45px",
+      "top": "15px",
+      "left": "455px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "卡速宝汽修",
+    "style": {
+      "width": "108px",
+      "height": "47px",
+      "top": "239px",
+      "left": "325px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "儿童乐园",
+    "style": {
+      "width": "86px",
+      "height": "114px",
+      "top": "88px",
+      "left": "411px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "午塘布鞋",
+    "style": {
+      "width": "35px",
+      "height": "42px",
+      "top": "90px",
+      "left": "542px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "聚宝阁",
+    "style": {
+      "width": "28px",
+      "height": "52px",
+      "top": "80px",
+      "left": "577px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "玛玛露昔娅咖啡",
+    "style": {
+      "width": "36px",
+      "height": "52px",
+      "top": "78px",
+      "left": "604px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "50px",
+      "height": "56px",
+      "top": "151px",
+      "left": "591px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "电房",
+    "style": {
+      "width": "11px",
+      "height": "19px",
+      "top": "206px",
+      "left": "603px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "水果摊",
+    "style": {
+      "width": "38px",
+      "height": "27px",
+      "top": "141px",
+      "left": "655px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "驿路香伴",
+    "style": {
+      "width": "25px",
+      "height": "39px",
+      "top": "92px",
+      "left": "726px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小圆满餐厅",
+    "style": {
+      "width": "72px",
+      "height": "74px",
+      "top": "92px",
+      "left": "750px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小圆满仓办",
+    "style": {
+      "width": "28px",
+      "height": "82px",
+      "top": "81px",
+      "left": "814px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "72px",
+      "height": "44px",
+      "top": "72px",
+      "left": "887px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "74px",
+      "height": "46px",
+      "top": "225px",
+      "left": "856px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小圆满厨房",
+    "style": {
+      "width": "53px",
+      "height": "95px",
+      "top": "162px",
+      "left": "739px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "马可波罗",
+    "style": {
+      "width": "27px",
+      "height": "46px",
+      "top": "179px",
+      "left": "707px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "绝味鸭脖",
+    "style": {
+      "width": "28px",
+      "height": "46px",
+      "top": "178px",
+      "left": "680px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "82px",
+      "height": "73px",
+      "top": "236px",
+      "left": "540px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "73px",
+      "height": "75px",
+      "top": "235px",
+      "left": "623px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

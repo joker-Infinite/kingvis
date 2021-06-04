@@ -1,0 +1,134 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "75px",
+      "height": "46px",
+      "top": "280px",
+      "left": "111px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "98px",
+      "height": "49px",
+      "top": "213px",
+      "left": "206px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "72px",
+      "height": "56px",
+      "top": "61px",
+      "left": "530px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "72px",
+      "height": "57px",
+      "top": "60px",
+      "left": "599px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楼梯间",
+    "style": {
+      "width": "20px",
+      "height": "56px",
+      "top": "139px",
+      "left": "489px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便仓",
+    "style": {
+      "width": "30px",
+      "height": "42px",
+      "top": "139px",
+      "left": "508px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "迈力士便利店",
+    "style": {
+      "width": "62px",
+      "height": "41px",
+      "top": "137px",
+      "left": "532px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "大厅",
+    "style": {
+      "width": "76px",
+      "height": "62px",
+      "top": "116px",
+      "left": "592px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楼梯间2",
+    "style": {
+      "width": "20px",
+      "height": "56px",
+      "top": "140px",
+      "left": "696px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "74px",
+      "height": "74px",
+      "top": "36px",
+      "left": "865px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "75px",
+      "height": "48px",
+      "top": "231px",
+      "left": "570px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "90px",
+      "height": "53px",
+      "top": "271px",
+      "left": "987px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

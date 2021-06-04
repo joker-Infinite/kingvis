@@ -1,0 +1,156 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "79px",
+      "height": "39px",
+      "top": "285px",
+      "left": "113px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "91px",
+      "height": "33px",
+      "top": "239px",
+      "left": "558px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "82px",
+      "height": "36px",
+      "top": "286px",
+      "left": "1060px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置汽修",
+    "style": {
+      "width": "80px",
+      "height": "79px",
+      "top": "168px",
+      "left": "874px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "配电室",
+    "style": {
+      "width": "52px",
+      "height": "35px",
+      "top": "73px",
+      "left": "822px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "76px",
+      "height": "42px",
+      "top": "231px",
+      "left": "235px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "39px",
+      "height": "82px",
+      "top": "101px",
+      "left": "233px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置",
+    "style": {
+      "width": "233px",
+      "height": "68px",
+      "top": "99px",
+      "left": "363px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便利店",
+    "style": {
+      "width": "51px",
+      "height": "65px",
+      "top": "101px",
+      "left": "596px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便仓",
+    "style": {
+      "width": "31px",
+      "height": "38px",
+      "top": "100px",
+      "left": "646px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小吃",
+    "style": {
+      "width": "32px",
+      "height": "34px",
+      "top": "134px",
+      "left": "645px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "母婴",
+    "style": {
+      "width": "25px",
+      "height": "21px",
+      "top": "103px",
+      "left": "697px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "50px",
+      "height": "43px",
+      "top": "100px",
+      "left": "720px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "49px",
+      "height": "41px",
+      "top": "143px",
+      "left": "721px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

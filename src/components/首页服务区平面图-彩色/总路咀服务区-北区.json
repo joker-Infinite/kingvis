@@ -1,0 +1,134 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "88px",
+      "height": "45px",
+      "top": "283px",
+      "left": "94px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "90px",
+      "height": "56px",
+      "top": "269px",
+      "left": "1019px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "81px",
+      "height": "97px",
+      "top": "184px",
+      "left": "888px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "95px",
+      "height": "47px",
+      "top": "230px",
+      "left": "407px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "91px",
+      "height": "45px",
+      "top": "247px",
+      "left": "579px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小吃亭",
+    "style": {
+      "width": "68px",
+      "height": "44px",
+      "top": "245px",
+      "left": "716px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "100px",
+      "height": "46px",
+      "top": "242px",
+      "left": "191px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "驿滋驿味餐厅",
+    "style": {
+      "width": "91px",
+      "height": "104px",
+      "top": "59px",
+      "left": "402px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "121px",
+      "height": "80px",
+      "top": "58px",
+      "left": "525px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "122px",
+      "height": "61px",
+      "top": "58px",
+      "left": "674px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "125px",
+      "height": "60px",
+      "top": "122px",
+      "left": "674px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "路政",
+    "style": {
+      "width": "68px",
+      "height": "33px",
+      "top": "64px",
+      "left": "867px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "87px",
+      "height": "41px",
+      "top": "21px",
+      "left": "83px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "105px",
+      "height": "46px",
+      "top": "30px",
+      "left": "400px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "90px",
+      "height": "34px",
+      "top": "30px",
+      "left": "696px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "117px",
+      "height": "64px",
+      "top": "21px",
+      "left": "913px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "76px",
+      "height": "36px",
+      "top": "25px",
+      "left": "1046px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "109px",
+      "height": "43px",
+      "top": "282px",
+      "left": "816px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "配电室",
+    "style": {
+      "width": "67px",
+      "height": "32px",
+      "top": "293px",
+      "left": "370px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小圆满餐厅",
+    "style": {
+      "width": "145px",
+      "height": "153px",
+      "top": "117px",
+      "left": "724px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "中驿便利店",
+    "style": {
+      "width": "107px",
+      "height": "101px",
+      "top": "162px",
+      "left": "558px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "板栗王",
+    "style": {
+      "width": "39px",
+      "height": "27px",
+      "top": "164px",
+      "left": "520px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "第三卫",
+    "style": {
+      "width": "24px",
+      "height": "28px",
+      "top": "162px",
+      "left": "497px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "59px",
+      "height": "72px",
+      "top": "209px",
+      "left": "401px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "60px",
+      "height": "74px",
+      "top": "208px",
+      "left": "458px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "母婴",
+    "style": {
+      "width": "44px",
+      "height": "33px",
+      "top": "115px",
+      "left": "394px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "母婴2",
+    "style": {
+      "width": "41px",
+      "height": "29px",
+      "top": "118px",
+      "left": "445px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "驿路香伴小吃",
+    "style": {
+      "width": "96px",
+      "height": "31px",
+      "top": "114px",
+      "left": "497px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

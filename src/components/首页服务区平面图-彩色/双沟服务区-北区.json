@@ -1,0 +1,101 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "115px",
+      "height": "54px",
+      "top": "266px",
+      "left": "106px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "114px",
+      "height": "45px",
+      "top": "281px",
+      "left": "976px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "107px",
+      "height": "52px",
+      "top": "200px",
+      "left": "579px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "122px",
+      "height": "54px",
+      "top": "197px",
+      "left": "218px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站仓库",
+    "style": {
+      "width": "67px",
+      "height": "41px",
+      "top": "89px",
+      "left": "315px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站便利店",
+    "style": {
+      "width": "139px",
+      "height": "47px",
+      "top": "121px",
+      "left": "381px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "79px",
+      "height": "66px",
+      "top": "71px",
+      "left": "550px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "86px",
+      "height": "46px",
+      "top": "70px",
+      "left": "465px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "一品荆楚餐厅",
+    "style": {
+      "width": "191px",
+      "height": "94px",
+      "top": "70px",
+      "left": "629px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

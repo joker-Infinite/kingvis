@@ -1,0 +1,189 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "76px",
+      "height": "35px",
+      "top": "276px",
+      "left": "135px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "110px",
+      "height": "65px",
+      "top": "239px",
+      "left": "211px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修厂",
+    "style": {
+      "width": "105px",
+      "height": "53px",
+      "top": "52px",
+      "left": "249px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "厨房区",
+    "style": {
+      "width": "139px",
+      "height": "132px",
+      "top": "126px",
+      "left": "335px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小圆满餐厅",
+    "style": {
+      "width": "149px",
+      "height": "101px",
+      "top": "128px",
+      "left": "472px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "一品荆楚牛肉面",
+    "style": {
+      "width": "51px",
+      "height": "49px",
+      "top": "134px",
+      "left": "621px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "湖北特产",
+    "style": {
+      "width": "74px",
+      "height": "48px",
+      "top": "135px",
+      "left": "671px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "66px",
+      "height": "51px",
+      "top": "131px",
+      "left": "741px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "串串",
+    "style": {
+      "width": "27px",
+      "height": "48px",
+      "top": "132px",
+      "left": "806px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "72px",
+      "height": "38px",
+      "top": "133px",
+      "left": "883px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "70px",
+      "height": "45px",
+      "top": "170px",
+      "left": "885px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "驿路香伴",
+    "style": {
+      "width": "71px",
+      "height": "26px",
+      "top": "192px",
+      "left": "686px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "猫屎咖啡",
+    "style": {
+      "width": "46px",
+      "height": "26px",
+      "top": "190px",
+      "left": "752px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "五芳斋",
+    "style": {
+      "width": "48px",
+      "height": "20px",
+      "top": "196px",
+      "left": "798px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "开水",
+    "style": {
+      "width": "28px",
+      "height": "23px",
+      "top": "195px",
+      "left": "845px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "70px",
+      "height": "33px",
+      "top": "256px",
+      "left": "558px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "66px",
+      "height": "41px",
+      "top": "276px",
+      "left": "983px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

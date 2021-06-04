@@ -1,0 +1,79 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "62px",
+      "height": "45px",
+      "top": "274px",
+      "left": "65px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "106px",
+      "height": "45px",
+      "top": "233px",
+      "left": "563px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "77px",
+      "height": "43px",
+      "top": "282px",
+      "left": "1016px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "89px",
+      "height": "33px",
+      "top": "243px",
+      "left": "250px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "配电房",
+    "style": {
+      "width": "85px",
+      "height": "29px",
+      "top": "206px",
+      "left": "200px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "62px",
+      "height": "35px",
+      "top": "112px",
+      "left": "229px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "水泵房",
+    "style": {
+      "width": "63px",
+      "height": "34px",
+      "top": "69px",
+      "left": "301px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

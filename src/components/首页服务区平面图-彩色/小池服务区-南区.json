@@ -1,0 +1,200 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "70px",
+      "height": "43px",
+      "top": "17px",
+      "left": "139px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "84px",
+      "height": "51px",
+      "top": "21px",
+      "left": "376px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "75px",
+      "height": "38px",
+      "top": "23px",
+      "left": "588px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "91px",
+      "height": "60px",
+      "top": "16px",
+      "left": "952px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "73px",
+      "height": "42px",
+      "top": "41px",
+      "left": "864px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "38px",
+      "height": "101px",
+      "top": "101px",
+      "left": "279px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小派鸡排",
+    "style": {
+      "width": "39px",
+      "height": "21px",
+      "top": "112px",
+      "left": "345px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "缙云烧饼",
+    "style": {
+      "width": "21px",
+      "height": "33px",
+      "top": "99px",
+      "left": "383px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "漫享果园",
+    "style": {
+      "width": "19px",
+      "height": "31px",
+      "top": "101px",
+      "left": "436px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "享当当小吃",
+    "style": {
+      "width": "38px",
+      "height": "21px",
+      "top": "112px",
+      "left": "456px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "41px",
+      "height": "70px",
+      "top": "114px",
+      "left": "511px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店仓库",
+    "style": {
+      "width": "87px",
+      "height": "35px",
+      "top": "187px",
+      "left": "467px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "享当当餐厅",
+    "style": {
+      "width": "97px",
+      "height": "63px",
+      "top": "116px",
+      "left": "628px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "69px",
+      "height": "42px",
+      "top": "143px",
+      "left": "425px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "77px",
+      "height": "50px",
+      "top": "134px",
+      "left": "347px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "李先生牛肉面",
+    "style": {
+      "width": "57px",
+      "height": "33px",
+      "top": "149px",
+      "left": "570px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "享当当餐厅后厨区",
+    "style": {
+      "width": "73px",
+      "height": "111px",
+      "top": "101px",
+      "left": "732px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "二楼客房",
+    "style": {
+      "width": "77px",
+      "height": "30px",
+      "top": "286px",
+      "left": "547px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

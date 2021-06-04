@@ -1,0 +1,233 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "72px",
+      "height": "36px",
+      "top": "27px",
+      "left": "134px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "76px",
+      "height": "40px",
+      "top": "50px",
+      "left": "592px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "113px",
+      "height": "67px",
+      "top": "38px",
+      "left": "865px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "59px",
+      "height": "32px",
+      "top": "23px",
+      "left": "1013px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "一楼五间房",
+    "style": {
+      "width": "76px",
+      "height": "38px",
+      "top": "75px",
+      "left": "199px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "二楼五间",
+    "style": {
+      "width": "61px",
+      "height": "33px",
+      "top": "122px",
+      "left": "202px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "三楼五间",
+    "style": {
+      "width": "56px",
+      "height": "37px",
+      "top": "159px",
+      "left": "217px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "90px",
+      "height": "49px",
+      "top": "127px",
+      "left": "299px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "93px",
+      "height": "47px",
+      "top": "176px",
+      "left": "303px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "开水",
+    "style": {
+      "width": "28px",
+      "height": "29px",
+      "top": "126px",
+      "left": "388px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "五芳斋",
+    "style": {
+      "width": "45px",
+      "height": "19px",
+      "top": "127px",
+      "left": "415px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "猫屎咖啡",
+    "style": {
+      "width": "47px",
+      "height": "24px",
+      "top": "129px",
+      "left": "461px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "驿路香伴",
+    "style": {
+      "width": "68px",
+      "height": "19px",
+      "top": "129px",
+      "left": "505px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "串串",
+    "style": {
+      "width": "29px",
+      "height": "47px",
+      "top": "160px",
+      "left": "427px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "65px",
+      "height": "45px",
+      "top": "164px",
+      "left": "454px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "湖北特产",
+    "style": {
+      "width": "78px",
+      "height": "49px",
+      "top": "161px",
+      "left": "515px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "一品荆楚牛肉面",
+    "style": {
+      "width": "45px",
+      "height": "48px",
+      "top": "160px",
+      "left": "592px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小圆满餐厅",
+    "style": {
+      "width": "81px",
+      "height": "58px",
+      "top": "138px",
+      "left": "637px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "厨房",
+    "style": {
+      "width": "136px",
+      "height": "53px",
+      "top": "159px",
+      "left": "721px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修厂",
+    "style": {
+      "width": "116px",
+      "height": "47px",
+      "top": "244px",
+      "left": "827px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "70px",
+      "height": "34px",
+      "top": "263px",
+      "left": "651px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

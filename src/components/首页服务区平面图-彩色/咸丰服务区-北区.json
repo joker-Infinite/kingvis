@@ -1,0 +1,123 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "52px",
+      "height": "53px",
+      "top": "271px",
+      "left": "119px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "82px",
+      "height": "44px",
+      "top": "260px",
+      "left": "258px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "82px",
+      "height": "44px",
+      "top": "266px",
+      "left": "420px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "81px",
+      "height": "44px",
+      "top": "263px",
+      "left": "790px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "58px",
+      "height": "61px",
+      "top": "266px",
+      "left": "1028px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "76px",
+      "height": "41px",
+      "top": "60px",
+      "left": "792px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "36px",
+      "height": "84px",
+      "top": "84px",
+      "left": "717px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "28px",
+      "height": "89px",
+      "top": "80px",
+      "left": "686px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便利店小吃",
+    "style": {
+      "width": "58px",
+      "height": "104px",
+      "top": "82px",
+      "left": "625px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "餐厅",
+    "style": {
+      "width": "125px",
+      "height": "74px",
+      "top": "117px",
+      "left": "444px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "厨房",
+    "style": {
+      "width": "35px",
+      "height": "118px",
+      "top": "82px",
+      "left": "412px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

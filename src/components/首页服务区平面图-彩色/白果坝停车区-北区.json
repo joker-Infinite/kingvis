@@ -1,0 +1,79 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "67px",
+      "height": "37px",
+      "top": "290px",
+      "left": "142px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "104px",
+      "height": "53px",
+      "top": "198px",
+      "left": "219px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "63px",
+      "height": "34px",
+      "top": "286px",
+      "left": "968px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "餐厅",
+    "style": {
+      "width": "149px",
+      "height": "105px",
+      "top": "97px",
+      "left": "388px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "易捷便利店",
+    "style": {
+      "width": "101px",
+      "height": "118px",
+      "top": "99px",
+      "left": "534px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "46px",
+      "height": "80px",
+      "top": "99px",
+      "left": "637px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "54px",
+      "height": "85px",
+      "top": "96px",
+      "left": "682px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

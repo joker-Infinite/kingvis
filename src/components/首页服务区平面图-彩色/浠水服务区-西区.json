@@ -1,0 +1,123 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "96px",
+      "height": "46px",
+      "top": "279px",
+      "left": "156px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "84px",
+      "height": "47px",
+      "top": "273px",
+      "left": "943px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "89px",
+      "height": "43px",
+      "top": "250px",
+      "left": "578px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "86px",
+      "height": "48px",
+      "top": "249px",
+      "left": "425px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "81px",
+      "height": "49px",
+      "top": "221px",
+      "left": "224px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "60px",
+      "height": "53px",
+      "top": "121px",
+      "left": "383px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便利店小吃",
+    "style": {
+      "width": "85px",
+      "height": "96px",
+      "top": "122px",
+      "left": "488px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "超市仓库",
+    "style": {
+      "width": "40px",
+      "height": "21px",
+      "top": "120px",
+      "left": "574px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "餐厅仓库",
+    "style": {
+      "width": "47px",
+      "height": "31px",
+      "top": "121px",
+      "left": "614px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "80px",
+      "height": "53px",
+      "top": "175px",
+      "left": "383px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "68px",
+      "height": "36px",
+      "top": "60px",
+      "left": "268px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

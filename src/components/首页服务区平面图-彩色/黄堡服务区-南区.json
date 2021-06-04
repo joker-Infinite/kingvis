@@ -1,0 +1,145 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "88px",
+      "height": "46px",
+      "top": "18px",
+      "left": "113px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "98px",
+      "height": "43px",
+      "top": "60px",
+      "left": "544px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "90px",
+      "height": "49px",
+      "top": "23px",
+      "left": "994px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "98px",
+      "height": "52px",
+      "top": "79px",
+      "left": "881px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "81px",
+      "height": "78px",
+      "top": "229px",
+      "left": "242px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楼梯间",
+    "style": {
+      "width": "25px",
+      "height": "60px",
+      "top": "145px",
+      "left": "468px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "大厅",
+    "style": {
+      "width": "76px",
+      "height": "62px",
+      "top": "164px",
+      "left": "516px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "73px",
+      "height": "56px",
+      "top": "225px",
+      "left": "512px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "73px",
+      "height": "55px",
+      "top": "226px",
+      "left": "583px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "配电房",
+    "style": {
+      "width": "74px",
+      "height": "35px",
+      "top": "278px",
+      "left": "843px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "迈力士便利店",
+    "style": {
+      "width": "61px",
+      "height": "43px",
+      "top": "163px",
+      "left": "591px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便仓",
+    "style": {
+      "width": "29px",
+      "height": "38px",
+      "top": "165px",
+      "left": "650px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楼梯间2",
+    "style": {
+      "width": "22px",
+      "height": "57px",
+      "top": "146px",
+      "left": "676px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

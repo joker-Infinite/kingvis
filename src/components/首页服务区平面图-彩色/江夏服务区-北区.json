@@ -1,0 +1,156 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "80px",
+      "height": "43px",
+      "top": "276px",
+      "left": "133px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "98px",
+      "height": "41px",
+      "top": "249px",
+      "left": "558px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "93px",
+      "height": "42px",
+      "top": "275px",
+      "left": "969px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "67px",
+      "height": "60px",
+      "top": "46px",
+      "left": "801px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "员工宿舍",
+    "style": {
+      "width": "61px",
+      "height": "38px",
+      "top": "137px",
+      "left": "734px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小圆满餐厅",
+    "style": {
+      "width": "75px",
+      "height": "85px",
+      "top": "138px",
+      "left": "657px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "猫屎咖啡",
+    "style": {
+      "width": "61px",
+      "height": "32px",
+      "top": "116px",
+      "left": "588px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "老龚家牛肉面",
+    "style": {
+      "width": "51px",
+      "height": "55px",
+      "top": "98px",
+      "left": "519px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "47px",
+      "height": "58px",
+      "top": "94px",
+      "left": "475px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "84px",
+      "height": "56px",
+      "top": "194px",
+      "left": "214px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "61px",
+      "height": "29px",
+      "top": "178px",
+      "left": "365px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "61px",
+      "height": "34px",
+      "top": "209px",
+      "left": "369px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "母婴",
+    "style": {
+      "width": "36px",
+      "height": "18px",
+      "top": "222px",
+      "left": "435px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "餐厨",
+    "style": {
+      "width": "105px",
+      "height": "44px",
+      "top": "51px",
+      "left": "471px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

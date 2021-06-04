@@ -1,0 +1,145 @@
+[
+  {
+    "name": "出口",
+    "style": {
+      "width": "97px",
+      "height": "43px",
+      "top": "285px",
+      "left": "81px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "59px",
+      "height": "67px",
+      "top": "131px",
+      "left": "236px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "82px",
+      "height": "45px",
+      "top": "269px",
+      "left": "323px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "79px",
+      "height": "43px",
+      "top": "262px",
+      "left": "661px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "93px",
+      "height": "51px",
+      "top": "264px",
+      "left": "834px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "入口",
+    "style": {
+      "width": "92px",
+      "height": "46px",
+      "top": "278px",
+      "left": "994px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "水电房",
+    "style": {
+      "width": "86px",
+      "height": "46px",
+      "top": "31px",
+      "left": "474px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "96px",
+      "height": "37px",
+      "top": "127px",
+      "left": "438px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "104px",
+      "height": "33px",
+      "top": "166px",
+      "left": "439px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "30px",
+      "height": "29px",
+      "top": "172px",
+      "left": "598px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "赶路小食",
+    "style": {
+      "width": "70px",
+      "height": "24px",
+      "top": "202px",
+      "left": "584px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "微米食刻餐厅",
+    "style": {
+      "width": "90px",
+      "height": "104px",
+      "top": "120px",
+      "left": "655px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "五芳斋",
+    "style": {
+      "width": "57px",
+      "height": "146px",
+      "top": "79px",
+      "left": "745px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

@@ -1,0 +1,189 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "76px",
+      "height": "36px",
+      "top": "20px",
+      "left": "123px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "72px",
+      "height": "35px",
+      "top": "22px",
+      "left": "972px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "73px",
+      "height": "33px",
+      "top": "45px",
+      "left": "292px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "76px",
+      "height": "39px",
+      "top": "33px",
+      "left": "688px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "54px",
+      "height": "48px",
+      "top": "153px",
+      "left": "252px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "68px",
+      "height": "37px",
+      "top": "232px",
+      "left": "310px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "水电房",
+    "style": {
+      "width": "69px",
+      "height": "37px",
+      "top": "278px",
+      "left": "330px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "47px",
+      "height": "56px",
+      "top": "174px",
+      "left": "400px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "46px",
+      "height": "68px",
+      "top": "175px",
+      "left": "465px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "赶路小吃",
+    "style": {
+      "width": "69px",
+      "height": "34px",
+      "top": "129px",
+      "left": "532px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "大厅",
+    "style": {
+      "width": "103px",
+      "height": "71px",
+      "top": "128px",
+      "left": "594px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楚天舒便利店",
+    "style": {
+      "width": "62px",
+      "height": "32px",
+      "top": "169px",
+      "left": "533px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "太白烤鸡",
+    "style": {
+      "width": "56px",
+      "height": "67px",
+      "top": "198px",
+      "left": "538px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "猫屎咖啡",
+    "style": {
+      "width": "37px",
+      "height": "30px",
+      "top": "173px",
+      "left": "692px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "真功夫",
+    "style": {
+      "width": "72px",
+      "height": "108px",
+      "top": "126px",
+      "left": "724px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "闲置仓库",
+    "style": {
+      "width": "61px",
+      "height": "139px",
+      "top": "128px",
+      "left": "792px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "86px",
+      "height": "44px",
+      "top": "71px",
+      "left": "852px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

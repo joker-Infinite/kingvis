@@ -1,0 +1,112 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "83px",
+      "height": "44px",
+      "top": "16px",
+      "left": "125px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "89px",
+      "height": "45px",
+      "top": "16px",
+      "left": "968px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "85px",
+      "height": "45px",
+      "top": "54px",
+      "left": "366px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区2",
+    "style": {
+      "width": "92px",
+      "height": "41px",
+      "top": "55px",
+      "left": "648px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "105px",
+      "height": "65px",
+      "top": "228px",
+      "left": "268px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "83px",
+      "height": "40px",
+      "top": "211px",
+      "left": "396px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "81px",
+      "height": "36px",
+      "top": "174px",
+      "left": "397px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "92px",
+      "height": "53px",
+      "top": "155px",
+      "left": "816px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "水电房",
+    "style": {
+      "width": "92px",
+      "height": "47px",
+      "top": "256px",
+      "left": "849px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "108px",
+      "height": "49px",
+      "top": "67px",
+      "left": "813px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "name": "入口",
+    "style": {
+      "width": "64px",
+      "height": "34px",
+      "top": "30px",
+      "left": "141px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "停车区",
+    "style": {
+      "width": "79px",
+      "height": "33px",
+      "top": "55px",
+      "left": "556px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "加油站",
+    "style": {
+      "width": "98px",
+      "height": "56px",
+      "top": "51px",
+      "left": "847px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "出口",
+    "style": {
+      "width": "64px",
+      "height": "40px",
+      "top": "30px",
+      "left": "984px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "生活区",
+    "style": {
+      "width": "89px",
+      "height": "40px",
+      "top": "278px",
+      "left": "835px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "汽修",
+    "style": {
+      "width": "86px",
+      "height": "85px",
+      "top": "195px",
+      "left": "245px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "女厕",
+    "style": {
+      "width": "60px",
+      "height": "82px",
+      "top": "179px",
+      "left": "384px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "男厕",
+    "style": {
+      "width": "64px",
+      "height": "81px",
+      "top": "179px",
+      "left": "443px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "小吃",
+    "style": {
+      "width": "41px",
+      "height": "66px",
+      "top": "195px",
+      "left": "506px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "便利店",
+    "style": {
+      "width": "72px",
+      "height": "64px",
+      "top": "195px",
+      "left": "546px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "楼梯间",
+    "style": {
+      "width": "37px",
+      "height": "31px",
+      "top": "229px",
+      "left": "616px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "休息区",
+    "style": {
+      "width": "149px",
+      "height": "39px",
+      "top": "160px",
+      "left": "505px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "大厅",
+    "style": {
+      "width": "86px",
+      "height": "41px",
+      "top": "123px",
+      "left": "651px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置",
+    "style": {
+      "width": "84px",
+      "height": "67px",
+      "top": "159px",
+      "left": "652px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  },
+  {
+    "name": "空置2",
+    "style": {
+      "width": "120px",
+      "height": "104px",
+      "top": "157px",
+      "left": "735px",
+      "background": "rgba(0,0,0,.4)",
+      "position": "absolute"
+    }
+  }
+]
