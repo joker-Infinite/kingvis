@@ -1,0 +1,82 @@
+.financialChart {
+  width: 100%;
+  height: calc(100% - 40px);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+
+  .financialChart_left {
+    width: 200px;
+    height: 100%;
+
+    .left {
+      width: 200px;
+      height: 100%;
+
+      .el-input {
+
+        .el-input__inner {
+          margin-bottom: 10px;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+
+      .myTree {
+        height: calc(100% - 45px);
+        overflow: hidden;
+        overflow-y: scroll;
+        background: white;
+
+        .el-tree {
+          height: 100%;
+          background: white;
+        }
+      }
+
+      .myTree::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .financialChart_right {
+    width: calc(100% - 240px);
+    height: 100%;
+
+    .financialChart_right_header {
+      height: 35px;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: right;
+    }
+
+    .financialChart_right_content {
+      width: 100%;
+      height: calc(100% - 45px);
+      overflow-y: scroll;
+
+      .charts {
+        width: 100%;
+        height: 310px;
+        margin-bottom: 10px;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+        .charts_content {
+          width: 49%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  /*.financialChart_right::-webkit-scrollbar {
+    display: none;
+  }*/
+}

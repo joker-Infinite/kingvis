@@ -16,7 +16,7 @@ export default [
         /* webpackChunkName: "energy" */ "@/pages/energy/children/ZHJiaoTou.vue"
       )
   },
-  //营收
+  // 营收
   {
     path: "energyrevenue",
     name: "energyrevenue",
@@ -25,7 +25,7 @@ export default [
         /* webpackChunkName: "energy" */ "@/pages/energy/children/energyrevenue.vue"
       )
   },
-  //利润
+  // 利润
 
   {
     path: "energprofit",

@@ -28,7 +28,7 @@ export default [
         /* webpackChunkName: "serviceArea" */ "@/pages/serviceArea/children/profit.vue"
       )
   },
-  //成本
+  // 成本
   {
     path: "costing",
     name: "costing",
@@ -37,7 +37,7 @@ export default [
         /* webpackChunkName: "serviceArea" */ "@/pages/serviceArea/children/costing.vue"
       )
   },
-  //业态结构
+  // 业态结构
   {
     path: "construction",
     name: "construction",
@@ -46,14 +46,14 @@ export default [
         /* webpackChunkName: "serviceArea" */ "@/pages/serviceArea/children/construction.vue"
       )
   },
-  //服务区对比
+  // 服务区对比
   {
     path: "comparison",
     name: "comparison",
     component: () =>
       import(/* webpackChunkName: "comparison" */ "@/pages/comparison/test.vue")
   },
-  //回款率
+  // 回款率
   {
     path: "rateOfReturn",
     name: "rateOfReturn",
@@ -62,7 +62,7 @@ export default [
         /* webpackChunkName: "rateOfReturn" */ "@/pages/serviceArea/children/rateOfReturn.vue"
       )
   },
-  //基础信息
+  // 基础信息
   {
     path: "basicInformation",
     name: "basicInformation",
@@ -71,7 +71,7 @@ export default [
         /* webpackChunkName: "basicInformation" */ "@/pages/serviceArea/children/basicInformation.vue"
       )
   },
-  //评论
+  // 评论
   {
     path: "comment",
     name: "comment",
@@ -80,7 +80,7 @@ export default [
         /* webpackChunkName: "basicInformation" */ "@/pages/serviceArea/children/comment.vue"
       )
   },
-  //供应商
+  // 供应商
   {
     path: "supplier",
     name: "supplier",
@@ -157,8 +157,38 @@ export default [
     path: "compared",
     name: "compared",
     component: () =>
-        import(
-            /* webpackChunkName: "serviceArea" */ "@/pages/serviceCompared/compared.vue"
-            )
+      import(
+        /* webpackChunkName: "serviceArea" */ "@/pages/serviceCompared/compared.vue"
+      )
+  },
+  {
+    path: "latitudeStatistics",
+    name: "latitudeStatistics",
+    component: () =>
+      import(
+        /* webpackChunkName: "serviceArea" */ "@/pages/latitudeStatistics/latitudeStatistics.vue"
+      )
+  },
+  {
+    path: "businessComparison",
+    name: "businessComparison",
+    component: () =>
+      import(
+        /* webpackChunkName: "serviceArea" */ "@/pages/businessComparison/businessComparison.vue"
+      )
+  },
+  {
+    path: "gas",
+    name: "gas",
+    component: () =>
+      import(/* webpackChunkName: "serviceArea" */ "@/pages/gas/gas.vue")
+  },
+  {
+    path: "financialChart",
+    name: "financialChart",
+    component: () =>
+      import(
+        /* webpackChunkName: "serviceArea" */ "@/pages/financialChart/financialChart.vue"
+      )
   }
 ];

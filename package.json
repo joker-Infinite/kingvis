@@ -9,20 +9,21 @@
     "dev": "vue-cli-service serve"
   },
   "dependencies": {
-    "core-js": "^3.8.2",
+    "core-js": "^3.15.0",
     "echarts": "^4.6.0",
     "echarts-liquidfill": "^2.0.6",
-    "element-ui": "^2.15.0",
+    "element-ui": "^2.15.2",
     "file-saver": "^2.0.5",
     "jquery": "^3.6.0",
-    "lodash": "^4.17.15",
-    "qs": "^6.9.6",
-    "vue": "^2.6.11",
+    "jsx": "^0.9.89",
+    "lodash": "^4.17.21",
+    "qs": "^6.10.1",
+    "vue": "^2.6.14",
     "vue-amap": "^0.5.10",
-    "vue-router": "^3.4.9",
+    "vue-router": "^3.5.2",
     "vue-scroll": "^2.1.13",
     "vuescroll": "^4.17.3",
-    "vuex": "^3.6.0",
+    "vuex": "^3.6.2",
     "xlsx": "^0.16.9",
     "xlsx-style": "^0.8.13"
   },
@@ -36,7 +37,7 @@
     "axios": "^0.18.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.13.1",
     "less-loader": "^5.0.0",
@@ -47,7 +48,7 @@
     "vue-cli-plugin-element": "^1.0.1",
     "vue-cli-plugin-lodash": "^0.1.4",
     "vue-cli-plugin-wyz-echarts": "^1.0.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,
