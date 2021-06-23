@@ -43,24 +43,22 @@
                                         v-if="i[0].dimensionType !== 'pie1'"
                                         v-model="selected[i[0].businessType]"
                                         @change="selectTypeChange(i)">
-                                    <el-checkbox
-                                            v-if="m['dimensionType'] === 'tab'"
-                                            v-for="(m, x) in i"
-                                            :key="x"
-                                            :label="m.dimensionName"
-                                            :disabled="m['havaData'] == '0'"
-                                            :value="m.dimensionValue"></el-checkbox>
+                                    <el-checkbox v-if="m['dimensionType'] === 'tab'"
+                                                 v-for="(m, x) in i"
+                                                 :key="x"
+                                                 :label="m.dimensionName"
+                                                 :disabled="m['havaData'] == '0'"
+                                                 :value="m.dimensionValue"></el-checkbox>
                                 </el-checkbox-group>
                                 <el-radio-group
                                         v-if="i[0].dimensionType === 'pie1' ||i[0].dimensionType === 'pie2' "
                                         v-model="selected[i[0].businessType]"
                                         @change="selectTypeChange(i)">
-                                    <el-radio
-                                            v-if=" m['dimensionType'] === 'pie1' ||m['dimensionType'] === 'pie2'"
-                                            v-for="(m, x) in i"
-                                            :key="x"
-                                            :disabled="m['havaData'] == '0'"
-                                            :label="m.dimensionName">
+                                    <el-radio v-if=" m['dimensionType'] === 'pie1' ||m['dimensionType'] === 'pie2'"
+                                              v-for="(m, x) in i"
+                                              :key="x"
+                                              :disabled="m['havaData'] == '0'"
+                                              :label="m.dimensionName">
                                         {{ m.dimensionName }}
                                     </el-radio>
                                 </el-radio-group>
