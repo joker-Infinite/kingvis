@@ -48,7 +48,8 @@
                                                  :key="x"
                                                  :label="m.dimensionName"
                                                  :disabled="m['havaData'] == '0'"
-                                                 :value="m.dimensionValue"></el-checkbox>
+                                                 :value="m.dimensionValue">
+                                    </el-checkbox>
                                 </el-checkbox-group>
                                 <el-radio-group
                                         v-if="i[0].dimensionType === 'pie1' ||i[0].dimensionType === 'pie2' "
