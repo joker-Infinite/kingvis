@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div id="prosecution_unit" class="prosecution_unit">
-                <div :class="{ prosecution_unit_container: true,container_height: showOptions,container_min_height: !showOptions }">
+                <div :class="{prosecution_unit_container: true,container_height: showOptions,container_min_height: !showOptions }">
                     <template v-for="i in all">
                         <div class="type_select">
                             <div class="type_header">
@@ -64,11 +64,9 @@
                         <el-divider></el-divider>
                     </template>
                 </div>
-                <el-button
-                        type="text"
-                        class="prosecution_unit_btn"
-                        @click.stop="moreUnit">
-                    展示纬度
+                <el-button type="text"
+                           class="prosecution_unit_btn"
+                           @click.stop="moreUnit">展示纬度
                 </el-button>
             </div>
             <div class="con" :style="{ height: content_height }">
