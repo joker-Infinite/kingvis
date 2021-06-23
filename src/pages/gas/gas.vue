@@ -532,11 +532,11 @@ export default {
             label: i["dimensionName"],
             formatter: v => {
               //allOrderAmount allOrderCount allOrderMoney
-              let arr = ["allOrderAmount", "allOrderCount", "allOrderMoney"];
-              console.log(v["stationOrderDto92"]);
-              console.log(v["stationOrderDto95"]);
-              console.log(v["stationOrderDto98"]);
-              console.log(v["stationOrderDtoFY"]);
+              // let arr = ["allOrderAmount", "allOrderCount", "allOrderMoney"];
+              // console.log(v["stationOrderDto92"]);
+              // console.log(v["stationOrderDto95"]);
+              // console.log(v["stationOrderDto98"]);
+              // console.log(v["stationOrderDtoFY"]);
               return v[i["dimensionValue"]] ? v[i["dimensionValue"]] : 0;
             }
           });
