@@ -21,10 +21,6 @@
         <div class="right">
             <div class="select_year">
                 <div class="select_year_btn">
-                    <!--<el-button :type="year===2020?'primary':''" @click="_=>(this.year=2020,this.lookView())">2020
-                              </el-button>
-                              <el-button :type="year===2021?'primary':''" @click="_=>(this.year=2021,this.lookView())">2021
-                              </el-button>-->
                     <el-select v-model="year" @change="lookView">
                         <el-option label="2020" value="2020"></el-option>
                         <el-option label="2021" value="2021"></el-option>
