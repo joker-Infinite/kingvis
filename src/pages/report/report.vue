@@ -176,12 +176,8 @@
                         if (state && state.length > 0) {
                             state.forEach(m => {
                                 dy++;
-                                if (m == 0) {
-                                    ywc++;
-                                }
-                                if (m == 1) {
-                                    wwc++;
-                                }
+                                if (m == 0) {ywc++;}
+                                if (m == 1) {wwc++;}
                             });
                         }
                         if (child && child.length > 0) {
@@ -190,12 +186,8 @@
                                 if (cState && cState.length > 0) {
                                     cState.forEach(m => {
                                         dy++;
-                                        if (m == 0) {
-                                            ywc++;
-                                        }
-                                        if (m == 1) {
-                                            wwc++;
-                                        }
+                                        if (m == 0) {ywc++;}
+                                        if (m == 1) {wwc++;}
                                     });
                                 }
                             });
