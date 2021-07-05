@@ -1,3 +1,5 @@
+import el from "element-ui/src/locale/lang/el";
+
 export default {
     methods: {
         /**
@@ -7,7 +9,7 @@ export default {
          * */
         getData(t, v) {
             let arr = [];
-            let series = this.getSeriesData(v.series);
+            let name = '';
             v.xAxis.forEach(i => {
                 if (i.type === "category") {
                     arr.push({
@@ -15,6 +17,8 @@ export default {
                         name: i.name,
                         data: i.data
                     });
+                } else {
+                    name = i.name;
                 }
             });
             v.yAxis.forEach(i => {
@@ -24,17 +28,20 @@ export default {
                         name: i.name,
                         data: i.data
                     });
+                } else {
+                    name = i.name;
                 }
             });
+            let series = this.getSeriesData(v.series, name);
             return [arr, series]
         },
-        getSeriesData(v) {
+        getSeriesData(v, name) {
             let arr = [];
             if (v && v.length > 0) {
                 v.forEach(i => {
                     arr.push({
                         type: "value",
-                        name: i.name,
+                        name: name,
                         data: i.data
                     })
                 });

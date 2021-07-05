@@ -18,6 +18,14 @@ const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
     function (config) {
+        let con = config.url;
+        let newC = con.split('/');
+        for (let i = 0; i < newC.length; i++) {
+            if (newC[i] === 'api') {
+                newC[i] = 'apidata';
+            }
+        }
+        config.url = newC.join('/');
         // Do something before request is sent
         return config;
     },

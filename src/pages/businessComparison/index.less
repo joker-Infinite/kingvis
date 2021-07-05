@@ -127,22 +127,31 @@
 
       .charts {
         width: 100%;
-        height: 300px;
+        height: 100%;
+        overflow-y: scroll;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-        background: #1d7dca;
+        justify-content: flex-start;
 
 
         .content {
-          width: 32%;
-          height: 100%;
+          width: 49%;
+          height: 410px;
+          margin-left: 0.6%;
+          margin-bottom: 10px;
           position: relative;
+
+          .title {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+          }
 
           .content_echarts {
             background: white;
-            border-radius: 5px;
           }
 
           .noData {
@@ -159,6 +168,11 @@
             z-index: 33;
           }
         }
+
+        .content:last-child {
+          margin-bottom: 0;
+          width: 98%;
+        }
       }
     }
   }
@@ -171,5 +185,10 @@
       width: 100%;
       height: 32%;
     }
+  }
+
+  .el-tree-node .is-current > .el-tree-node__content {
+    background-color: #1d7dca !important;
+    color: white;
   }
 }

@@ -15,40 +15,40 @@ Vue.config.productionTip = false;
 Vue.component("empty", empty);
 Vue.use(VueAMap);
 VueAMap.initAMapApiLoader({
-  key: "5f4ec16b146bc7ebde7308bd2dbcd132",
-  plugin: [
-    "AMap.Autocomplete",
-    "AMap.PlaceSearch",
-    "AMap.Scale",
-    "AMap.OverView",
-    "AMap.ToolBar",
-    "AMap.MapType",
-    "AMap.PolyEditor",
-    "AMap.CircleEditor"
-  ],
-  // 默认高德 sdk 版本为 1.4.4
-  v: "1.4.4",
-  uiVersion: "1.0.11"
+    key: "5f4ec16b146bc7ebde7308bd2dbcd132",
+    plugin: [
+        "AMap.Autocomplete",
+        "AMap.PlaceSearch",
+        "AMap.Scale",
+        "AMap.OverView",
+        "AMap.ToolBar",
+        "AMap.MapType",
+        "AMap.PolyEditor",
+        "AMap.CircleEditor"
+    ],
+    // 默认高德 sdk 版本为 1.4.4
+    v: "1.4.4",
+    uiVersion: "1.0.11"
 });
 //同比增长
-Vue.prototype.YOY = function(ls, THIS, NEXT) {
-  let ns = JSON.parse(JSON.stringify(ls));
-  let data = [];
-  ls.pop();
-  ns.shift();
-  ns.forEach((i, x) => {
-    if (i !== 0 && ls[x] !== 0) {
-      data.push(((i - ls[x]) / ls[x]) * 100);
-    } else {
-      data.push("");
-    }
-  });
-  data.unshift("");
-  return data;
+Vue.prototype.YOY = function (ls, THIS, NEXT) {
+    let ns = JSON.parse(JSON.stringify(ls));
+    let data = [];
+    ls.pop();
+    ns.shift();
+    ns.forEach((i, x) => {
+        if (i !== 0 && ls[x] !== 0) {
+            data.push(((i - ls[x]) / ls[x]) * 100);
+        } else {
+            data.push("");
+        }
+    });
+    data.unshift("");
+    return data;
 };
 //深拷贝
 Vue.prototype.DeepCopy = v => {
-  return JSON.parse(JSON.stringify(v));
+    return JSON.parse(JSON.stringify(v));
 };
 //通过ref调用多个子页面方法
 /**
@@ -58,42 +58,45 @@ Vue.prototype.DeepCopy = v => {
  * @param data ECharts数据
  * */
 Vue.prototype.childRef = (num, time = 70, ref, data) => {
-  let i = 0;
-  let key = setInterval(_ => {
-    let d;
-    if (data && data[i]) {
-      d = data[i];
-    }
-    if (ref[i]) {
-      ref[i].initECharts(d);
-    }
-    i++;
-    if (i === num) clearInterval(key);
-  }, time);
+    let i = 0;
+    let key = setInterval(_ => {
+        let d;
+        if (data && data[i]) {
+            d = data[i];
+        }
+        if (ref[i]) {
+            ref[i].initECharts(d);
+        }
+        i++;
+        if (i === num) clearInterval(key);
+    }, time);
 };
 Vue.prototype.mySet = (d, parameter) => {
-  let array = [];
-  let allArray = [];
-  d.forEach(i => {
-    if (parameter) {
-      i = i[parameter];
-      allArray.push(i);
-    } else {
-      allArray.push(i);
+    let array = [];
+    let allArray = [];
+    if (!d || d.length === 0) {
+        return [];
     }
-  });
-  allArray.forEach((i, x) => {
-    if (x === 0) {
-      array.push(i);
-    }
-    if (array.indexOf(i) === -1 && x !== 0) {
-      array.push(i);
-    }
-  });
-  return array;
+    d.forEach(i => {
+        if (parameter) {
+            i = i[parameter];
+            allArray.push(i);
+        } else {
+            allArray.push(i);
+        }
+    });
+    allArray.forEach((i, x) => {
+        if (x === 0) {
+            array.push(i);
+        }
+        if (array.indexOf(i) === -1 && x !== 0) {
+            array.push(i);
+        }
+    });
+    return array;
 };
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount("#app");

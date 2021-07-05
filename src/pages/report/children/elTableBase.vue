@@ -21,8 +21,8 @@
                     <div style="font-size: 16px;width: 80px;position: absolute;z-index: 99999;right:0;top: calc(50% - 10px)">
                         <i v-if="calculation(scope.row.progressRate, increase[scope.row.id])>=0"
                            style="color: greenyellow" class="iconfont iconshangsheng"></i>
-                        <i v-if="calculation(scope.row.progressRate, increase[scope.row.id])<0" style="color: red"
-                           class="iconfont iconxiajiang"></i>
+                        <i v-if="calculation(scope.row.progressRate, increase[scope.row.id])<0"
+                           style="color: red" class="iconfont iconxiajiang"></i>
                         {{calculation(scope.row.progressRate, increase[scope.row.id])}}%
                     </div>
                 </template>
@@ -42,8 +42,8 @@
                 <template slot-scope="scope">
                     <div style="text-align: left" :id="scope.row.states" v-if="scope.row.states">
                         <p v-for="(m,n) in scope.row.states" :key="n">
-                            {{n+1}}、<i :style="{color:m==0?'#67C23A':'#F56C6C',verticalAlign: '-1px'}"
-                                       :class="{'iconfont':true,'icongou':m==0,'iconcha':m==1}"></i>
+                            {{n+1}}、<i :style="{color:m==2?'#67C23A':'#F56C6C',verticalAlign: '-1px'}"
+                                       :class="{'iconfont':true,'icongou':m==2,'iconcha':m!=2}"></i>
                         </p>
                     </div>
                     <div v-if="scope.row.states.length===0">无</div>
@@ -137,7 +137,9 @@
                                 }
                             ]
                         };
-                        this.$echarts["init"](document.getElementById('ID' + page + '-' + (table[i].tableIndex))).setOption(option);
+                        this.$nextTick(_ => {
+                            this.$echarts["init"](document.getElementById('ID' + page + '-' + (table[i].tableIndex))).setOption(option);
+                        })
                         let tableChildren = table[i].children;
                         if (tableChildren && tableChildren.length > 0) {
                             for (let j = 0; j < tableChildren.length; j++) {

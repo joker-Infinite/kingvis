@@ -61,6 +61,7 @@
                                      :key="cIndex"
                                      :align="cItem.align ? cItem.align : 'center'"
                                      :prop="cItem.prop"
+                                     :width="cItem.width ? cItem.width : ''"
                                      :label="cItem.label">
                     </el-table-column>
                 </el-table-column>
@@ -199,7 +200,7 @@
             pageSizes: {
                 type: Array,
                 default: function () {
-                    return [];
+                    return [20,50,100,200];
                 }
             },
             pageSize: {
@@ -259,11 +260,9 @@
                 }
             },
             handleSizeChange(val) {
-                this.pageSize = val;
                 this.$emit('size-change', val);
             },
             handleCurrentChange(val) {
-                this.currentPage = val;
                 this.$emit('current-change', val);
             },
             //多选时点击复选框

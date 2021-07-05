@@ -11,10 +11,10 @@
                      style="height: 100%"
                      class="el-menu-vertical-demo"
                      @select="select">
-                <div class="oc" id="oc" style="text-align: right">
-                    <i :class="menuStatus % 2 === 0 ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
-                       @click="menuOC"></i>
-                </div>
+                <!-- <div class="oc" id="oc" style="text-align: right">
+                     <i :class="menuStatus % 2 === 0 ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
+                        @click="menuOC"></i>
+                 </div>-->
                 <div class="blank" @click="select('1')" v-if="showKanBan">
                     <i class="el-icon-menu"></i>
                     <span slot="title" v-if="menuStatus % 2 !== 0">首页</span>
@@ -80,16 +80,6 @@
                         imgActive: require("../assets/Home/1.png"),
                         menuItem: [
                             {name: ">>服务区对比", url: "/serviceArea/compared", show: true},
-                            {
-                                name: ">>维度统计",
-                                url: "/serviceArea/businessComparison",
-                                show: true
-                            },
-                            {
-                                name: ">>财务图表",
-                                url: "/serviceArea/financialChart",
-                                show: true
-                            },
                             {name: ">>服务区营收", url: "/serviceArea/revenue", show: true},
                             {name: ">>服务区利润", url: "/serviceArea/profit", show: true},
                             {name: ">>服务区成本", url: "/serviceArea/costing", show: true},
@@ -156,7 +146,6 @@
                         img: require("../assets/Home/10.png"),
                         imgActive: require("../assets/Home/3.png"),
                         menuItem: [
-                            {name: ">>维度统计", url: "/serviceArea/gas", show: true},
                             {name: ">>能源营收", url: "/energy/energyrevenue", show: true},
                             {name: ">>能源利润", url: "/energy/profit", show: true},
                             {name: ">>预算控制", url: "/energy/budgetControl", show: true},
@@ -229,6 +218,38 @@
                             {name: ">>中百比对", url: "/business/comparison", show: true},
                             {name: ">>应收管理", url: "/business/rateOfReturn", show: true}
                         ]
+                    },
+                    {
+                        id: "8",
+                        label: "数据库资源",
+                        img: require("../assets/Home/2.png"),
+                        imgActive: require("../assets/Home/1.png"),
+                        menuItem: [
+                            {name: '>>数据展示', url: '/dataBase/libraryData', show: true},
+                        ]
+                    },
+                    {
+                        id: '9',
+                        label: "维度统计",
+                        img: require("../assets/Home/4.png"),
+                        imgActive: require("../assets/Home/5.png"),
+                        menuItem: [
+                            {
+                                name: ">>服务区维度统计",
+                                url: "/serviceArea/businessComparison",
+                                show: true
+                            },
+                            {
+                                name: ">>能源维度统计",
+                                url: "/serviceArea/gas",
+                                show: true
+                            },
+                            {
+                                name: ">>财务维度统计",
+                                url: "/serviceArea/financialChart",
+                                show: true
+                            },
+                        ]
                     }
                 ],
                 tagData: [],
@@ -287,6 +308,12 @@
                 }
             },
             select(k, n, m) {
+                if (k === "/dataBase/libraryData") {
+                    this.$router.push('/dataBase/libraryData');
+                    setTimeout(_ => {
+                        this.$router.go(0);
+                    }, 500)
+                }
                 if (k == "1") {
                     let routeData = this.$router.resolve({
                         path: "/homeKanBan".replace("#", "")

@@ -20,9 +20,17 @@
 <script>
     export default {
         name: 'MsOtherSetting',
+        props: {
+            i: {
+                type: Number,
+                default: () => {
+                    return 0;
+                }
+            }
+        },
         methods: {
             operations(v) {
-                this.$emit("clickType", v);
+                this.$emit("clickType", v, this.i);
             }
         }
     };

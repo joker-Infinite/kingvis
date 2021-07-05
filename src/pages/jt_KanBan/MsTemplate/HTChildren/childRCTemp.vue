@@ -35,7 +35,7 @@
                     <td class="mc">
                         <span style="display: inline-block;width: 100px;overflow: hidden;line-height: 30px; text-overflow: ellipsis;
                         white-space: nowrap;" :title="i.name">{{i.name}}</span></td>
-                    <td class="ys">{{i.sumMoney}}</td>
+                    <td class="ys">{{i.sumMoney}}万</td>
                     <td class="lr"></td>
                     <td class="kdj">{{i.onePrice}}</td>
                     <td class="dds">{{i.orderNum}}</td>

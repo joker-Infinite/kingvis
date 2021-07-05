@@ -7,6 +7,10 @@
                v-bind="{...$attrs}"
                v-on="$listeners"
                :close-on-click-modal="closeOnClickModal">
+        <div slot="title">
+            {{title}}
+            <slot name="title"></slot>
+        </div>
         <vue-scroll
                 :style="{height:height?height:'500px'}"
                 :ops="{bar:{background:'#000',opacity:0.2,keepShow:true,size:'8px',onlyShowBarOnScroll:true},scrollPanel:{scrollingX:false}}">

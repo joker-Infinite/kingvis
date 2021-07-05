@@ -4,12 +4,12 @@
             <img class="HomeSecond_header_img" src="../../../assets/showOffHome/home2/border.png" alt=""/>
         </div>
         <div class="HomeSecond_PlugIn">
-           <!-- <div class="HomeSecond_PlugIn_Broadcast">
-                <div class="HomeSecond_PlugIn_Broadcast_content">
-                    <i class="iconfont">&#xe614;</i>
-                    <span>凌晨二时 蔡甸服务区因为XXX 已临时关闭 预计XXX开放</span>
-                </div>
-            </div>-->
+            <!-- <div class="HomeSecond_PlugIn_Broadcast">
+                 <div class="HomeSecond_PlugIn_Broadcast_content">
+                     <i class="iconfont">&#xe614;</i>
+                     <span>凌晨二时 蔡甸服务区因为XXX 已临时关闭 预计XXX开放</span>
+                 </div>
+             </div>-->
             <div class="HomeSecond_PlugIn_Time-Theme">
                 <span>{{nowTime}}</span>
                 <el-select v-model="selectTheme" @change="updateHomeState(selectTheme)">
@@ -610,12 +610,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元")
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -705,12 +700,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元")
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -800,12 +790,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元")
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -895,12 +880,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元")
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -990,12 +970,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元")
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -1405,55 +1380,41 @@
                     this.$refs['jyph'].stopLoading();
                 })
             },
-            selectType(v, a) {
+            async selectType(a) {
                 this.active = a;
                 for (let i = 3; i < 9; i++) {
                     this.$refs[i].startLoading();
                 }
-                let PID = ["实业公司", "服务区板块", "能源板块", "商业板块", "传媒公司"];
-                this.$axios["get"]("/api/index/liudabankuai", {
+                const d = await Promise.all([this.$axios.get("/apifin/home/plate", {
                     params: {
-                        financeTypeId: v,
-                        plateId: "123"
+                        selectYear: 2021,
+                        type: a
                     }
-                })["then"](res => {
-                    let data = this.getData(res.data.data);
-                    this.ECData[3].xAxis[0].data = data[0];
-                    this.ECData[3].series[0].data = data[1];
-                });
-                this.$axios["get"]("/api/index/wan_cheng_lv", {params: {financeTypeId: v}})["then"](res => {
-                    let datas = res.data.data;
-                    datas.sort(function (a, b) {
-                        return a.tCRate - b.tCRate;
-                    });
-                    let series = [];
-                    let yAxis = [];
-                    datas.forEach(i => {
-                        if (i.yAxis != "小龙虾公司" && i.yAxis != "新致公司") {
-                            series.push(i.tCRate);
-                            yAxis.push(i.plateId);
-                        }
-                    });
-                    this.ECData[8].yAxis.data = yAxis;
-                    this.ECData[8].series[0].data = series;
-                });
-                this.plate.forEach(i => {
-                    let index = parseInt(PID.join(',').indexOf(i.plateName));
-                    if (index !== -1) {
-                        this.$axios["get"]("/api/index/liudabankuai", {
-                            params: {
-                                financeTypeId: v,
-                                plateId: i.plateId
-                            }
-                        })["then"](res => {
-                            let ix = PID.indexOf(i.plateName) + 3;
-                            let data = this.getData(res.data.data);
-                            this.ECData[ix].xAxis[0].data = data[0];
-                            this.ECData[ix].series[0].data = data[1];
-                            this.childRef(9, 100, this.$refs, this.ECData);
-                        })
-                    }
-                });
+                }),]);
+                let ds = d[0].data.data;
+                /*  for (let i = 3; i < this.ECData.length; i++) {
+                      if (data[i - 3] && data[i - 3].length > 0) {
+                          this.ECData[i].series[0].data = this.mySet(data[i - 3], 'yAxis');
+                          this.ECData[i].xAxis[0].data = this.mySet(data[i - 3], 'xBxis');
+                      }
+                  }*/
+                this.ECData[3].series[0].data = this.mySet(ds['sye'], 'yAxis');
+                this.ECData[3].xAxis[0].data = this.mySet(ds['sye'], 'xBxis');
+
+                this.ECData[4].series[0].data = this.mySet(ds['fwq'], 'yAxis');
+                this.ECData[4].xAxis[0].data = this.mySet(ds['fwq'], 'xBxis');
+
+                this.ECData[5].series[0].data = this.mySet(ds['ny'], 'yAxis');
+                this.ECData[5].xAxis[0].data = this.mySet(ds['ny'], 'xBxis');
+
+                this.ECData[6].series[0].data = this.mySet(ds['sy'], 'yAxis');
+                this.ECData[6].xAxis[0].data = this.mySet(ds['sy'], 'xBxis');
+
+                this.ECData[7].series[0].data = this.mySet(ds['cm'], 'yAxis');
+                this.ECData[7].xAxis[0].data = this.mySet(ds['cm'], 'xBxis');
+                this.$nextTick(_ => {
+                    this.childRef(9, 100, this.$refs, this.ECData);
+                })
             },
             getData(v) {
                 let series = [];
@@ -1535,7 +1496,7 @@
             setInterval(function () {
                 this_.nowTime = time();
             }, 1000);
-            const [yskzl, yslr, plate] = await Promise.all([this.$axios.get("/api/index/rate_list", {params: {type: "ys"}}), this.$axios.get("/api/index/finance_type_list"), this.$axios.get("/api/jt_finance/plate_list")]);
+            /*const [yskzl, yslr, plate] = await Promise.all([this.$axios.get("/api/index/rate_list", {params: {type: "ys"}}), this.$axios.get("/api/index/finance_type_list"), this.$axios.get("/api/jt_finance/plate_list")]);
             this.bottomType = yslr.data.data;
             this.plate = plate.data.data;
             let data = yskzl.data.data;
@@ -1554,11 +1515,12 @@
                 xBxis.unshift(element.plateName);
             });
             this.ECData[0].series[0].data = rateCount;
-            this.ECData[0].yAxis.data = xBxis;
-            await this.selectType(this.bottomType[1]['financeTypeId'], 1);
+            this.ECData[0].yAxis.data = xBxis;*/
+            await this.selectType(1);
             this.childRef(9, 100, this.$refs, this.ECData);
             this.ZHL();
             this.ranking(1, 1);
+
             let homeState = this.$store.state.homeState;
             if (homeState.map.oid) {
                 this.searchDot = homeState.map.oid;

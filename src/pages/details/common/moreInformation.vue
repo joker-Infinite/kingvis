@@ -155,7 +155,7 @@
                         },
                         series: [
                             {
-                                data: [42.31, 49.51, 36.4, 41.53, 23.4, 19.62],
+                                data: [],
                                 type: "bar",
                                 itemStyle: {
                                     color: "#00bff6"
@@ -474,7 +474,7 @@
                         }
                     };
                     showCharts[0].xAxis.data = chart1[0];
-                    showCharts[0].series.data = chart1[1];
+                    showCharts[0].series[0].data = chart1[1];
                     this.formData = [
                         {label: '加油站所属单位', value: v.stationCompanyName},
                         {label: '加油站名', value: v.stationName},
@@ -509,9 +509,9 @@
                     chart1 = this.process_Bar(v.xYListFrom);
                     chart2 = this.process_Bar(v.xYListFroms);
                     showCharts[1].xAxis.data = chart2[0];
-                    showCharts[1].series.data = chart2[1];
+                    showCharts[1].series[0].data = chart2[1];
                     showCharts[0].xAxis.data = chart1[0];
-                    showCharts[0].series.data = chart1[1];
+                    showCharts[0].series[0].data = chart1[1];
                     this.formData = [
                         {label: '店铺状态', value: arr[v.storeStatus]},
                         {label: '店铺负责人', value: v.userName},
@@ -535,7 +535,7 @@
                 let number = [];
                 let label = [];
                 data.forEach(i => {
-                    label.push(parseInt(i.xBxis.substr(0, 4))+"-"+parseInt(i.xBxis.substr(4, 2)));
+                    label.push(parseInt(i.xBxis.substr(0, 4)) + "-" + parseInt(i.xBxis.substr(4, 2)));
                     number.push(i.yAxis);
                 });
                 return [label, number];
@@ -647,7 +647,7 @@
             allECharts(eId, v) {
                 eId.forEach((i, x) => {
                     if (this.openIndex % 2 == 0) {
-                        document.getElementById(i).removeAttribute("_echarts_instance_");
+                        i.dispose();
                     }
                     this.$nextTick(_ => {
                         i.setOption(v[x]);
@@ -749,13 +749,16 @@
                         data: this.scatterData
                     }]
                 };
-                eId[0].setOption(this.chartBox[0]);
-                eId[1].setOption(option);
+                eId[0].dispose();
+                eId[1].dispose();
+                this.$nextTick(_ => {
+                    eId[0].setOption(this.chartBox[0]);
+                    eId[1].setOption(option);
+                })
+
                 setTimeout(function () {
                     let series = that.getPieSeries(eId[1]);
-                    eId[1].setOption({
-                        series: series
-                    });
+                    eId[1].setOption({series: series});
                 }, 10);
             }
         }

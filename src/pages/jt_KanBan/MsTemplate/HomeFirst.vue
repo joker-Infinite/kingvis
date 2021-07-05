@@ -105,10 +105,10 @@
                     </ul>
                     <div class="HomeFirst_content_content_bottom">
                         <div class="HomeFirst_content_content_bottom_button">
-                            <div :class="{'active':active===1}" @click="selectType(bottomType[1]['financeTypeId'],1)">
+                            <div :class="{'active':active===1}" @click="selectType(1)">
                                 营收
                             </div>
-                            <div :class="{'active':active===2}" @click="selectType(bottomType[0]['financeTypeId'],2)">
+                            <div :class="{'active':active===2}" @click="selectType(2)">
                                 利润
                             </div>
                         </div>
@@ -583,10 +583,10 @@
                     {
                         barWidth: 10,
                         grid: {
-                            show: true,
+                            show: false,
                             top: "7",
-                            left: "10%",
-                            right: "5%",
+                            left: "10",
+                            right: "10",
                             bottom: "30"
                         },
                         title: {
@@ -610,12 +610,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元");
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -635,12 +630,18 @@
                                     textStyle: {
                                         color: "#FFF"
                                     }
+                                },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#fff',
+                                        width: 2,
+                                    }
                                 }
                             }
                         ],
                         yAxis: [
                             {
-                                show: true,
+                                show: false,
                                 name: "亿",
                                 axisLine: {
                                     show: false,
@@ -671,6 +672,7 @@
                             {
                                 name: "营收",
                                 type: "line",
+                                itemStyle: {normal: {label: {show: true, position: 'bottom'}}},
                                 data: []
                             }
                         ]
@@ -678,10 +680,10 @@
                     {
                         barWidth: 10,
                         grid: {
-                            show: true,
+                            show: false,
                             top: "7",
-                            left: "10%",
-                            right: "5%",
+                            left: "10",
+                            right: "10",
                             bottom: "30"
                         },
                         title: {
@@ -705,12 +707,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元");
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -730,12 +727,18 @@
                                     textStyle: {
                                         color: "#FFF"
                                     }
+                                },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#fff',
+                                        width: 2,
+                                    }
                                 }
                             }
                         ],
                         yAxis: [
                             {
-                                show: true,
+                                show: false,
                                 name: "亿",
                                 axisLine: {
                                     show: false,
@@ -766,6 +769,7 @@
                             {
                                 name: "营收",
                                 type: "line",
+                                itemStyle: {normal: {label: {show: true, position: 'bottom'}}},
                                 data: []
                             }
                         ]
@@ -773,10 +777,10 @@
                     {
                         barWidth: 10,
                         grid: {
-                            show: true,
+                            show: false,
                             top: "7",
-                            left: "10%",
-                            right: "5%",
+                            left: "10",
+                            right: "10",
                             bottom: "30"
                         },
                         title: {
@@ -800,12 +804,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元");
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -825,12 +824,18 @@
                                     textStyle: {
                                         color: "#FFF"
                                     }
+                                },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#fff',
+                                        width: 2,
+                                    }
                                 }
                             }
                         ],
                         yAxis: [
                             {
-                                show: true,
+                                show: false,
                                 name: "亿",
                                 axisLine: {
                                     show: false,
@@ -861,6 +866,7 @@
                             {
                                 name: "营收",
                                 type: "line",
+                                itemStyle: {normal: {label: {show: true, position: 'bottom'}}},
                                 data: []
                             }
                         ]
@@ -868,10 +874,10 @@
                     {
                         barWidth: 10,
                         grid: {
-                            show: true,
+                            show: false,
                             top: "7",
-                            left: "10%",
-                            right: "5%",
+                            left: "10",
+                            right: "10",
                             bottom: "30"
                         },
                         title: {
@@ -895,12 +901,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元");
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -920,12 +921,18 @@
                                     textStyle: {
                                         color: "#FFF"
                                     }
+                                },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#fff',
+                                        width: 2,
+                                    }
                                 }
                             }
                         ],
                         yAxis: [
                             {
-                                show: true,
+                                show: false,
                                 name: "亿",
                                 axisLine: {
                                     show: false,
@@ -956,6 +963,7 @@
                             {
                                 name: "营收",
                                 type: "line",
+                                itemStyle: {normal: {label: {show: true, position: 'bottom'}}},
                                 data: []
                             }
                         ]
@@ -963,10 +971,10 @@
                     {
                         barWidth: 10,
                         grid: {
-                            show: true,
+                            show: false,
                             top: "7",
-                            left: "10%",
-                            right: "5%",
+                            left: "10",
+                            right: "10",
                             bottom: "30"
                         },
                         title: {
@@ -990,12 +998,7 @@
                                 }
                             },
                             formatter: function (list) {
-                                return (
-                                    list[0].dataIndex +
-                                    1 +
-                                    "月：" +
-                                    list[0].value
-                                );
+                                return (list[0].name + "月：" + list[0].value + "亿元");
                             }
                         },
                         color: ["#17cce1", "#a549ff"],
@@ -1015,15 +1018,21 @@
                                     textStyle: {
                                         color: "#FFF"
                                     }
+                                },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#fff',
+                                        width: 2,
+                                    }
                                 }
                             }
                         ],
                         yAxis: [
                             {
-                                show: true,
+                                show: false,
                                 name: "亿",
                                 axisLine: {
-                                    show: false,
+                                    show: true,
                                     lineStyle: {
                                         color: "#fff"
                                     }
@@ -1051,6 +1060,7 @@
                             {
                                 name: "营收",
                                 type: "line",
+                                itemStyle: {normal: {label: {show: true, position: 'bottom'}}},
                                 data: []
                             }
                         ]
@@ -1066,8 +1076,8 @@
                         },
                         grid: {
                             top: "7",
-                            left: "10%",
-                            right: "5%",
+                            left: "10",
+                            right: "10",
                             bottom: "30"
                         },
                         xAxis: {
@@ -1409,157 +1419,42 @@
                     this.$refs['jyph'].stopLoading();
                 })
 
-            } /*{
-                this.$refs['jyph'].startLoading();
-                this.Format = Format;
-                this.Type = Type;
-                let num = 1;
-                let url = '/sundry/station_back_list';
-                if (Type == 1) {
-                    url = '/sundry/service_back_list';
-                }
-                if (Type == 2) {
-                    url = '/sundry/station_back_list';
-                }
-                if (Type == 3) {
-                    url = '/sundry/shop_back_list';
-                }
-                //服务区营收
-                if (Type == 1 && Format == 1) {
-                    num = 1;
-                }
-                if (Type == 1 && Format == 2) {
-                    num = 0;
-                }
-                //服务区 客单价
-                if (Type == 1 && Format == 3) {
-                    num = 2;
-                }
-                //服务区 转化率
-                if (Type == 1 && Format == 5) {
-                    num = 3;
-                }
-                //自营油站 营收
-                if (Type == 2 && Format == 1) {
-                    num = 7;
-                }
-                //自营油站 客单价
-                if (Type == 2 && Format == 3) {
-                    num = 8;
-                }
-                //自营油站 转化率
-                if (Type == 2 && Format == 5) {
-                    num = 9;
-                }
-                //自营超市 营收
-                if (Type == 3 && Format == 1) {
-                    num = 4;
-                }
-                //自营超市 客单价
-                if (Type == 3 && Format == 3) {
-                    num = 5;
-                }
-                //自营超市 转化率
-                if (Type == 3 && Format == 5) {
-                    num = 6;
-                }
-                this.$axios.get("/api" + url, {params: {num: num}}).then(res => {
-                    let yAxis = [];
-                    let xAxis = [];
-                    let arr = [];
-                    let newArr = [];
-                    if (!res.data.data) {
-                        yAxis = [];
-                        xAxis = [];
-                    }
-                    if (res.data.data) {
-                        let data = JSON.parse(JSON.stringify(res.data.data));
-                        if (Format == 5) {
-                            data.forEach(i => {
-                                i.sumMoney = parseInt(i.orderNum) / parseInt(i.carNum) * 1000
-                            })
-                        }
-                        data.forEach(element => {
-                            arr.push(parseInt(element.sumMoney))
-                        });
-                        newArr = arr.sort((a, b) => {
-                            return a - b
-                        });
-                        xAxis = newArr;
-                        data.forEach((i, x) => {
-                            yAxis[x] = data[newArr.indexOf(parseInt(data[x].sumMoney))].serviceName
-                        })
-                    }
-                    if ((Type == 1 && Format == 1) || (Type == 2 && Format == 1)) {
-                        this.jyph.xAxis.name = "万";
-                        xAxis = [];
-                        newArr.forEach(i => {
-                            xAxis.push(i / 10000);
-                        })
-                    }
-                    if (Format == 1 || Format == 2 || Format == 3) this.jyph.xAxis.name = "元";
-                    if (Format == 4) this.jyph.xAxis.name = "个";
-                    if (Format == 5) this.jyph.xAxis.name = "‰";
-                    this.jyph.yAxis.data = yAxis;
-                    this.jyph.series[0].data = xAxis;
-                    this.$echarts["init"](document.getElementById("bllb")).setOption(this.jyph);
-                    this.$refs['jyph'].stopLoading();
-                }).catch(e => {
-                    this.jyph.series[0].data = [];
-                    this.jyph.yAxis.data = [];
-                    this.$refs['jyph'].stopLoading();
-                });
-
-            }*/,
-            selectType(v, a) {
+            },
+            async selectType(a) {
                 this.active = a;
                 for (let i = 3; i < 9; i++) {
                     this.$refs[i].startLoading();
                 }
-                let PID = ["实业公司", "服务区板块", "能源板块", "商业板块", "传媒公司"];
-                this.$axios["get"]("/api/index/liudabankuai", {
+                const d = await Promise.all([this.$axios.get("/api/home/plate", {
                     params: {
-                        financeTypeId: v,
-                        plateId: "123"
+                        selectYear: 2021,
+                        type: a
                     }
-                })["then"](res => {
-                    let data = this.getData(res.data.data);
-                    this.ECData[3].xAxis[0].data = data[0];
-                    this.ECData[3].series[0].data = data[1];
-                });
-                this.$axios["get"]("/api/index/wan_cheng_lv", {params: {financeTypeId: v}})["then"](res => {
-                    let datas = res.data.data;
-                    datas.sort(function (a, b) {
-                        return a.tCRate - b.tCRate;
-                    });
-                    let series = [];
-                    let yAxis = [];
-                    datas.forEach(i => {
-                        if (i.yAxis != "小龙虾公司" && i.yAxis != "新致公司") {
-                            series.push(i.tCRate);
-                            yAxis.push(i.plateId);
-                        }
-                    });
-                    this.ECData[8].yAxis.data = yAxis;
-                    this.ECData[8].series[0].data = series;
-                });
-                this.plate.forEach(i => {
-                    let index = parseInt(PID.join(',').indexOf(i.plateName));
-                    if (index !== -1) {
-                        this.$axios["get"]("/api/index/liudabankuai", {
-                            params: {
-                                financeTypeId: v,
-                                plateId: i.plateId
-                            }
-                        })["then"](res => {
-                            let ix = PID.indexOf(i.plateName) + 3;
-                            let data = this.getData(res.data.data);
-                            this.ECData[ix].xAxis[0].data = data[0];
-                            this.ECData[ix].series[0].data = data[1];
-                            this.childRef(9, 100, this.$refs, this.ECData);
-                        })
-                    }
-                });
+                }),]);
+                let ds = d[0].data.data;
+                /*  for (let i = 3; i < this.ECData.length; i++) {
+                      if (data[i - 3] && data[i - 3].length > 0) {
+                          this.ECData[i].series[0].data = this.mySet(data[i - 3], 'yAxis');
+                          this.ECData[i].xAxis[0].data = this.mySet(data[i - 3], 'xBxis');
+                      }
+                  }*/
+                this.ECData[3].series[0].data = this.mySet(ds['sye'], 'yAxis');
+                this.ECData[3].xAxis[0].data = this.mySet(ds['sye'], 'xBxis');
+
+                this.ECData[4].series[0].data = this.mySet(ds['fwq'], 'yAxis');
+                this.ECData[4].xAxis[0].data = this.mySet(ds['fwq'], 'xBxis');
+
+                this.ECData[5].series[0].data = this.mySet(ds['ny'], 'yAxis');
+                this.ECData[5].xAxis[0].data = this.mySet(ds['ny'], 'xBxis');
+
+                this.ECData[6].series[0].data = this.mySet(ds['sy'], 'yAxis');
+                this.ECData[6].xAxis[0].data = this.mySet(ds['sy'], 'xBxis');
+
+                this.ECData[7].series[0].data = this.mySet(ds['cm'], 'yAxis');
+                this.ECData[7].xAxis[0].data = this.mySet(ds['cm'], 'xBxis');
+                this.$nextTick(_ => {
+                    this.childRef(9, 100, this.$refs, this.ECData);
+                })
             },
             getData(v) {
                 let series = [];
@@ -1641,27 +1536,28 @@
             setInterval(function () {
                 this_.nowTime = time();
             }, 1000);
-            const [yskzl, yslr, plate] = await Promise.all([this.$axios.get("/api/index/rate_list", {params: {type: "ys"}}), this.$axios.get("/api/index/finance_type_list"), this.$axios.get("/api/jt_finance/plate_list")]);
-            this.bottomType = yslr.data.data;
-            this.plate = plate.data.data;
-            let data = yskzl.data.data;
 
-            let sum = 0;
-            let rateCount = [];
-            let xBxis = [];
-            data.forEach(i => {
-                sum += i.ysRateCount - 0;
-            });
-            data.sort(function (a, b) {
-                return b.ysRateCount - a.ysRateCount;
-            });
-            data.forEach(element => {
-                rateCount.unshift(element.ysRateCount);
-                xBxis.unshift(element.plateName);
-            });
-            this.ECData[0].series[0].data = rateCount;
-            this.ECData[0].yAxis.data = xBxis;
-            await this.selectType(this.bottomType[1]['financeTypeId'], 1);
+            /*  const [yskzl, yslr, plate] = await Promise.all([this.$axios.get("/api/index/rate_list", {params: {type: "ys"}}), this.$axios.get("/api/index/finance_type_list"), this.$axios.get("/api/jt_finance/plate_list")]);
+              this.bottomType = yslr.data.data;
+              this.plate = plate.data.data;
+              let data = yskzl.data.data;
+
+              let sum = 0;
+              let rateCount = [];
+              let xBxis = [];
+              data.forEach(i => {
+                  sum += i.ysRateCount - 0;
+              });
+              data.sort(function (a, b) {
+                  return b.ysRateCount - a.ysRateCount;
+              });
+              data.forEach(element => {
+                  rateCount.unshift(element.ysRateCount);
+                  xBxis.unshift(element.plateName);
+              });
+              this.ECData[0].series[0].data = rateCount;
+              this.ECData[0].yAxis.data = xBxis;*/
+            await this.selectType(1);
             this.childRef(9, 100, this.$refs, this.ECData);
             this.ZHL();
             this.ranking(1, 1);

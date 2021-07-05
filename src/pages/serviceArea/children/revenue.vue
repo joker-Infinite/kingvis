@@ -2,7 +2,7 @@
     <div style="width: 100%; height: 100%;">
         <ms-collapse>
             <div slot="content">
-                <ms-grid-layout name="2020年营收" :columns="1">
+                <ms-grid-layout name="2021年营收" :columns="1">
                     <children-e-charts-temp style="width: 35%"
                                             oid="a"
                                             ref="0"
@@ -17,7 +17,7 @@
                                             :e-charts="EChartsB">
                     </children-e-charts-temp>
                 </ms-grid-layout>
-                <ms-grid-layout name="2019年营收" :columns="2">
+                <ms-grid-layout name="2020年营收" :columns="2">
                     <children-e-charts-temp style="width: 35%"
                                             oid="c"
                                             ref="2"
@@ -57,7 +57,7 @@
                             tooltip: {
                                 trigger: "axis",
                                 formatter: function (val) {
-                                    return (val[0].name + "月" + ":" + "<br />营收:" + val[0].value / 10000 + "万元");
+                                    return (val[0].name + "月" + ":" + "<br />营收:" + val[0].value + "万元");
                                 }
                             },
                             grid: {
@@ -230,14 +230,7 @@
                                             }
                                         }
                                     },
-                                    data: [
-                                        {name: "其他", value: 11154551},
-                                        {name: "餐饮", value: 54125877},
-                                        {name: "超市", value: 65478254},
-                                        {name: "品牌餐饮", value: 69874512},
-                                        {name: "小龙虾", value: 36578941},
-                                        {name: "小吃", value: 12054890}
-                                    ]
+                                    data: []
                                 }
                             ]
                         }
@@ -317,14 +310,7 @@
                                             }
                                         }
                                     },
-                                    data: [
-                                        {name: "咸宁中心", value: 5114551},
-                                        {name: "宜昌中心", value: 2412577},
-                                        {name: "黄冈中心", value: 3547824},
-                                        {name: "十堰中心", value: 9987512},
-                                        {name: "孝感中心", value: 8657941},
-                                        {name: "恩施中心", value: 1205890}
-                                    ]
+                                    data: []
                                 }
                             ]
                         }
@@ -339,14 +325,7 @@
                             tooltip: {
                                 trigger: "axis",
                                 formatter: function (val) {
-                                    return (
-                                        val[0].name +
-                                        "月" +
-                                        ":" +
-                                        "<br />营收:" +
-                                        (val[0].value / 10000).toFixed(2) +
-                                        "万元"
-                                    );
+                                    return (val[0].name + "月" + ":" + "<br />营收:" + val[0].value + "万元");
                                 }
                             },
                             grid: {
@@ -618,7 +597,27 @@
                 ],
             };
         },
-        mounted() {
+        methods: {
+            async common(param, e1, e2) {
+                const d = await this.$axios.get("/apifin/service/revenue", {params: param})
+                const d2 = await this.$axios.get("/apifin/service/revenue2", {params: param})
+                let data = d.data.data;
+                let data2 = d2.data.data;
+                for (let i = 0; i < 2; i++) {
+                    data[i].forEach(j => {
+                        j['name'] = i === 1 ? (j['yAxis']).substring(j['yAxis'].length - 5) : j['yAxis']
+                        j['value'] = j['xBxis']
+                    })
+                }
+                e1[0].option.series[0].data = this.mySet(data2, 'yAxis')
+                e1[0].option.xAxis[0].data = this.mySet(data2, 'xBxis')
+                e2[0].option.series[0].data = data[0]
+                e2[1].option.series[0].data = data[1]
+            }
+        },
+        async mounted() {
+            await this.common({selectYear: 2021, type: 1}, this.EChartsA, this.EChartsB);
+            // await this.common({selectYear: 2020, type: 1}, this.EChartsC, this.EChartsD);
             this.childRef(4, 70, this.$refs);
         }
     };
