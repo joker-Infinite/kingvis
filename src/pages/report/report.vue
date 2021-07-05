@@ -171,27 +171,62 @@
                 v.forEach(i => {
                     //月度计划完成情况统计
                     {
-                        let state = i.states;
-                        let child = i.children;
-                        if (state && state.length > 0) {
-                            state.forEach(m => {
-                                dy++;
-                                if (m == 0) {ywc++;}
-                                if (m == 1) {wwc++;}
-                            });
-                        }
-                        if (child && child.length > 0) {
-                            child.forEach(s => {
-                                let cState = s.states;
-                                if (cState && cState.length > 0) {
-                                    cState.forEach(m => {
-                                        dy++;
-                                        if (m == 0) {ywc++;}
-                                        if (m == 1) {wwc++;}
-                                    });
+                        let pa = i.states;
+                        if (pa && pa.length > 0) {
+                            pa.forEach(a => {
+                                if (a == 2) {
+                                    ywc++;
+                                } else {
+                                    wwc++;
                                 }
-                            });
+                                dy++;
+                            })
                         }
+                        let sub = i.children;
+                        if (sub && sub.length > 0) {
+                            sub.forEach(b => {
+                                let pb = b.states;
+                                if (pb && pb.length > 0) {
+                                    pb.forEach(c => {
+                                        if (c == 2) {
+                                            ywc++;
+                                        } else {
+                                            wwc++;
+                                        }
+                                        dy++;
+                                    })
+                                }
+                            })
+                        }
+                        /* let state = i.states;
+                         let child = i.children;
+                         if (state && state.length > 0) {
+                             state.forEach(m => {
+                                 dy++;
+                                 if (m == 2) {
+                                     ywc++;
+                                 }
+                                 if (m != 2) {
+                                     wwc++;
+                                 }
+                             });
+                         }
+                         if (child && child.length > 0) {
+                             child.forEach(s => {
+                                 let cState = s.states;
+                                 if (cState && cState.length > 0) {
+                                     cState.forEach(m => {
+                                         dy++;
+                                         if (m == 2) {
+                                             ywc++;
+                                         }
+                                         if (m != 2) {
+                                             wwc++;
+                                         }
+                                     });
+                                 }
+                             });
+                         }*/
                     }
                 });
                 //饼1 id:this.unitId
@@ -215,7 +250,6 @@
                 //年度绩效重点工作执行情况
                 const mm = await this.$axios.get("/wj/report/get_executive_condition", {params: {id: this.unitId}});
                 let jx = JSON.parse(mm.data.data).data;
-                console.log()
                 let ids = [];
                 for (let i = 1; i < 5; i++) {
                     ids.push(this.$echarts["init"](document.getElementById("footer-" + i)));

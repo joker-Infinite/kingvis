@@ -27,7 +27,12 @@
                     </div>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="目标" prop="goalDetail"></el-table-column>
+            <el-table-column align="center" label="目标" prop="goalDetail">
+                <template slot-scope="scope">
+                    <div v-if="scope.row.goalDetail">{{scope.row.goalDetail}}</div>
+                    <div v-if="!scope.row.goalDetail">无</div>
+                </template>
+            </el-table-column>
             <el-table-column align="center" label="当月计划">
                 <template slot-scope="scope">
                     <div style="text-align: left" :id="scope.row.plan" v-if="scope.row.plan">
@@ -35,7 +40,7 @@
                             {{n+1}}、{{m}}
                         </p>
                     </div>
-                    <div v-if="scope.row.plan.length===0">无</div>
+                    <div v-if="!scope.row.plan||scope.row.plan.length===0">无</div>
                 </template>
             </el-table-column>
             <el-table-column align="center" label="状态" prop="state" width="90px">
@@ -46,7 +51,7 @@
                                        :class="{'iconfont':true,'icongou':m==2,'iconcha':m!=2}"></i>
                         </p>
                     </div>
-                    <div v-if="scope.row.states.length===0">无</div>
+                    <div v-if="!scope.row.states||scope.row.states.length===0">无</div>
                 </template>
             </el-table-column>
             <el-table-column align="center" prop="stateDesc" label="情况说明">
@@ -56,7 +61,7 @@
                             {{n+1}}、{{m}}
                         </p>
                     </div>
-                    <div v-if="scope.row.stateDescs.length===0">无</div>
+                    <div v-if="!scope.row.stateDescs||scope.row.stateDescs.length===0">无</div>
                 </template>
             </el-table-column>
             <el-table-column align="center" label="下月计划">
@@ -140,7 +145,7 @@
                         this.$nextTick(_ => {
                             this.$echarts["init"](document.getElementById('ID' + page + '-' + (table[i].tableIndex))).setOption(option);
                         })
-                        let tableChildren = table[i].children;
+                        let tableChildren = table[i].children ? table[i].children : [];
                         if (tableChildren && tableChildren.length > 0) {
                             for (let j = 0; j < tableChildren.length; j++) {
                                 let carryOut_c = Math.round(tableChildren[j]["progressRate"] / 100);
@@ -174,7 +179,9 @@
                                         }
                                     ]
                                 };
-                                this.$echarts["init"](document.getElementById('ID' + page + '-' + (tableChildren[j].tableIndex))).setOption(option_);
+                                this.$nextTick(_ => {
+                                    this.$echarts["init"](document.getElementById('ID' + page + '-' + (tableChildren[j].tableIndex))).setOption(option_);
+                                })
                             }
                         }
                     }
@@ -204,9 +211,9 @@
                                 stateDescs.push(m.stateDesc);
                             }
                         });
-                        i["plan"] = plans;
-                        i["states"] = state;
-                        i["stateDescs"] = stateDescs;
+                        i["plan"] = (plans && plans.length > 0) ? plans : [];
+                        i["states"] = (state && state.length > 0) ? state : [];
+                        i["stateDescs"] = (stateDescs && stateDescs.length > 0) ? stateDescs : [];
                         i["tableIndex"] = x + 1;
                     }
                     if (i["subProject"] && i["subProject"].length > 0) {
@@ -224,13 +231,17 @@
                                         stateDescs.push(c.stateDesc);
                                     }
                                 });
-                                a["plan"] = aPlans;
-                                a["states"] = state;
-                                a["stateDescs"] = stateDescs;
+                                a["plan"] = (aPlans && aPlans.length > 0) ? aPlans : [];
+                                a["states"] = (state && state.length > 0) ? state : [];
+                                a["stateDescs"] = (stateDescs && stateDescs.length > 0) ? stateDescs : [];
                                 a["tableIndex"] = (x + 1) + '.' + (b + 1);
                             }
                         });
-                        i["children"] = i["subProject"];
+                        if (i["subProject"] && i["subProject"].length > 0) {
+                            i["children"] = i["subProject"];
+                        } else {
+                            i["children"] = [];
+                        }
                     }
                 });
                 this.formatterData(project, typeSelect);

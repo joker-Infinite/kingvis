@@ -536,7 +536,6 @@
                         }
                     })
                 })
-                console.log(kmmc)
                 const t = await this.$axios.get("/apifin/jt_financial/get_form_data", {
                     params: {
                         flowingDwbh: v.join(','),

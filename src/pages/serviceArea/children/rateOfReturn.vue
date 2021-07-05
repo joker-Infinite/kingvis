@@ -250,7 +250,6 @@ export default {
                               data.forEach(element => {
                                 datas.push((element / 10000).toFixed(2));
                               });
-                              console.log(datas);
                               return datas;
                             })(),
                             itemStyle: {
@@ -938,7 +937,6 @@ export default {
                               data.forEach(element => {
                                 datas.push((element / 10000).toFixed(2));
                               });
-                              console.log(datas);
                               return datas;
                             })(),
                             itemStyle: {
@@ -1055,7 +1053,6 @@ export default {
                           //提示框组件
                           trigger: "axis",
                           formatter: function(val) {
-                            console.log(val);
                             let val0 = val[0];
                             let val1 = val[1];
                             return (

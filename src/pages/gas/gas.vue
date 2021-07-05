@@ -206,7 +206,6 @@
                 for (let i in this.listParam) {
                     param.append(i, this.listParam[i]);
                 }
-                console.log(this.listParam)
                 param.append("selectYear", this.year);
                 param.append("companyId", this.param["companyId"]);
                 param.append("stationId", this.param["stationId"]);
@@ -550,7 +549,6 @@
                                     {prop: 'allOrderCount', label: '订单数(92:95:98)', width: '200px'},
                                     {prop: 'allOrderMoney', label: '销售额(92:95:98)', width: '200px'},
                                 ]
-                                console.log(i)
                                 if (flag) {
                                     this.columns.push({
                                         prop: i["dimensionValue"],
@@ -646,7 +644,6 @@
                     }
                     Object.assign(i, obj_);
                 });
-                console.log(data);
                 this.tableData = data;
                 this.loading = false;
             });

@@ -271,7 +271,6 @@
             },
             //单选
             selection(selection) {
-                console.log(222)
                 this.$emit('selection-change', [selection]);
             },
             //点击全选

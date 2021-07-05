@@ -670,7 +670,6 @@
             addMarker(v, position, d) {
                 let that = this;
                 position.forEach((item, index) => {
-                    console.log(item)
                     let icon;
                     if (item.type) {
                         if (item.type === "ms") {

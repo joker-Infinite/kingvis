@@ -773,8 +773,6 @@
                 }
                 ysBar = this.mySet(d1_d, 'yAxis');
                 lrBar = this.mySet(d2_d, 'yAxis');
-                console.log(ysBar)
-                console.log(lrBar)
                 // ysLine = this.YOY(JSON.parse(JSON.stringify(ysBar)));
                 // lrLine = this.YOY(JSON.parse(JSON.stringify(lrBar)));
                 let option = {

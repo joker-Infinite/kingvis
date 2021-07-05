@@ -775,7 +775,6 @@
                 });
                 datas.name = this.optionTitle;
                 datas.series = series;
-                console.log(datas)
                 return datas;
             },
             /**

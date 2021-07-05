@@ -192,7 +192,6 @@
             },
             addClass(index) {
                 this.current = index;
-                // console.log(index);
                 this.hover = true
             },
             removeClass(index) {

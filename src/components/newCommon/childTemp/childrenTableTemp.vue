@@ -140,7 +140,6 @@
         },
         methods: {
             selection(v) {
-                console.log(2222)
                 this.$emit("selection", v);
             },
             sizeChange(v) {
