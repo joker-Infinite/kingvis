@@ -9,11 +9,15 @@ import "./plugins/wyz-echarts/wyz-echarts.js";
 import empty from "./pages/empty/empty.vue";
 import "./assets/icon/iconfont.css";
 import "echarts-liquidfill";
-import el from "element-ui/src/locale/lang/el";
+import 'xe-utils'
+import VXETable from 'vxe-table'
+import 'vxe-table/lib/index.css'
 
+Vue.prototype.$axios.defaults.timeout = 120000;
 Vue.config.productionTip = false;
 Vue.component("empty", empty);
 Vue.use(VueAMap);
+Vue.use(VXETable)
 VueAMap.initAMapApiLoader({
     key: "5f4ec16b146bc7ebde7308bd2dbcd132",
     plugin: [

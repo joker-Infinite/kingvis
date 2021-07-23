@@ -132,7 +132,7 @@
                                 </li>
                                 <li>
                                     <MsECharts :optionData="ECData[7]" plug-in="HomeFirstPlugIn" e-c-id="j" ref="7"
-                                               title="传媒公司"></MsECharts>
+                                               title="传媒板块"></MsECharts>
                                 </li>
                                 <li>
                                     <MsECharts :optionData="ECData[8]" plug-in="HomeFirstPlugIn" e-c-id="k" ref="8"
@@ -1343,6 +1343,7 @@
                 this.clickNum = v;
                 this.searchDot = "";
                 this.$emit("clickType", v);
+                this.showSupermarket(v);
             },
             searchChange(v) {
                 this.$refs["map"].searchDot(v);
@@ -1425,7 +1426,7 @@
                 for (let i = 3; i < 9; i++) {
                     this.$refs[i].startLoading();
                 }
-                const d = await Promise.all([this.$axios.get("/api/home/plate", {
+                const d = await Promise.all([this.$axios.get("/apifin/home/plate", {
                     params: {
                         selectYear: 2021,
                         type: a
@@ -1528,7 +1529,10 @@
             },
             initMap(v) {
                 this.$refs['map'].initMap(v, "fresh");
-            }
+            },
+            showSupermarket(v) {
+                this.$refs['map'].showSupermarket(v);
+            },
         },
         async mounted() {
             let this_ = this;

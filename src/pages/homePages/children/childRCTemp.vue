@@ -88,11 +88,11 @@
             },
             changeType(v) {
                 this.changeValue = v;
-                this.getTableData(this.selected, v);
+                // this.getTableData(this.selected, v);
             }
         },
         mounted() {
-            this.getTableData(1, 1);
+            // this.getTableData(1, 1);
         }
     };
 </script>

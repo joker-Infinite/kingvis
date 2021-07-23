@@ -510,6 +510,7 @@
                     chart2 = this.process_Bar(v.xYListFroms);
                     showCharts[1].xAxis.data = chart2[0];
                     showCharts[1].series[0].data = chart2[1];
+                    showCharts[1].title.text = '当天销售额';
                     showCharts[0].xAxis.data = chart1[0];
                     showCharts[0].series[0].data = chart1[1];
                     this.formData = [

@@ -132,7 +132,7 @@
                                 </li>
                                 <li>
                                     <MsECharts :optionData="ECData[7]" plug-in="HomeSecondPlugIn" e-c-id="j" ref="7"
-                                               title="传媒公司"></MsECharts>
+                                               title="传媒板块"></MsECharts>
                                 </li>
                                 <li>
                                     <MsECharts :optionData="ECData[8]" plug-in="HomeSecondPlugIn" e-c-id="k" ref="8"
@@ -1308,6 +1308,7 @@
                 this.clickNum = v;
                 this.searchDot = "";
                 this.$emit("clickType", v);
+                this.showSupermarket(v);
             },
             searchChange(v) {
                 this.$refs["map"].searchDot(v);
@@ -1488,7 +1489,10 @@
             },
             initMap(v) {
                 this.$refs['map'].initMap(v, "darkblue");
-            }
+            },
+            showSupermarket(v) {
+                this.$refs['map'].showSupermarket(v);
+            },
         },
         async mounted() {
             let this_ = this;

@@ -5,6 +5,12 @@
          element-loading-spinner="el-icon-loading"
          element-loading-background="rgba(0, 0, 0, 0.5)">
         <div id="MapBaseChild"></div>
+        <div class="showSupermarket" v-if="showSupermarket_">
+            <p v-for="(i,x) in showSupermarketData">
+                {{x==='shopCounts'?'超市数量':x==='shopOrderCount'?'总订单数':'总收益'}}：{{i}}
+                {{x==='shopCounts'?'个':x==='shopOrderCount'?'单':'元'}}
+            </p>
+        </div>
         <el-dialog :title="serviceName"
                    align="center"
                    width="1200px"
@@ -21,6 +27,50 @@
                           ref="more"
                           location="homeKanBan">
         </more-information>
+        <el-dialog :title="zbName"
+                   align="center"
+                   width="1200px"
+                   :modal-append-to-body="false"
+                   :visible.sync="visible_zb">
+            <div class="zb">
+                <el-form :model="form" label-width="100px">
+                    <el-col :span="8">
+                        <el-form-item label="名称：">
+                            <el-input v-model="form.formatName"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-form-item label="负责人：">
+                            <el-input v-model="form.storeContact"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-form-item label="营业状态：">
+                            <el-input v-model="form.storeStatus"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-form-item label="昨日收益：">
+                            <el-input v-model="form.yesterdayMoney"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-form-item label="开门时间：">
+                            <el-input v-model="form.openData"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-form-item label="电话号码：">
+                            <el-input v-model="form.serveTel"></el-input>
+                        </el-form-item>
+                    </el-col>
+                </el-form>
+                <div class="cc">
+                    <div id="bsc-0"></div>
+                    <div id="bsc-1"></div>
+                </div>
+            </div>
+        </el-dialog>
     </div>
 </template>
 
@@ -472,6 +522,11 @@
                         background: "rgb(39,255,221)"
                     }
                 },
+                showSupermarketData: [],
+                showSupermarket_: false,
+                zbName: '',
+                visible_zb: false,
+                form: {}
             }
         },
         methods: {
@@ -491,6 +546,12 @@
                 });
                 this.marker = d;
                 this.externalRefreshMap(d, map)
+            },
+            async showSupermarket(v) {
+                console.log(v)
+                const res = await this.$axios.get("/apidata/merchant/get_shop_other");
+                this.showSupermarketData = res.data.data;
+                this.showSupermarket_ = v === 3;
             },
             zoomChange(map) {
                 //zoom==8 时，删除双点，改换单点
@@ -601,6 +662,8 @@
                             // th.$refs["more"].openDialog(th.gasDetails, item);
                         } else if (oid[0] === "kk") {
                             // th.$refs["more"].openDialog(th.bayonetDetails, item);
+                        } else if (oid[0] === 'zb') {
+                            th.Supermarket(item.name, item.gisId);
                         } else {
                             infoWindow.open(map, item.getPosition());
                         }
@@ -643,8 +706,165 @@
                 });
                 this.isLoading = false;
             },
+            async Supermarket(name, id) {
+                this.zbName = name;
+                const res = await this.$axios.get("/apidata/merchant/get_shop_moneyOrder?storeNo=" + id);
+                this.form = res.data.data['shopInformationVo'];
+                let bars = res.data.data['shopSixMonthDataVos'];
+                let option = [
+                    {
+                        barWidth: 20,
+                        title: {
+                            text: "近半年销售额",
+                            x: "center",
+                            textStyle: {
+                                color: "#FFF"
+                            }
+                        },
+                        tooltip: {
+                            trigger: "axis",
+                            formatter: v => {
+                                return v[0].name + "月：" + v[0].value + "元";
+                            }
+                        },
+                        xAxis: {
+                            type: "category",
+                            name: "月",
+                            data: this.mySet(bars, 'yearMonth'),
+                            axisPointer: {
+                                type: "shadow"
+                            },
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel: {
+                                textStyle: {
+                                    color: "#FFF"
+                                }
+                            },
+                            splitLine: {show: false},
+                            axisLine: {
+                                lineStyle: {
+                                    color: "#FFF"
+                                }
+                            }
+                        },
+                        grid: {
+                            left: 40,
+                            top: 40,
+                            bottom: 30,
+                            right: 50
+                        },
+                        yAxis: {
+                            type: "value",
+                            name: "万元",
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel: {
+                                textStyle: {
+                                    color: "#FFF"
+                                }
+                            },
+                            splitLine: {show: false},
+                            axisLine: {
+                                lineStyle: {
+                                    color: "#FFF"
+                                }
+                            }
+                        },
+                        series: [
+                            {
+                                data: this.mySet(bars, 'totalMoney'),
+                                type: "bar",
+                                itemStyle: {
+                                    color: "#00bff6"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        barWidth: 20,
+                        title: {
+                            text: "近半年订单数",
+                            x: "center",
+                            textStyle: {
+                                color: "#FFF"
+                            }
+                        },
+                        tooltip: {
+                            trigger: "axis",
+                            formatter: v => {
+                                return v[0].name + "月：" + v[0].value + "单";
+                            }
+                        },
+                        xAxis: {
+                            type: "category",
+                            name: "月",
+                            data: this.mySet(bars, 'yearMonth'),
+                            axisPointer: {
+                                type: "shadow"
+                            },
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel: {
+                                textStyle: {
+                                    color: "#FFF"
+                                }
+                            },
+                            splitLine: {show: false},
+                            axisLine: {
+                                lineStyle: {
+                                    color: "#FFF"
+                                }
+                            }
+                        },
+                        grid: {
+                            left: 40,
+                            top: 40,
+                            bottom: 30,
+                            right: 50
+                        },
+                        yAxis: {
+                            type: "value",
+                            name: "万元",
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel: {
+                                textStyle: {
+                                    color: "#FFF"
+                                }
+                            },
+                            splitLine: {show: false},
+                            axisLine: {
+                                lineStyle: {
+                                    color: "#FFF"
+                                }
+                            }
+                        },
+                        series: [
+                            {
+                                data: this.mySet(bars, 'orderCounts'),
+                                type: "bar",
+                                itemStyle: {
+                                    color: "#00bff6"
+                                }
+                            }
+                        ]
+                    }
+                ]
+                this.visible_zb = true;
+                this.$nextTick(_ => {
+                    this.$echarts.init(document.getElementById('bsc-0')).dispose();
+                    this.$echarts.init(document.getElementById('bsc-1')).dispose();
+                    this.$echarts.init(document.getElementById('bsc-0')).setOption(option[0])
+                    this.$echarts.init(document.getElementById('bsc-1')).setOption(option[1])
+                })
+            },
             async showSmallPiece(v, id) {
-                const res = await this.$axios.get("/api/index/gis_jtservice_info_id", {params: {serviceInfoId: id}});
+                const res = await this.$axios.get("/apidata/index/gis_jtservice_info_id", {params: {serviceInfoId: id}});
                 let d = res.data.data;
                 let pieceData = (d && d.serviceJson) ? JSON.parse(d.serviceJson) : [];
                 let imgUrl = (d && d.servicePicture) ? d.servicePicture : '';
@@ -683,6 +903,7 @@
                     //向已经生成的点标记实例注入所需参数
                     markerInstanceAll.push(Object.assign(markerInstance, {
                         gisName: item.gisName,
+                        gisId: item.gisId ? item.gisId : '',
                         name: item.searchName,
                         oid: item.oid,
                         serviceInfoId: item.serviceInfoId,
@@ -693,11 +914,27 @@
         }
     }
 </script>
-
 <style scoped lang="less">
     .MapBaseChild {
         width: 100%;
         height: 100%;
+        position: relative;
+
+        .showSupermarket {
+            position: absolute;
+            z-index: 1000;
+            left: 20px;
+            top: 70%;
+            width: 200px;
+            background: rgba(0, 0, 0, .5);
+            color: white;
+            padding: 5px 10px;
+        }
+
+        .showSupermarket:hover {
+            background: rgba(0, 0, 0, .2);
+            color: #000;
+        }
 
         /deep/ .el-dialog__wrapper {
             .el-dialog {
@@ -746,6 +983,48 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .zb {
+        height: 600px;
+        padding: 50px 50px 0;
+        background: url("../assets/detailsTest/imgDetailsBG.jpg");
+        background-size: 100% 100%;
+
+        /deep/ .el-form {
+            .el-col {
+                .el-form-item {
+                    .el-form-item__label {
+                        color: white;
+                    }
+
+                    .el-form-item__content {
+                        .el-input {
+                            .el-input__inner {
+                                background: none;
+                                border: none;
+                                color: white;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .cc {
+            width: 100%;
+            height: calc(100% - 150px);
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+
+            div {
+                width: 50%;
+                height: 100%;
             }
         }
     }

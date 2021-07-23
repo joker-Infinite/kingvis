@@ -1,0 +1,126 @@
+#box {
+  height: 100%;
+  margin: 0 3px 0 10px;
+
+  .backButton {
+    margin-bottom: 10px;
+  }
+
+  .bold {
+    font-weight: bold;
+    color: #000;
+  }
+
+  .dateBaseShow, .dateTableShow {
+    height: 97%;
+    margin: 20px 15px 20px 10px;
+    background-color: rgba(255, 255, 255, .9);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .header {
+      padding: 20px 40px 10px 40px;
+      background-color: #fff;
+      box-shadow: 0 0 2px #888;
+      position: sticky;
+      top: 0;
+      left: 0;
+
+      .header-content {
+        margin-top: 20px;
+        position: relative;
+        zoom: 1;
+        display: flex;
+        flex-direction: column;
+
+        .header-info {
+          display: flex;
+          flex-direction: row;
+          font-size: 20px;
+          margin-top: 10px;
+
+          .header-infoLeft {
+            width: 260px;
+          }
+
+          .header-infoMiddle {
+            margin: auto;
+
+            .el-breadcrumb {
+              font-size: 20px !important;
+            }
+          }
+
+          .addStyle {
+            margin-left: 540px;
+          }
+        }
+      }
+    }
+
+    .databaseNum, .datatableNum {
+      .item {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 60px;
+
+        li {
+          width: 450px;
+          margin: 0 0 50px 40px;
+          border: 2px solid transparent;
+
+          .space {
+            padding: 20px 0 20px 30px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+              padding-right: 20px;
+            }
+
+            .subItem {
+              display: flex;
+              flex-direction: column;
+
+              span {
+                display: block;
+                text-align: left;
+                margin: 3px;
+                width: 242px;
+                height: 20px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                cursor: pointer;
+              }
+
+              span:nth-child(1) {
+                font-size: 16px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        .hoverStyle {
+          background-color: rgb(238, 247, 254);
+          border: 2px solid rgb(65, 150, 254);
+        }
+      }
+    }
+  }
+}
+
+.backButton {
+  margin-right: 10px;
+}
+
+.el-dialog__body {
+  height: 550px;
+}

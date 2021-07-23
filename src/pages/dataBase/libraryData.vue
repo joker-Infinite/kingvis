@@ -3,14 +3,21 @@
 
         <div class="dateBaseShow" v-if="visible">
             <div class="header">
-                <div class="header-content clearfix">
-                    <div class="header-left">
-                        <h2>数据库</h2>
-                        <el-breadcrumb separator-class="el-icon-arrow-right">
-                            <el-breadcrumb-item>现有数据库<span class="bold">{{dataBaseNames.length}}</span>个
-                            </el-breadcrumb-item>
-                            <el-breadcrumb-item>数据总量<span class="bold">{{dataCountNum}}</span>条</el-breadcrumb-item>
-                        </el-breadcrumb>
+                <div class="header-content">
+                    <h2>数据库</h2>
+                    <div class="header-info">
+                        <div class="header-infoMiddle">
+                            <el-breadcrumb separator-class="el-icon-arrow-right">
+                                <el-breadcrumb-item>现有数据库<span class="bold">{{dataBaseNames.length}}</span>个
+                                </el-breadcrumb-item>
+                                <el-breadcrumb-item>库数据总量<span class="bold">{{statisticsData.sumRows}}</span>条
+                                </el-breadcrumb-item>
+                                <el-breadcrumb-item>处理数据条数<span class="bold">{{statisticsData.summoreTimes}}</span>条
+                                </el-breadcrumb-item>
+                                <el-breadcrumb-item>获取数据条数<span class="bold">{{statisticsData.sumRowshandleNumber}}</span>条
+                                </el-breadcrumb-item>
+                            </el-breadcrumb>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -20,12 +27,14 @@
                         @mouseover="addClass(index)" @mouseleave="removeClass(index)"
                         :class="(hover&&(index === current))?'hoverStyle':''">
                         <div class="space">
-                            <img src="../../assets/dataBase/fwql.png" alt="图片无法加载">
+                            <img :src="require('../../assets/dataBase/' + item.tableSchema + '.png')" alt="图片无法加载">
                             <div class="subItem">
-                                <span>库名：{{item.tableSchema}}</span>
-                                <span>注释：{{item.dataBaseNotes}}</span>
-                                <span>表中数据量：{{item.numRows}}</span>
-                                <span>更新时间：{{item.updateTime}}</span>
+                                <span>库：{{item.dataBaseNotes}}</span>
+                                <span>库简称：{{item.tableSchema}}</span>
+                                <span>库数据量：{{item.numRows}}条</span>
+                                <span :title="item.updateTime">更新时间：{{item.updateTime}}</span>
+                                <span>更新次数：{{item.moreTimes}}次</span>
+                                <span>处理数据条数：{{item.handleNumber}}条</span>
                             </div>
                         </div>
                     </li>
@@ -36,27 +45,31 @@
         <div class="dateTableShow" v-if="visible1">
             <div class="header">
                 <el-button type="primary" icon="el-icon-arrow-left" class="back" @click="back1()">返回</el-button>
-                <div class="header-content clearfix">
-                    <div class="header-left">
-                        <h2>数据表</h2>
-                        <el-breadcrumb separator-class="el-icon-arrow-right">
-                            <el-breadcrumb-item><span
-                                    class="bold">{{dataBaseNames[select]['tableSchema']}}数据库</span>中现有数据表<span
-                                    class="bold">{{dataBaseTable.length}}</span>个
-                            </el-breadcrumb-item>
-                            <el-breadcrumb-item>数据总量<span class="bold">{{dataCountNum1}}</span>条</el-breadcrumb-item>
-                        </el-breadcrumb>
-                    </div>
-                    <div class="header-right">
-                        <div @click="openValue">
-                            <el-input clearable type="text" v-model="value" placeholder="请选择需要查看的数据库" ></el-input>
+                <div class="header-content">
+                    <h2>数据表</h2>
+                    <div class="header-info">
+                        <div class="header-infoLeft">
+                            <el-select v-model="value" filterable placeholder="请选择查看的数据库">
+                                <el-option
+                                        v-for="(item,index) in dataBaseNames"
+                                        :key="index"
+                                        :value="item['dataBaseNotes']"
+                                        @click.native="getValue(item, index)"
+                                >
+                                </el-option>
+                            </el-select>
                         </div>
-                        <div class="list" v-show="show" >
-                            <ul>
-                                <li @click="getValue(item,index)" v-for="(item,index) in dataBaseNames" :key="index">
-                                    {{item['tableSchema']}}
-                                </li>
-                            </ul>
+                        <div class="header-infoMiddle">
+                            <el-breadcrumb separator-class="el-icon-arrow-right">
+                                <el-breadcrumb-item>
+                                    <span class="bold">{{dataBaseNames[select]['dataBaseNotes']}}</span>
+                                </el-breadcrumb-item>
+                                <el-breadcrumb-item>
+                                    现有数据表<span class="bold">{{dataBaseTable.length}}</span>个
+                                </el-breadcrumb-item>
+                                <el-breadcrumb-item>表数据总量<span class="bold">{{dataCountNum1}}</span>条
+                                </el-breadcrumb-item>
+                            </el-breadcrumb>
                         </div>
                     </div>
                 </div>
@@ -69,9 +82,9 @@
                         <div class="space">
                             <img src="../../assets/dataBase/table.png" alt="图片无法加载">
                             <div class="subItem">
-                                <span>表名：{{item.tableName}}</span>
-                                <span>注释：{{item.tableNotes}}</span>
-                                <span>数据量：{{item.numRows}}</span>
+                                <span :title="item.tableName">表名：{{item.tableName}}</span>
+                                <span :title="item.tableNotes">注释：{{item.tableNotes}}</span>
+                                <span>表数据量：{{item.numRows}}条</span>
                             </div>
                         </div>
                     </li>
@@ -110,6 +123,7 @@
 </template>
 
 <script>
+    import "./libraryData.less"
     import MyDialog from "../../components/common/myDialog";
     import MyTableBase from "../../components/common/myTableBase";
 
@@ -119,9 +133,7 @@
 
         data() {
             return {
-                isIcon: false,
                 value: '',
-                show: false,
                 current: '',
                 hover: false,
                 numRows: '',
@@ -146,20 +158,13 @@
                 pageSizes: [10, 20, 30, 40],
                 dataCountNum: 0,
                 dataCountNum1: 0,
+                statisticsData: {}
             }
         },
         methods: {
-            openValue() {
-                this.show = !this.show;
-            },
             getValue(item, index) {
-                this.isIcon = true;
-                this.show = false;
-                this.loading = true;
                 this.queryE(item, index);
-                this.loading = false;
             },
-
             async queryE(v, index) {
                 this.loading = true;
                 this.hover = false;
@@ -172,7 +177,10 @@
                     "smart_release": "/eight/get_table_data",
                     "smart_report": "/nine/get_table_data",
                     "jtfinance": "/ten/get_table_data",
-                    "pigxx_jt": "/ten/get_table_data",
+                    "BUSINESS": "/thirteen/get_two_table",
+                    "pigxx_contract": "/eleven/get_table_data",
+                    "pigxx_contract2": "/fourteen/get_table_data",
+                    "pigxx_jt": "/twelve/get_table_data",
                 };
                 this.select = index;
                 let data = [];
@@ -198,7 +206,6 @@
                 this.hover = false
             },
             back1() {
-                this.show = false;
                 this.visible = true;
                 this.visible1 = false;
             },
@@ -214,7 +221,10 @@
                     "smart_release": "/eight/get_all_data",
                     "smart_report": "/nine/get_all_data",
                     "jtfinance": "/ten/get_all_data",
-                    "pigxx_jt": "/ten/get_all_data",
+                    "BUSINESS": "thirteen/get_all_table_data",
+                    "pigxx_contract": "/eleven/get_all_data",
+                    "pigxx_contract2": "/fourteen/get_all_data",
+                    "pigxx_jt": "/twelve/get_all_data"
                 };
                 this.select1 = index;
                 let data = [];
@@ -245,8 +255,8 @@
                     });
                 });
                 setTimeout(v => {
-                    document.getElementById('title_').innerHTML = '<span>(<span style="font-weight: bold">' + this.dataBaseNames[this.select]['tableSchema'] + '</span>数据库)' + this.dataBaseTable[this.select1]['tableName'] + '</span>'
-                }, 100)
+                    document.getElementById('title_').innerHTML = '<span>(<span style="font-weight: bold">' + this.dataBaseNames[this.select]['dataBaseNotes'] + '</span>数据库)' + this.dataBaseTable[this.select1]['tableName'] + '</span>'
+                }, 100);
                 this.loading = false;
             },
 
@@ -267,7 +277,6 @@
                 this.$emit('current-change', val);
             },
         },
-
         created() {
             this.loading = true;
             this.dataCountNum = 0;
@@ -281,147 +290,13 @@
                 });
                 this.loading = false;
             })
-        }
+            this.$axios.get("/apibase/one/get_datebase_data_ts").then(res => {
+                this.statisticsData = res.data;
+            })
+        },
     }
 </script>
 
 <style scoped lang="less">
-    #box {
-        height: 100%;
-        margin: 0 3px 0 10px;
 
-        .dateBaseShow, .dateTableShow {
-            height: 97%;
-            margin: 20px 15px 20px 10px;
-            background-color: rgba(255, 255, 255, .9);
-            overflow-y: scroll;
-            overflow-x: hidden;
-
-            .header {
-                padding: 20px 40px;
-                background-color: #fff;
-                box-shadow: 0 0 5px #888;
-                position: sticky;
-                top: 0;
-
-                .backButton {
-                    margin-bottom: 10px;
-                }
-
-                .header-content {
-                    margin-top: 20px;
-                    position: relative;
-                    zoom: 1;
-
-                    .header-left {
-                        float: left;
-                        display: flex;
-                        flex-direction: column;
-
-                        .el-breadcrumb {
-                            padding-top: 20px;
-                            font-size: 18px !important;
-
-                            .bold {
-                                font-weight: bold;
-                                color: #000;
-                            }
-                        }
-                    }
-
-                    .header-right {
-                        position: absolute;
-                        top: 0;
-                        left: 600px;
-                        z-index: 1;
-                        float: left;
-                        padding-left: 50px;
-                        padding-top: 30px;
-
-                        .list {
-                            ul {
-                                border: 1px solid #ccc;
-                                li {
-                                    list-style: none;
-                                    width: 217px;
-                                    height: 30px;
-                                    cursor: pointer;
-                                    line-height: 30px;
-                                    padding-left: 10px;
-                                    font-size: 14px;
-                                    background-color: #fff;
-                                    color: #77c;
-                                }
-
-                                li:hover {
-                                    background-color: #cccccc;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .clearfix::after {
-                    content: '';
-                    clear: both;
-                    height: 0;
-                    display: block;
-                }
-            }
-
-            .databaseNum, .datatableNum {
-                .item {
-                    list-style: none;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    justify-content: flex-start;
-                    margin-top: 60px;
-
-                    li {
-                        width: 450px;
-                        margin: 0 0 50px 40px;
-                        border: 2px solid transparent;
-
-                        .space {
-                            padding: 20px 0 20px 30px;
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: nowrap;
-                            justify-content: flex-start;
-                            align-items: center;
-
-                            img {
-                                padding-right: 20px;
-                            }
-
-                            .subItem {
-                                display: flex;
-                                flex-direction: column;
-
-                                span {
-                                    text-align: left;
-                                    margin: 3px;
-                                }
-
-                                span:nth-child(1) {
-                                    font-size: 16px;
-                                    font-weight: bold;
-                                }
-                            }
-                        }
-                    }
-
-                    .hoverStyle {
-                        background-color: rgb(238, 247, 254);
-                        border: 2px solid rgb(65, 150, 254);
-                    }
-                }
-            }
-        }
-    }
-
-    .backButton {
-        margin-right: 10px;
-    }
 </style>

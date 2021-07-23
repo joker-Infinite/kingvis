@@ -8,7 +8,7 @@
             <!--标题 副标题-->
             <div class="work_report_header_title">
                 <p class="mainTitle">
-                    湖北交投实业公司2021年{{ new Date().getMonth() }}月重点工作汇报
+                    湖北交投实业公司2021年{{ parseInt(this.time_page.split("-")[1])-1 }}月重点工作汇报
                 </p>
                 <!--<p class="subtitle">
                             KEY WORK REPORT IN MAY
@@ -32,6 +32,10 @@
             </div>
             <!--日期 时间-->
             <div class="timeSelect">
+                <el-select v-model="type">
+                    <el-option label="月度" :value="1"></el-option>
+                    <el-option label="季度" :value="2"></el-option>
+                </el-select>
                 <el-date-picker
                         value-format="yyyy-MM"
                         v-model="time_page"
@@ -44,16 +48,21 @@
             <!--项目进度-->
             <div class="typeSelect">
                 <div :class="{ typeBtn: true, btnImg: btnImg === i }"
-                     v-for="i in 4"
+                     v-for="i in 2"
                      @click="typeSelect(i)">
-                    {{i===1?"全部":i=== 2?"已完成":i===3?"未完成":"进行中"}}
+                    <!-- <i v-if="i!==4" class="iconfont icondian"
+                        :style="{color:i===2?'#32e232':i===1?'#dd2a2a':'#ffde2a'}"></i>
+                     {{i===4?"全部":i=== 2?"已完成":i===1?"未完成":"进行中"}}-->
+                    <i v-if="i!==2" class="iconfont icondian"
+                       :style="{color:i===1?'#dd2a2a':''}"></i>
+                    {{i=== 1?"未完成":"全部"}}
                 </div>
             </div>
         </div>
         <div class="work_report_content">
             <el-table-base
                     ref="elTableBase"
-                    @allData="v => {(this.table = v), (this.isLoading = false), this.initECharts(v);}"
+                    @allData="v => {(this.table =v[0]), (this.isLoading = false), this.initECharts(v[1],v[0]);}"
                     :btnImg="btnImg"
                     :currentPage="currentPage"
             ></el-table-base>
@@ -65,7 +74,7 @@
                     :current-page.sync="currentPage"
                     :page-size="4"
                     layout="prev, pager, next, jumper"
-                    :total="table.length">
+                    :total="table&&table.length">
             </el-pagination>
         </div>
         <div class="work_report_footer">
@@ -88,6 +97,8 @@
         components: {ElTableBase},
         data() {
             return {
+                type: 1,
+                visible: false,
                 baseData: [],
                 isLoading: false,
                 stateDict: ["未开始", "进行中", "完成", "归档", "终止"],
@@ -128,16 +139,12 @@
             },
             handleCurrentChange(v) {
                 this.currentPage = v;
-                this.$refs["elTableBase"].refresh(
-                    this.baseData,
-                    this.btnImg,
-                    this.increase
-                );
+                this.$refs["elTableBase"].refresh(this.baseData, this.btnImg, this.increase, parseInt(this.time_page.split("-")[1]));
             },
             typeSelect(v) {
                 this.btnImg = v;
                 this.$nextTick(_ => {
-                    this.$refs["elTableBase"].refresh(this.baseData, v, this.increase);
+                    this.$refs["elTableBase"].refresh(this.baseData, v, this.increase, parseInt(this.time_page.split("-")[1]));
                 });
             },
             changeBusiness(v) {
@@ -159,7 +166,8 @@
                 this.headerBorderImg = require("../../assets/report/header/headerBorder-" + this.thisImg + ".png");
                 this.getAllData();
             },
-            async initECharts(v) {
+            async initECharts(v, s) {
+                this.table = s;
                 for (let i = 1; i < 5; i++) {
                     let item = this.$echarts["init"](document.getElementById("footer-" + i));
                     if (item.dispose()) {
@@ -167,16 +175,18 @@
                     }
                 }
                 let [dy, ywc, wwc, yzz, xy] = [0, 0, 0, 0, 0];
-                let schedule = (100 / 12) * 6 * 100;
+                let [fzz, zc, ytp, zdtp] = [0, 0, 0, 0];
                 v.forEach(i => {
                     //月度计划完成情况统计
                     {
                         let pa = i.states;
+                        let ip = i['planNext'] ? i['planNext'] : [];
+                        xy += ip.length;
                         if (pa && pa.length > 0) {
                             pa.forEach(a => {
                                 if (a == 2) {
                                     ywc++;
-                                } else {
+                                } else if (a != 2 && a != 0) {
                                     wwc++;
                                 }
                                 dy++;
@@ -186,11 +196,13 @@
                         if (sub && sub.length > 0) {
                             sub.forEach(b => {
                                 let pb = b.states;
+                                let bp = b['planNext'] ? b['planNext'] : [];
+                                xy += bp.length;
                                 if (pb && pb.length > 0) {
                                     pb.forEach(c => {
                                         if (c == 2) {
                                             ywc++;
-                                        } else {
+                                        } else if (c != 2 && c != 0) {
                                             wwc++;
                                         }
                                         dy++;
@@ -198,40 +210,58 @@
                                 }
                             })
                         }
-                        /* let state = i.states;
-                         let child = i.children;
-                         if (state && state.length > 0) {
-                             state.forEach(m => {
-                                 dy++;
-                                 if (m == 2) {
-                                     ywc++;
-                                 }
-                                 if (m != 2) {
-                                     wwc++;
-                                 }
-                             });
-                         }
-                         if (child && child.length > 0) {
-                             child.forEach(s => {
-                                 let cState = s.states;
-                                 if (cState && cState.length > 0) {
-                                     cState.forEach(m => {
-                                         dy++;
-                                         if (m == 2) {
-                                             ywc++;
-                                         }
-                                         if (m != 2) {
-                                             wwc++;
-                                         }
-                                     });
-                                 }
-                             });
-                         }*/
+                    }
+                    //月度进展
+                    {
+                        let previous = this.increase[i['id']] ? this.increase[i['id']] : 0;
+                        let nows = i['progressRate'] ? i['progressRate'] : 0;
+                        let ss = Math.round(Math.round((nows - previous) / 100));
+                        if (ss < 0) {
+                            fzz++;
+                        }
+                        if (ss >= 0 && ss < 10) {
+                            zc++;
+                        }
+                        if (ss >= 10 && ss < 20) {
+                            ytp++;
+                        }
+
+                        if (ss >= 20) {
+                            zdtp++;
+                        }
+                        let children_ = i["children"];
+                        if (children_ && children_.length > 0) {
+                            children_.forEach(j => {
+                                let previous_ = this.increase[i['id']] ? this.increase[i['id']] : 0;
+                                let nows_ = i['progressRate'] ? i['progressRate'] : 0;
+                                let ss_ = Math.round(Math.round((nows_ - previous_) / 100));
+                                if (ss_ < 0) {
+                                    fzz++;
+                                }
+                                if (ss_ >= 0 && ss_ < 10) {
+                                    zc++;
+                                }
+                                if (ss_ >= 10 && ss_ < 20) {
+                                    ytp++;
+                                }
+
+                                if (ss_ >= 20) {
+                                    zdtp++;
+                                }
+                            })
+                        }
                     }
                 });
+                let reportTime = this.time_page + '-01 00:00:00';
                 //饼1 id:this.unitId
-                const ii = await this.$axios.get("/wj/report/get_work_time", {params: {id: this.unitId}});
-                let wc = JSON.parse(ii.data.data).data
+                const ii = await this.$axios.get("/apidata/report/get_work_time", {
+                    params: {
+                        tagType: this.unitId,
+                        reportTime: reportTime
+                    }
+                });
+                // let wc = JSON.parse(ii.data.data).data
+                let wc = ii.data.data
                 let wc_pie = [
                     {value: wc.d, name: "0 ~ 15%"},
                     {value: wc.c, name: "15 ~ 50%"},
@@ -239,8 +269,14 @@
                     {value: wc.a, name: "85%+"}
                 ];
                 //饼2
-                const jj = await this.$axios.get("/wj/report/get_situation_preview", {params: {id: this.unitId}});
-                let db = JSON.parse(jj.data.data).data
+                const jj = await this.$axios.get("/apidata/report/get_situation_preview", {
+                    params: {
+                        tagType: this.unitId,
+                        reportTime: reportTime
+                    }
+                });
+                // let db = JSON.parse(jj.data.data).data
+                let db = jj.data.data
                 let jd = [
                     {value: db.d, name: "<-20%"},
                     {value: db.c, name: "-20%~-10%"},
@@ -248,12 +284,25 @@
                     {value: db.a, name: ">10%"}
                 ];
                 //年度绩效重点工作执行情况
-                const mm = await this.$axios.get("/wj/report/get_executive_condition", {params: {id: this.unitId}});
-                let jx = JSON.parse(mm.data.data).data;
+                /*const mm = await this.$axios.get("/apidata/report/get_executive_condition", {
+                    params: {
+                        tagType: this.unitId,
+                        reportTime: reportTime
+                    }
+                });*/
+                let nd_pie = [
+                    {value: fzz, name: "负增长"},
+                    {value: zc, name: "正常"},
+                    {value: ytp, name: "有突破"},
+                    {value: zdtp, name: "重大突破"}
+                ];
+                // let jx = JSON.parse(mm.data.data).data;
+                // let jx = mm.data.data
                 let ids = [];
                 for (let i = 1; i < 5; i++) {
                     ids.push(this.$echarts["init"](document.getElementById("footer-" + i)));
                 }
+                let selectMonth = parseInt(this.time_page.split("-")[1]);
                 let options = [
                     {
                         barWidth: 15,
@@ -265,7 +314,7 @@
                         },
                         grid: {
                             left: 40,
-                            top: 20,
+                            top: 30,
                             bottom: 20,
                             right: 20
                         },
@@ -285,7 +334,7 @@
                                     color: "#FFF"
                                 }
                             },
-                            data: ["当月计划", "已完成", "未完成", "已终止", "下月计划"]
+                            data: [selectMonth - 1 + "月计划", selectMonth - 1 + "月已完成", selectMonth - 1 + "月未完成", selectMonth + "月计划"]
                         },
                         yAxis: {
                             type: "value",
@@ -306,13 +355,52 @@
                         },
                         series: [
                             {
-                                data: [dy, ywc, wwc, yzz, xy],
-                                type: "bar",
-                                itemStyle: {
-                                    normal: {
-                                        color: "rgb(7,95,213)"
+                                data: [
+                                    {
+                                        value: dy,
+                                        itemStyle: {
+                                            normal: {
+                                                color: '#01beff'
+                                            }
+                                        }
+                                    },
+                                    {
+                                        value: ywc,
+                                        itemStyle: {
+                                            normal: {
+                                                color: '#32e232'
+                                            }
+                                        }
+                                    },
+                                    {
+                                        value: wwc,
+                                        itemStyle: {
+                                            normal: {
+                                                color: '#dd2a2a'
+                                            }
+                                        }
+                                    },
+                                    {
+                                        value: xy,
+                                        itemStyle: {
+                                            normal: {
+                                                color: '#01beff'
+                                            }
+                                        }
+                                    }],
+                                label: {
+                                    show: true,
+                                    position: "top",
+                                    color: "#FFF",
+                                    fontSize: 18,
+                                    formatter: v => {
+                                        if (v.value === 0) {
+                                            return ''
+                                        }
+                                        return v.value;
                                     }
-                                }
+                                },
+                                type: "bar"
                             }
                         ]
                     },
@@ -321,9 +409,7 @@
                             trigger: "item"
                         },
                         legend: {
-                            orient: "vertical",
-                            left: "left",
-                            top: "center",
+                            bottom: 0,
                             textStyle: {
                                 color: "white"
                             }
@@ -337,8 +423,8 @@
                         series: [
                             {
                                 type: "pie",
-                                radius: ["0%", "80%"],
-                                center: ["55%", "55%"],
+                                radius: ["0%", "70%"],
+                                center: ["50%", "50%"],
                                 itemStyle: {
                                     normal: {
                                         color: function (v) {
@@ -347,12 +433,11 @@
                                         }
                                     }
                                 },
-                                itemStyle: {
-                                    normal: {
-                                        color: function (v) {
-                                            let colorList = ["#dd2a2a", "#ffde2a", "#01beff", "#32e232"]
-                                            return colorList[v.dataIndex];
-                                        }
+                                label: {
+                                    position: "inner",
+                                    fontSize: 18,
+                                    formatter: v => {
+                                        return v.value;
                                     }
                                 },
                                 data: wc_pie
@@ -364,9 +449,7 @@
                             trigger: "item"
                         },
                         legend: {
-                            orient: "vertical",
-                            left: "left",
-                            top: "center",
+                            bottom: 0,
                             textStyle: {
                                 color: "white"
                             }
@@ -374,8 +457,8 @@
                         series: [
                             {
                                 type: "pie",
-                                radius: ["0%", "80%"],
-                                center: ["55%", "55%"],
+                                radius: ["0%", "70%"],
+                                center: ["50%", "50%"],
                                 itemStyle: {
                                     normal: {
                                         color: function (v) {
@@ -384,19 +467,52 @@
                                         }
                                     }
                                 },
-                                data: jd,
-                                emphasis: {
-                                    itemStyle: {
-                                        shadowBlur: 10,
-                                        shadowOffsetX: 0,
-                                        shadowColor: "rgba(0, 0, 0, 0.5)"
+                                label: {
+                                    position: "inner",
+                                    fontSize: 18,
+                                    formatter: v => {
+                                        return v.value;
                                     }
-                                }
+                                },
+                                data: jd,
                             }
                         ]
                     },
                     {
-                        barWidth: 8,
+                        tooltip: {
+                            trigger: "item"
+                        },
+                        legend: {
+                            bottom: 0,
+                            textStyle: {
+                                color: "white"
+                            }
+                        },
+                        series: [
+                            {
+                                type: "pie",
+                                radius: ["0%", "70%"],
+                                center: ["50%", "50%"],
+                                itemStyle: {
+                                    normal: {
+                                        color: function (v) {
+                                            let colorList = ["#dd2a2a", "#ffde2a", "#01beff", "#32e232"]
+                                            return colorList[v.dataIndex];
+                                        }
+                                    }
+                                },
+                                label: {
+                                    position: "inner",
+                                    fontSize: 18,
+                                    formatter: v => {
+                                        return v.value;
+                                    }
+                                },
+                                data: nd_pie,
+                            }
+                        ]
+                    },
+                    /*{
                         textStyle: {color: "white"},
                         tooltip: {trigger: "axis"},
                         legend: {
@@ -464,7 +580,7 @@
                                 name: "未完成",
                                 type: "bar",
                                 itemStyle: {
-                                    color: "#03DBF1"
+                                    color: "#dd2a2a"
                                 },
                                 data: this.mySet(jx, 'weiWanCheng'),
                             },
@@ -472,7 +588,7 @@
                                 name: "已完成",
                                 type: "bar",
                                 itemStyle: {
-                                    color: "#026cf9"
+                                    color: "#32e232"
                                 },
                                 data: this.mySet(jx, 'wanCheng'),
                             },
@@ -485,7 +601,7 @@
                                 data: this.mySet(jx, 'deFen'),
                             }
                         ]
-                    }
+                    }*/
                 ];
                 ids.forEach((i, x) => {
                     this.$nextTick(_ => {
@@ -497,17 +613,16 @@
                 this.isLoading = true;
                 const unitData = (await this.$axios["get"]("https://okr.hbjtsy.com:7080/jt/zt/getDeptList")).data.data;
                 let unit = [5, 6, 7, 8, 4, 11, 0, 10, 9, 1, 12, 13, 3, 2];
-                this.unitId = unitData[unit[this.thisImg - 1]]["id"];
-                const d = await this.$axios["get"]("/wj/report/getMonthReport", {
+                this.unitId = unitData[unit[this.thisImg - 1]]["tagValue"];
+                const d = await this.$axios["get"]("/apidata/report/getMonthReport", {
                     params: {
                         reportType: unitData[unit[this.thisImg - 1]]["tagValue"],
                         reportTime: this.time_page + "-01 00:00:00"
                     }
                 });
                 let date = this.time_page.split("-");
-                let former =
-                    date[0] + "-" + (date[1] - 1 < 10 ? "0" + (date[1] - 1) : date[1] - 1);
-                const e = await this.$axios["get"]("/wj/report/getMonthReport", {
+                let former = date[0] + "-" + (date[1] - 1 < 10 ? "0" + (date[1] - 1) : date[1] - 1);
+                const e = await this.$axios["get"]("/apidata/report/getMonthReport", {
                     params: {
                         reportType: "TZJYB_ZN",
                         reportTime: former + "-01 00:00:00"
@@ -547,11 +662,7 @@
                     sure[n].push(i);
                 });
                 this.baseData = d.data.data.child;
-                this.$refs["elTableBase"].refresh(
-                    this.baseData,
-                    this.btnImg,
-                    this.increase
-                );
+                this.$refs["elTableBase"].refresh(this.baseData, this.btnImg, this.increase, parseInt(this.time_page.split("-")[1]));
             },
             changeTime() {
                 this.getAllData();
@@ -568,6 +679,7 @@
             this.getAllData();
             window.onresize = () => {
                 this.initECharts(this.table);
+                this.$refs["elTableBase"].refresh(this.baseData, this.btnImg, this.increase, parseInt(this.time_page.split("-")[1]));
             };
         }
     };
@@ -674,12 +786,44 @@
             }
 
             .timeSelect {
-                width: 300px;
+                width: 400px;
                 height: 25px;
                 position: absolute;
                 top: 20px;
                 right: 50px;
                 color: white;
+
+                /deep/ .el-select {
+                    .el-input {
+                        width: 100px;
+
+                        .el-input__inner {
+                            background-color: rgba(0, 0, 0, 0);
+                            border: none;
+                            height: 30px;
+                            line-height: 30px;
+                            border-radius: 0;
+                            /*border-bottom: 2px solid #0266ec;*/
+                            width: 90px;
+                            color: white;
+                            font-size: 20px;
+                            padding: 0;
+                            text-align: center;
+                            font-weight: 700;
+                        }
+
+                        .el-input__suffix {
+
+                            .el-input__suffix-inner {
+                                .el-input__icon {
+                                    height: 30px;
+                                    line-height: 30px;
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
 
                 /deep/ .el-date-editor {
                     width: 100px;
@@ -725,7 +869,7 @@
                 display: flex;
                 flex-wrap: nowrap;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: flex-start;
 
                 .typeBtn {
                     width: 70px;
@@ -931,7 +1075,7 @@
                     font-weight: 800;
                     font-family: "Microsoft YaHei";
                     text-align: center;
-                    z-index: 9999;
+                    z-index: 100;
                     color: white;
                 }
             }

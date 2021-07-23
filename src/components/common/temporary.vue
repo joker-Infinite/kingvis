@@ -115,7 +115,7 @@
             }
         },
         async mounted() {
-            await this.getMarkerData();
+            // await this.getMarkerData();
             let ps = [...this.ms, ...this.os];
             this.$nextTick(_ => {
                 this.$refs['map'].initMap(ps);

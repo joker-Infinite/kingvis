@@ -24,11 +24,12 @@
         <el-table
                 ref="eltable"
                 :data="tableData"
-                :height="height?height:(buttons.length===0&&!pagination&&!search&&!self?'100%':(buttons.length!==0||search||self)&&pagination?'calc(100% - 100px)':'calc(100% - 50px)')"
+                :max-height="height?height:(buttons.length===0&&!pagination&&!search&&!self?'100%':(buttons.length!==0||search||self)&&pagination?'calc(100% - 100px)':'calc(100% - 50px)')"
                 style="width: 100%;"
                 :highlight-current-row="chooseItem === 'single'"
                 row-key="id"
                 :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
+                @header-click="headerClick"
                 @select="select"
                 @row-click="selection"
                 @select-all="selectAll">
@@ -73,7 +74,7 @@
                         :align="item.align ? item.align : 'center'"
                         :width="item.width ? item.width : ''">
                     <template slot-scope="scope">
-                        {{item.formatter(scope.row)}}
+                        {{item.formatter(scope.row,item.prop)}}
                     </template>
                 </el-table-column>
                 <el-table-column v-if="item.rowImg" :label="item.label" :align="item.align ? item.align : 'center'">
@@ -200,7 +201,7 @@
             pageSizes: {
                 type: Array,
                 default: function () {
-                    return [20,50,100,200];
+                    return [20, 50, 100, 200];
                 }
             },
             pageSize: {
@@ -263,6 +264,7 @@
                 this.$emit('size-change', val);
             },
             handleCurrentChange(val) {
+                this.currentPage = val;
                 this.$emit('current-change', val);
             },
             //多选时点击复选框
@@ -277,8 +279,15 @@
             selectAll(selection) {
                 this.$emit('selection-change', selection);
             },
+            //点击表头
+            headerClick(column, event) {
+                this.$emit('header-click', column, event);
+            },
             refreshScroll() {
                 this.$refs['eltable'].bodyWrapper.scrollTop = 0;
+            },
+            doLayout() {
+                this.$refs['eltable'].doLayout();
             }
         },
         mounted() {
@@ -399,7 +408,7 @@
             width: calc(100% - 20px);
             text-align: right;
             overflow: hidden;
-            margin: 10px 0;
+            /*margin: 10px 0;*/
 
             /deep/ .el-pagination {
                 padding: 4px 5px;

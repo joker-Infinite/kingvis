@@ -56,13 +56,24 @@
                         </el-submenu>
                     </template>
                 </el-submenu>
+                <div class="blank" @click="select('3')">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">服务区维度统计</span>
+                </div>
+                <div class="blank" @click="select('4')">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">能源维度统计</span>
+                </div>
+                <div class="blank" @click="select('5')">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">财务维度统计</span>
+                </div>
             </el-menu>
         </div>
         <div class="con" id="con_">
-            <router-view
-                    :viewChange="menuStatus % 2 === 0"
-                    @clickTable="clickTable"
-            ></router-view>
+            <router-view :viewChange="menuStatus % 2 === 0"
+                         @clickTable="clickTable">
+            </router-view>
         </div>
     </div>
 </template>
@@ -228,29 +239,39 @@
                             {name: '>>数据展示', url: '/dataBase/libraryData', show: true},
                         ]
                     },
-                    {
-                        id: '9',
-                        label: "维度统计",
-                        img: require("../assets/Home/4.png"),
-                        imgActive: require("../assets/Home/5.png"),
-                        menuItem: [
-                            {
-                                name: ">>服务区维度统计",
-                                url: "/serviceArea/businessComparison",
-                                show: true
-                            },
-                            {
-                                name: ">>能源维度统计",
-                                url: "/serviceArea/gas",
-                                show: true
-                            },
-                            {
-                                name: ">>财务维度统计",
-                                url: "/serviceArea/financialChart",
-                                show: true
-                            },
-                        ]
-                    }
+                    /* {
+                         id: '9',
+                         label: "维度统计",
+                         img: require("../assets/Home/4.png"),
+                         imgActive: require("../assets/Home/5.png"),
+                         menuItem: [
+                             /!*  {
+                                   name: ">>服务区维度统计",
+                                   url: "/serviceArea/businessComparison",
+                                   show: true
+                               },*!/
+                            /!* {
+                                 name: ">>服务区维度统计",
+                                 url: "/dimensionStatistics/serviceAreaDimension",
+                                 show: true
+                             },*!/
+                             {
+                                 name: ">>能源维度统计",
+                                 url: "/serviceArea/gas",
+                                 show: true
+                             },
+                             /!* {
+                                  name: ">>财务维度统计",
+                                  url: "/serviceArea/financialChart",
+                                  show: true
+                              },*!/
+                             /!* {
+                                  name: ">>财务维度统计",
+                                  url: "/dimensionStatistics/financeDimension",
+                                  show: true
+                              },*!/
+                         ]
+                     }*/
                 ],
                 tagData: [],
                 key: "/serviceArea/revenue",
@@ -324,7 +345,22 @@
                         path: "/WorkReport".replace("#", "")
                     });
                     window.open(routeData.href, "_blank");
-                } else {
+                } else if (k == "3") {
+                    let routeData = this.$router.resolve({
+                        path: "/serviceAreaDimension".replace("#", "")
+                    });
+                    window.open(routeData.href, "_blank");
+                } else if (k == "4") {
+                    let routeData = this.$router.resolve({
+                        path: "/gas".replace("#", "")
+                    });
+                    window.open(routeData.href, "_blank");
+                }else if (k=="5"){
+                    let routeData = this.$router.resolve({
+                        path: "/newFinanceDimension".replace("#", "")
+                    });
+                    window.open(routeData.href, "_blank");
+                }else {
                     this.setCookie(k, "");
                 }
             },

@@ -1,10 +1,10 @@
 <template>
     <div class="elTableBase">
         <el-table :data="tableData"
+                  id="table_report"
                   ref="elTable"
                   height="100%"
                   row-key="id"
-                  default-expand-all
                   :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
                   highlight-current-row>
             <el-table-column align="center" label="序号" width="90px">
@@ -27,13 +27,29 @@
                     </div>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="目标" prop="goalDetail">
+            <el-table-column align="left" label="目标" prop="goalDetail">
                 <template slot-scope="scope">
-                    <div v-if="scope.row.goalDetail">{{scope.row.goalDetail}}</div>
+                    <el-tooltip class="item" effect="light">
+                        <div slot="content">
+                            <div v-for="i in addBr(scope.row.goalDetail)">
+                                <p style="font-size: 16px">{{i}}</p><br/>
+                            </div>
+                        </div>
+                        <div v-if="scope.row.goalDetail"
+                             :style="{height:(height-height%23)+'px',
+                         width:'100%',
+                         overflow:'hidden',
+                         display: '-webkit-box',
+                         '-webkit-box-orient': 'vertical',
+                         textOverflow: 'ellipsis',
+                         '-webkit-line-clamp':parseInt(height/23)}">
+                            {{scope.row.goalDetail}}
+                        </div>
+                    </el-tooltip>
                     <div v-if="!scope.row.goalDetail">无</div>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="当月计划">
+            <el-table-column align="center" :label="(time-1)+'月计划'">
                 <template slot-scope="scope">
                     <div style="text-align: left" :id="scope.row.plan" v-if="scope.row.plan">
                         <p v-for="(m,n) in scope.row.plan" :key="n">
@@ -64,15 +80,14 @@
                     <div v-if="!scope.row.stateDescs||scope.row.stateDescs.length===0">无</div>
                 </template>
             </el-table-column>
-            <el-table-column align="center" label="下月计划">
+            <el-table-column align="center" :label="time+'月计划'">
                 <template slot-scope="scope">
-                    <!--  <div style="text-align: left" :id="scope.row.plan" v-if="scope.row.plan">
-                          <p v-for="(m,n) in scope.row.plan" :key="n">
-                              {{n+1}}、{{m}}
-                          </p>
-                      </div>
-                      <div v-if="scope.row.plan.length===0">无</div>-->
-                    无
+                    <div style="text-align: left" :id="scope.row.planNext" v-if="scope.row.planNext">
+                        <p v-for="(m,n) in scope.row.planNext" :key="n">
+                            <i class="iconfont icondian"></i> {{m}}
+                        </p>
+                    </div>
+                    <div v-if="!scope.row.planNext||scope.row.planNext.length===0">无</div>
                 </template>
             </el-table-column>
         </el-table>
@@ -100,10 +115,19 @@
             return {
                 tableData: [],
                 allData: [],
-                increase: []
+                increase: [],
+                height: 0,
+                time: ''
             }
         },
         methods: {
+            addBr(v) {
+                let s = '';
+                if (v && v.length > 20) {
+                    s = v.match(/.{1,20}/g).join("^")
+                }
+                return s.split("^");
+            },
             calculation(v1, v2) {
                 if (v1 && v2) {
                     return Math.round(Math.round((v1 - v2) / 100));
@@ -187,9 +211,12 @@
                     }
                 }
             },
-            refresh(v, typeSelect, increase) {
+            refresh(v, typeSelect, increase, time) {
+                this.time = time;
+                this.height = (document.getElementById('table_report').offsetHeight - 48) / 4 - 30;
                 this.increase = increase;
                 let project = [];
+                let month = time;
                 v.forEach(a => {
                     let child = a.child;
                     if (child.length > 0) {
@@ -200,22 +227,33 @@
                 });
                 project.forEach((i, x) => {
                     if (i.child && i.child.length > 0) {
-                        let childPlans = i.child[0].plans;
-                        let plans = [];
-                        let stateDescs = [];
-                        let state = [];
-                        childPlans.forEach((m, n) => {
-                            plans.push(m.planDetail);
-                            state.push(m.state);
-                            if (m.stateDesc) {
-                                stateDescs.push(m.stateDesc);
-                            }
-                        });
-                        i["plan"] = (plans && plans.length > 0) ? plans : [];
-                        i["states"] = (state && state.length > 0) ? state : [];
-                        i["stateDescs"] = (stateDescs && stateDescs.length > 0) ? stateDescs : [];
-                        i["tableIndex"] = x + 1;
+                        let cc = i.child;
+                        if (cc && cc.length > 0) {
+                            let plans = [];
+                            let plansNext = [];
+                            let stateDescs = [];
+                            let state = [];
+                            cc.forEach(l => {
+                                let childPlans = l.plans;
+                                childPlans.forEach((m, n) => {
+                                    if (parseInt((m.endTime).split("-")[1]) == month) {
+                                        plansNext.push(m.planDetail)
+                                    }
+                                    plans.push(m.planDetail);
+                                    state.push(m.state);
+                                    if (m.stateDesc) {
+                                        stateDescs.push(m.stateDesc);
+                                    }
+                                });
+                            })
+                            i["plan"] = (plans && plans.length > 0) ? plans : [];
+                            i["planNext"] = plansNext;
+                            i["states"] = (state && state.length > 0) ? state : [];
+                            i["stateDescs"] = (stateDescs && stateDescs.length > 0) ? stateDescs : [];
+                            i["tableIndex"] = x + 1;
+                        }
                     }
+
                     if (i["subProject"] && i["subProject"].length > 0) {
                         let subProject = i["subProject"];
                         subProject.forEach((a, b) => {
@@ -224,7 +262,11 @@
                                 let aPlans = [];
                                 let state = [];
                                 let stateDescs = [];
+                                let plansNexts = [];
                                 scPlans.forEach((c, d) => {
+                                    if (parseInt((c.endTime).split("-")[1]) == month) {
+                                        plansNexts.push(c.planDetail)
+                                    }
                                     aPlans.push(c.planDetail);
                                     state.push(c.state);
                                     if (c.stateDesc) {
@@ -232,6 +274,7 @@
                                     }
                                 });
                                 a["plan"] = (aPlans && aPlans.length > 0) ? aPlans : [];
+                                a["planNext"] = plansNexts;
                                 a["states"] = (state && state.length > 0) ? state : [];
                                 a["stateDescs"] = (stateDescs && stateDescs.length > 0) ? stateDescs : [];
                                 a["tableIndex"] = (x + 1) + '.' + (b + 1);
@@ -244,19 +287,17 @@
                         }
                     }
                 });
-                this.formatterData(project, typeSelect);
+                this.formatterData(this.DeepCopy(project), typeSelect);
             },
             formatterData(v, typeSelect) {
                 let arr_ = this.DeepCopy(v);
                 let arr = [];
                 arr_.forEach(i => {
-                    if (typeSelect === 2) {
-                        arr = [];
-                    } else if (typeSelect === 4) {
-                        arr.push(i)
-                    } else if (typeSelect === 3) {
-                        arr.push(i)
-                    } else if (typeSelect === 1) {
+                    if (typeSelect === 1) {
+                        if (i["progressRate"] && i["progressRate"] !== 10000) {
+                            arr.push(i)
+                        }
+                    } else if (typeSelect === 2) {
                         arr.push(i)
                     }
                 });
@@ -273,7 +314,8 @@
                     }
                     sure[n].push(i);
                 });
-                this.$emit('allData', arr);
+                this.$emit('allData', [arr, v]);
+                this.tableData = [];
                 this.tableData = sure[this.currentPage - 1];
                 this.$nextTick(_ => {
                     this.cellEChartsInit(this.tableData, this.currentPage)

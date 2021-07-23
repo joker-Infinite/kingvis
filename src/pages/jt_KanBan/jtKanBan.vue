@@ -51,6 +51,9 @@
                 this.searchQuery = ps;
                 this.$nextTick(_ => {
                     this.$refs['map'].initMap(ps);
+                    if (v === 3) {
+                        this.$refs['map'].showSupermarket(v);
+                    }
                 })
             },
             changeTheme(d) {
@@ -76,6 +79,9 @@
                 this.searchQuery = ps;
                 this.$nextTick(_ => {
                     this.$refs['map'].initMap(ps);
+                    if (v === 3) {
+                        this.$refs['map'].showSupermarket();
+                    }
                 })
             },
             dblclickDot(oid, obj) {
@@ -83,19 +89,19 @@
             async getMarkerData() {
                 let [service, allGas, bayonet, supermarket] = await Promise.all([
                     //服务区
-                    this.$axios.get("/api/index/list_gis", {
+                    this.$axios.get("/apidata/index/list_gis", {
                         params: {gisType: "service"}
                     }),
                     //油站
-                    this.$axios.get("/api/index/list_gis", {
+                    this.$axios.get("/apidata/index/list_gis", {
                         params: {gisType: 'station'}
                     }),
                     //卡口
-                    this.$axios.get("/api/index/list_gis", {
+                    this.$axios.get("/apidata/index/list_gis", {
                         params: {gisType: "bayonet"}
                     }),
                     // 超市
-                    this.$axios.get("/api/index/list_gis", {
+                    this.$axios.get("/apidata/index/list_gis", {
                         params: {gisType: "store"}
                     }),
                 ]);
@@ -110,7 +116,7 @@
                 this.zhjt = await this.formatterMarker(g, 'zhjt-longitude-latitude', 'serviceInfoId', 'gisCompanyName-中化交投（湖北）能源有限公司', '===');
                 this.glyz = await this.formatterMarker(g, 'glyz-longitude-latitude', 'serviceInfoId', 'gisCompanyName-湖北高速公路油站管理分公司（新）', '===');
                 this.kk = await this.formatterMarker(b, 'kk-longitude-latitude', 'serviceInfoId');
-                this.zb = await this.formatterMarker(m, 'zb-longitude-latitude', 'serviceInfoId');
+                this.zb = await this.formatterMarker(m, 'zb-longitude-latitude', 'gisId');
             },
             /**
              * @param data 数据源

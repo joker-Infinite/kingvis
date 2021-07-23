@@ -1,0 +1,404 @@
+.serviceAreaDimension {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  margin: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @treeWidth: 150px;
+
+  .serviceAreaDimension_tree {
+    width: @treeWidth;
+    height: 100%;
+
+    .tree_box {
+      width: @treeWidth;
+      height: 100%;
+
+      .tree_scroll {
+        width: @treeWidth;
+        height: calc(100% - 50px);
+        margin-top: 10px;
+        overflow-y: scroll;
+        background: white;
+      }
+
+      .tree_scroll::-webkit-scrollbar { /*滚动条整体样式*/
+        width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+        height: 4px;
+      }
+
+      .tree_scroll::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      .tree_scroll::-webkit-scrollbar-track { /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .serviceAreaDimension_container {
+    width: calc(100% - 160px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    .serviceAreaDimension_container_query {
+      height: 40px;
+      width: 100%;
+      background: #fff;
+      text-align: right;
+
+      .el-button {
+        padding: 8px 15px;
+        margin: 4px;
+      }
+    }
+
+    .serviceAreaDimension_container_select {
+      width: 100%;
+      //height: 40px;
+      background: white;
+      position: relative;
+
+      @row_title_width: 90px;
+      @row_btn_width: 100px;
+      @all_line_height: 30px;
+
+      .showOffDimension {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        line-height: @all_line_height;
+        cursor: pointer;
+        color: #1a73e8;
+        text-align: center;
+      }
+
+      .row_select {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        line-height: @all_line_height;
+
+        .row_title {
+          width: @row_title_width;
+          text-indent: 5px;
+        }
+
+        .row_content {
+          max-width: calc(100% - @row_title_width - @row_btn_width - 80px);
+          overflow: hidden;
+
+          .el-checkbox-group {
+            min-height: 30px;
+          }
+
+          .el-radio-group {
+            min-height: 30px;
+
+            .el-radio {
+              line-height: 30px;
+            }
+          }
+        }
+
+        .row_content_h {
+          height: 30px;
+        }
+
+        .row_content_mh {
+          min-height: 30px;
+        }
+
+        .row_btn {
+          width: @row_btn_width;
+          font-size: 12px;
+          color: #1a73e8;
+          cursor: pointer;
+          padding-left: 10px;
+        }
+      }
+
+      .el-divider {
+        margin: 0;
+      }
+    }
+
+    .serviceAreaDimension_container_select_h {
+      height: 30px;
+      overflow: hidden;
+    }
+
+    .serviceAreaDimension_container_select_mh {
+      max-height: 500px;
+      margin: 10px 0;
+    }
+
+    .serviceAreaDimension_container_content {
+      height: calc(100% - 40px - 40px - 10px);
+      width: 100%;
+      overflow-y: scroll;
+
+      .serviceAreaDimension_container_content_top {
+        width: 100%;
+        height: 610px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @charts_right_width: 400px;
+
+        .table_left {
+          width: calc(100% - @charts_right_width - 10px);
+          height: 100%;
+        }
+
+        .charts_right {
+          width: @charts_right_width;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex-wrap: nowrap;
+
+          .charts {
+            background: white;
+            width: 100%;
+            height: 300px;
+            position: relative;
+
+            .enlarge {
+              width: 20px;
+              height: 20px;
+              top: 5px;
+              right: 5px;
+              position: absolute;
+              line-height: 20px;
+              text-align: center;
+              font-size: 16px;
+              border-radius: 100%;
+              border: 1px solid #38a0ff;
+              color: #38a0ff;
+              display: none;
+              cursor: pointer;
+              z-index: 1000;
+            }
+
+            .charts_title {
+              position: absolute;
+              width: 100%;
+              line-height: 40px;
+              text-align: center;
+              font-weight: bold;
+              font-size: 20px;
+            }
+
+            .noData {
+              position: absolute;
+              width: 100%;
+              height: 300px;
+              top: 0;
+              left: 0;
+              z-index: 10;
+              background: white;
+              line-height: 300px;
+              text-align: center;
+              font-size: 25px;
+              font-weight: bold;
+            }
+
+            .other {
+              display: none;
+              left: 10px;
+            }
+
+            .charts_table {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 0;
+              z-index: -1;
+              background: white;
+
+              .myTable {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+
+                div {
+                  line-height: 30px;
+                  text-align: center;
+                  display: flex;
+                  flex-wrap: nowrap;
+                  flex-direction: column;
+                  justify-content: flex-start;
+
+                  .borderB {
+                    border-bottom: 1px solid #000;
+                  }
+                }
+              }
+            }
+          }
+
+          .charts:hover .other {
+            display: block;
+          }
+
+          .charts:hover .enlarge {
+            display: block;
+          }
+        }
+      }
+
+      .serviceAreaDimension_container_content_bottom {
+        margin-top: 10px;
+        width: 100%;
+        height: 300px;
+        background: #2fbcb6;
+
+        .charts {
+          background: white;
+          width: 100%;
+          height: 300px;
+          position: relative;
+
+          .enlarge {
+            width: 20px;
+            height: 20px;
+            top: 5px;
+            right: 5px;
+            position: absolute;
+            line-height: 20px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 100%;
+            border: 1px solid #38a0ff;
+            color: #38a0ff;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+          }
+
+          .charts_title {
+            position: absolute;
+            top: 0;
+            left: 100px;
+            width: calc(100% - 200px);
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            z-index: 9;
+          }
+
+          .noData {
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background: white;
+            line-height: 300px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+          }
+
+          .other {
+            display: none;
+            left: 10px;
+          }
+
+          .charts_table {
+            position: absolute;
+            background: white;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+
+            .myTable {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              flex-wrap: nowrap;
+              width: 100%;
+              height: 100%;
+              overflow-y: scroll;
+
+              div {
+                line-height: 30px;
+                text-align: center;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                .borderB {
+                  border-bottom: 1px solid #000;
+                }
+              }
+            }
+          }
+        }
+
+        .charts:hover .other {
+          display: block;
+        }
+
+        .charts:hover .enlarge {
+          display: block;
+        }
+      }
+    }
+
+    .serviceAreaDimension_container_content::-webkit-scrollbar { /*滚动条整体样式*/
+      width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+      height: 4px;
+    }
+
+    .serviceAreaDimension_container_content::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .serviceAreaDimension_container_content::-webkit-scrollbar-track { /*滚动条里面轨道*/
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .el-table {
+    .el-table__body-wrapper {
+      height: 550px !important;
+      //overflow-x: scroll;
+    }
+  }
+}

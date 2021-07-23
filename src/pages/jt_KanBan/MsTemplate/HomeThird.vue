@@ -221,6 +221,7 @@
                 this.clickNum = v;
                 this.searchDot = "";
                 this.$emit("clickType", v);
+                this.showSupermarket(v);
             },
             dblclickDot() {
             },
@@ -911,7 +912,10 @@
                         this.clickNum = homeState.map.clickNum;
                     }
                 })
-            }
+            },
+            showSupermarket(v) {
+                this.$refs['map'].showSupermarket(v);
+            },
         },
         mounted() {
             let this_ = this;

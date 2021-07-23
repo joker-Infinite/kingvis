@@ -74,12 +74,12 @@
                               return '';
                           }
                       })*/
-                    this.$router.push("/serviceArea/revenue");
+                    this.$router.push("/dataBase/libraryData");
                 }
             }
         },
         mounted() {
-            document.cookie = "menu=/serviceArea/revenue-";
+            document.cookie = "menu=/dataBase/libraryData-";
         }
     };
 </script>

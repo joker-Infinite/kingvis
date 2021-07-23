@@ -1,16 +1,16 @@
 <template>
-    <div class="businessComparison_" v-loading="loading">
-        <div class="left_">
-            <el-input placeholder="输入关键字进行过滤" v-model="filterText">
-            </el-input>
-            <div class="myTree">
-                <div>
+    <div class="serviceAreaDimension" v-loading="loading">
+        <div class="serviceAreaDimension_tree">
+            <div class="tree_box">
+                <el-input
+                        placeholder="输入关键字进行过滤"
+                        v-model="filterText">
+                </el-input>
+                <div class="tree_scroll">
                     <el-tree
                             class="filter-tree"
-                            :data="data"
+                            :data="treeData"
                             :props="defaultProps"
-                            :highlight-current="true"
-                            :default-expand-all="false"
                             @node-click="nodeClick"
                             :filter-node-method="filterNode"
                             ref="tree">
@@ -18,98 +18,84 @@
                 </div>
             </div>
         </div>
-        <div class="right_">
-            <div class="select_year">
-                <div class="select_year_btn">
-                    <el-switch
-                            v-model="switchShow"
-                            @change="_=>{this.loading=true;this.lookView()}"
-                            active-text="图表"
-                            inactive-text="列表">
-                    </el-switch>
-                    <span style="width: 20px;display: inline-block"></span>
-                    <el-select v-model="year" @change="lookView">
-                        <el-option value="2020" label="2020"></el-option>
-                        <el-option value="2021" label="2021"></el-option>
-                    </el-select>
-                    <span style="width: 20px;display: inline-block"></span>
-                </div>
+        <div class="serviceAreaDimension_container">
+            <div class="serviceAreaDimension_container_query">
+                <el-button type="primary" @click="addColumns">查询</el-button>
+                <el-button @click="resetColumns">重置</el-button>
             </div>
-            <div id="prosecution_unit" class="prosecution_unit">
-                <div :class="{prosecution_unit_container: true,container_height: showOptions,container_min_height: !showOptions}">
-                    <template v-for="i in all">
-                        <div class="type_select">
-                            <div class="type_header">
-                                <span>{{ i[0].businessType }}:</span>
-                            </div>
-                            <div class="type_content">
-                                <el-checkbox-group
-                                        v-if="i[0]['dimensionType'] !== 'pie1'"
-                                        v-model="selected[i[0].businessType]"
-                                        @change="selectTypeChange(i)">
-                                    <el-checkbox v-if="m['dimensionType'] === 'tab'"
-                                                 v-for="(m, x) in i"
-                                                 :key="x"
-                                                 :label="m.dimensionName"
-                                                 :value="m.dimensionValue"></el-checkbox>
-                                </el-checkbox-group>
-                                <el-radio-group
-                                        v-if="i[0]['dimensionType'] === 'pie1'"
-                                        v-model="selected[i[0].businessType]"
-                                        @change="selectTypeChange(i)">
-                                    <el-radio
-                                            v-if="m['dimensionType'] === 'pie1'"
-                                            v-for="(m, x) in i"
-                                            :key="x"
-                                            :label="m.dimensionName">
-                                        {{ m.dimensionName }}
+            <div :class="{'serviceAreaDimension_container_select':true,'serviceAreaDimension_container_select_h':!showOff,'serviceAreaDimension_container_select_mh':showOff}">
+                <div class="showOffDimension" @click="showOffDimension">展示维度>></div>
+                <template v-for="(i,x) in query">
+                    <div class="row_select">
+                        <div class="row_title">{{i[0].businessType}}:</div>
+                        <div :class="{'row_content':true,'row_content_mh':openMore.indexOf(x)!==-1,'row_content_h':openMore.indexOf(x)===-1}">
+                            <el-checkbox-group :id="i[0].businessType"
+                                               v-if="i[0].templateType === 'checkBox'"
+                                               v-model="selected[i[0].businessType]"
+                                               @change="selectDimension(i)">
+                                {{i[0].businessType}}
+                                <template v-for="j in i">
+                                    <el-checkbox :label="j.dimensionValue"
+                                                 :value="j.dimensionValue">
+                                        {{j.dimensionName}}
+                                    </el-checkbox>
+                                </template>
+                            </el-checkbox-group>
+                            <el-radio-group :id="i[0].businessType"
+                                            v-if="i[0].templateType === 'radio'"
+                                            v-model="selected[i[0].businessType]"
+                                            @change="selectDimension(i)">
+                                <template v-for="j in i">
+                                    <el-radio :label="j.dimensionValue"
+                                              :value="j.dimensionValue">
+                                        {{j.dimensionName}}
                                     </el-radio>
-                                </el-radio-group>
-                            </div>
+                                </template>
+                            </el-radio-group>
                         </div>
-                        <el-divider></el-divider>
-                    </template>
-                </div>
-                <el-button
-                        type="text"
-                        class="prosecution_unit_btn"
-                        @click.stop="moreUnit">
-                    展示纬度
-                </el-button>
-            </div>
-            <div class="con" :style="{ height: content_height }">
-                <div v-show="!switchShow" style="height: 100%">
-                    <my-table-base
-                            height="calc(100% - 50px)"
-                            :pagination="false"
-                            chooseItem="single"
-                            :gridIndex="false"
-                            :search="false"
-                            :columns="columns"
-                            :table-data="tableData">
-                    </my-table-base>
-                </div>
-                <div v-show="switchShow" class="charts_gas">
-                    <div class="content_gas">
-                        <div class="title">{{selected['饼图']}}</div>
-                        <div class="content_echarts_t" id="cbb1"></div>
+                        <div class="row_btn" @click="seeMore(x)" v-show="showMore[x]">查看更多>></div>
                     </div>
-                    <div class="content_gas">
-                        <div class="maxAMin" v-if="JSON.stringify(max_min) !== '{}'">
-                            <div>
-                                <span class="ys" style="font-weight: 700;">营收：</span>
-                                <span class="ys">最高：{{(max_min["maxTotalSales"] / 10000).toFixed(2)}}万元</span><br/>
-                                <span class="ys pl">最低：{{(max_min["minTotalSales"] / 10000).toFixed(2)}}万元</span><br/>
-                                <span class="ys pl">平均：{{(max_min["avgTotalSales"] / 10000).toFixed(2)}}万元</span><br/>
-                            </div>
-                            <div>
-                                <span class="cl" style="font-weight: 700;">车辆：</span>
-                                <span class="cl">最高：{{ max_min["maxCount"] }}辆</span><br/>
-                                <span class="cl pl">最低：{{ max_min["minCount"] }}辆</span><br/>
-                                <span class="cl pl">平均：{{ max_min["avgCount"] }}辆</span><br/>
-                            </div>
+                    <el-divider></el-divider>
+                </template>
+            </div>
+            <div class="serviceAreaDimension_container_content">
+                <div class="serviceAreaDimension_container_content_top">
+                    <div class="table_left">
+                        <my-table-base ref="table"
+                                       height="600px"
+                                       :search="false"
+                                       :pagination="false"
+                                       :grid-index="false"
+                                       chooseItem="single"
+                                       :columns="columns"
+                                       :tableData="tableData">
+                        </my-table-base>
+                    </div>
+                    <div class="charts_right">
+                        <div class="charts">
+                            <div class="title">{{selected['饼图']}}</div>
+                            <div class="content_echarts_t" id="cbb1"></div>
+                            <div class="noData" v-show="!noData[0]">暂无数据</div>
                         </div>
-                        <div class="content_echarts" id="cbb2"></div>
+                        <div style="width: 100%;height: 10px"></div>
+                        <div class="charts">
+                            <div class="maxAMin" v-if="JSON.stringify(max_min) !== '{}'">
+                                <div>
+                                    <span class="ys" style="font-weight: 700;">营收：</span>
+                                    <span class="ys">最高：{{(max_min["maxTotalSales"] / 10000).toFixed(2)}}万元</span><br/>
+                                    <span class="ys pl">最低：{{(max_min["minTotalSales"] / 10000).toFixed(2)}}万元</span><br/>
+                                    <span class="ys pl">平均：{{(max_min["avgTotalSales"] / 10000).toFixed(2)}}万元</span><br/>
+                                </div>
+                                <div>
+                                    <span class="cl" style="font-weight: 700;">车辆：</span>
+                                    <span class="cl">最高：{{ max_min["maxCount"] }}辆</span><br/>
+                                    <span class="cl pl">最低：{{ max_min["minCount"] }}辆</span><br/>
+                                    <span class="cl pl">平均：{{ max_min["avgCount"] }}辆</span><br/>
+                                </div>
+                            </div>
+                            <div class="content_echarts" id="cbb2"></div>
+                            <div class="noData" v-show="!noData[1]">暂无数据</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,220 +104,80 @@
 </template>
 
 <script>
-    import "./gas.less";
-    import MyDialog from "../../components/common/myDialog";
+    import "./gas.less"
     import MyTableBase from "../../components/common/myTableBase";
+    import MsOtherSetting from "../../components/newCommon/MyCommon/MsOtherSetting";
+    import {printExcel} from "../../../public/api/excel"
+    import index from "../../../src/components/newCommon/javaScript/index"
+    import ShowBigCharts from "./children/showBigCharts";
 
     export default {
         name: "gas",
-        components: {MyTableBase, MyDialog},
+        mixins: [index],
+        components: {ShowBigCharts, MsOtherSetting, MyTableBase},
         data() {
             return {
-                switchShow: false,
-                year: 2021,
                 loading: false,
-                unfold: 0,
-                content_height: "calc(100% - 45px)",
+                windowWidth: 0,
+                filterText: '',
+                defaultProps: {
+                    children: 'children',
+                    label: 'label'
+                },
+                query: {},
                 selected: {},
-                all: [],
-                max_min: {},
-                noData: [false, false],
+                treeData: [],
+                tableData: [],
                 columns: [
                     {prop: "name", label: "名称", width: '150px'},
                     {prop: "id", label: "加油站ID", hidden: true}
                 ],
-                tableData: [],
-                filterText: "",
-                data: [],
-                defaultProps: {
-                    children: "children",
-                    label: "label"
-                },
+                openMore: [],
+                showMore: {'选择年份': false},
+                noData: [false, false],
                 param: {
-                    selectYear: "",
+                    selectYear: "2021",
                     companyId: "",
-                    stationId: ""
+                    stationId: "",
                 },
-                listParam: {}
-            };
-        },
-        computed: {
-            showOptions() {
-                this.loading = true;
-                setTimeout(_ => {
-                    let change = document.getElementById("prosecution_unit").offsetHeight;
-                    this.content_height = "calc(100% - 45px - " + change + "px)";
-                    if (
-                        JSON.stringify(this.max_min) !== "{}" &&
-                        this.tableData.length !== 0
-                    ) {
-                        this.loading = false;
-                    }
-                    setTimeout(_ => {
-                        this.loading = false;
-                    }, 10000);
-                }, 500);
-                return this.unfold % 2 === 0;
+                listParam: {},
+                showOff: false,
+                max_min: {},
+                option: [],
             }
         },
         methods: {
-            nodeClick(v, s) {
-                this.loading = true;
-                this.param["selectYear"] = this.year;
-                if (s["level"] === 1) {
-                    this.loading = false;
-                }
-                if (s["level"] === 2) {
-                    this.param["companyId"] = v["companyId"];
-                    this.param["stationId"] = "";
-                    this.lookView();
-                }
-                if (s["level"] === 3) {
-                    this.param["companyId"] = "";
-                    this.param["stationId"] = v["stationId"];
-                    this.lookView();
-                }
-            },
-            lookView() {
-                this.loading = true;
-                let n = 0;
-                let data = JSON.parse(JSON.stringify(this.selected));
-                for (let i in data) {
-                    if (data[i].length !== 0) {
-                        n++;
-                    }
-                }
-                this.param["selectYear"] = this.year;
-                let param = new URLSearchParams();
-                for (let i in this.listParam) {
-                    param.append(i, this.listParam[i]);
-                }
-                param.append("selectYear", this.year);
-                param.append("companyId", this.param["companyId"]);
-                param.append("stationId", this.param["stationId"]);
-                this.$axios.get("/zyf/station/station_datas2", {params: param}).then(res => {
-                    this.tableData = [];
-                    let data = res.data;
-                    data.forEach(i => {
-                        let obj = {
-                            allOrderAmount: '',
-                            allOrderCount: '',
-                            allOrderMoney: ''
-                        }
-                        let obj_ = this.DeepCopy(obj);
-                        for (let j in obj) {
-                            let stationOrderDto92, stationOrderDto95, stationOrderDto98;
-                            if (!!i['stationOrderDto92']) {
-                                stationOrderDto92 = i["stationOrderDto92"]
-                            } else {
-                                stationOrderDto92 = {};
-                            }
-                            if (!!i['stationOrderDto95']) {
-                                stationOrderDto95 = i["stationOrderDto95"]
-                            } else {
-                                stationOrderDto95 = {};
-                            }
-                            if (!!i['stationOrderDto98']) {
-                                stationOrderDto98 = i["stationOrderDto98"]
-                            } else {
-                                stationOrderDto98 = {};
-                            }
-                            obj_[j] = (stationOrderDto92[j] ? stationOrderDto92[j] : 0) + ' : ' + (stationOrderDto95[j] ? stationOrderDto95[j] : 0) + ' : ' + (stationOrderDto98[j] ? stationOrderDto98[j] : 0);
-                        }
-                        Object.assign(i, obj_);
-                    });
-                    this.tableData = [];
-                    this.tableData = data;
-                });
-                this.initECharts();
-            },
-            selectTypeChange(v) {
-                let columns = [];
-                let data = JSON.parse(JSON.stringify(this.selected));
-                this.selected = {};
-                this.selected = data;
-                let str = "";
-                for (let j in data) {
-                    if (data[j].constructor === Array) {
-                        data[j].forEach(i => {
-                            str += i + ",";
-                        });
-                    } else {
-                        str += data[j] + ",";
-                    }
-                }
-                for (let i in this.all) {
-                    this.all[i].forEach(j => {
-                        if (str.indexOf(j['dimensionName']) !== -1 && j['dimensionType'] !== 'pie1') {
-                            this.listParam[j["dimensionValue"]] = "1";
-                        }
-                        if (str.indexOf(j["dimensionName"]) !== -1) {
-                            if (j["dimensionType"] !== "pie1") {
-                                let flag = j["dimensionValue"] === 'orderCount';
-                                let child = [
-                                    {prop: 'allOrderAmount', label: '销量(92:95:98)', width: '200px'},
-                                    {prop: 'allOrderCount', label: '订单数(92:95:98)', width: '200px'},
-                                    {prop: 'allOrderMoney', label: '销售额(92:95:98)', width: '200px'},
-                                ]
-                                if (flag) {
-                                    columns.push({
-                                        prop: j["dimensionValue"],
-                                        label: j["dimensionName"],
-                                        children: flag ? child : []
-                                    });
-                                } else {
-                                    columns.push({
-                                        prop: j["dimensionValue"],
-                                        label: j["dimensionName"],
-                                        width: '150px',
-                                        formatter: v => {
-                                            return v[j["dimensionValue"]] ? v[j["dimensionValue"]] : 0;
-                                        }
-                                    });
-                                }
-                            }
-                        }
-                    });
-                }
-                columns.unshift({prop: "name", label: "名称", width: '150px'});
-                if (columns.length === 0) {
-                    columns = [{prop: "name", label: "名称", width: '150px'}];
-                }
-                columns.unshift({prop: "id", label: "加油站ID", hidden: true});
-                this.columns = columns;
-                this.lookView();
-            },
-            moreUnit() {
-                this.unfold++;
-                if (this.unfold === 2) {
-                    this.unfold = 0;
-                }
-            },
-            filterNode(value, data) {
-                if (!value) return true;
-                return data.label.indexOf(value) !== -1;
-            },
-            async initECharts() {
+            //渲染图表
+            async setECharts() {
                 this.noData = [];
                 let [legend, d] = [[], []];
                 let param = this.DeepCopy(this.param);
+                // console.log(this.selected);
                 for (let i in this.selected) {
-                    if (i === "饼图") {
-                        for (let j in this.all) {
-                            this.all[i].forEach(s => {
-                                if (this.selected[i] === s["dimensionName"]) {
-                                    param["dimensionValue"] = s["dimensionValue"];
+                    // console.log(i);
+                    if (i === '饼图'){
+                        // console.log(this.query);
+                        for (let j in this.query){
+                            this.query[i].forEach( k => {
+                                // console.log(k);
+                                // console.log(this.selected);
+                                if(this.selected[i] === k['dimensionValue']){
+                                    param['dimensionValue'] = k['dimensionValue'];
                                 }
+                                // console.log(param);
                             });
                         }
                     }
                 }
-                let v = await this.$axios.get("/zyf/station/station_datas_bing", {
+                let v = await this.$axios.get("/apidata/station/station_datas_bing", {
                     params: param
                 });
-                let datas = v.data["pie1"];
+                let datas = v.data['pie1'];
+                // console.log(datas);
                 datas.forEach(i => {
-                    for (let j in i) {
+                    // console.log(i);
+                    for (let j in i){
+                        // console.log(j);
                         legend.push(j);
                         d.push({
                             name: j,
@@ -339,10 +185,12 @@
                         });
                     }
                 });
-                let res = await this.$axios.get("/zyf/station/station_data", {
+
+                let res = await this.$axios.get("/apidata/station/station_data", {
                     params: this.param
                 });
                 let data = res.data.data;
+                // console.log(data);
                 this.max_min = data;
                 let count = {name: [], value: []};
                 let totalSales = {name: [], value: []};
@@ -511,68 +359,195 @@
                         this.loading = false;
                     }
                 });
-            }
-        },
-        async mounted() {
-            this.loading = true;
-            this.param.selectYear = this.year;
-            const res = await this.$axios.get("/zyf/station/station_field");
-            let data = res.data.data;
-            let arr = this.mySet(data, "businessType");
-            let all = {};
-            arr.forEach(i => {
-                all[i] = [];
-                let obj = {};
-                obj[i] = [];
-                if (i === "饼图") {
-                    let obj = {};
-                    obj[i] = "";
-                }
-                Object.assign(this.selected, obj);
-            });
-            let mm = 0;
-            data.forEach((i, x) => {
-                for (let j in all) {
-                    if (i["businessType"] === j) {
-                        all[j].push(i);
-                        if (j === "饼图" && mm === 0) {
-                            this.selected[j] = i["dimensionName"];
-                            mm++;
-                        } else if (i["dimensionType"] === "tab" && i["havaData"] != "0" && x < 5) {
-                            this.selected[j].push(i["dimensionName"]);
-                            this.listParam[i["dimensionValue"]] = "1";
+            },
 
-                            if (i["dimensionType"] !== "pie1" && i["havaData"] != "0") {
-                                let flag = i["dimensionValue"] === 'orderCount';
-                                let child = [
-                                    {prop: 'allOrderAmount', label: '销量(92:95:98)', width: '200px'},
-                                    {prop: 'allOrderCount', label: '订单数(92:95:98)', width: '200px'},
-                                    {prop: 'allOrderMoney', label: '销售额(92:95:98)', width: '200px'},
-                                ]
-                                if (flag) {
-                                    this.columns.push({
-                                        prop: i["dimensionValue"],
-                                        label: i["dimensionName"],
-                                        children: flag ? child : []
-                                    });
-                                } else {
-                                    this.columns.push({
-                                        prop: i["dimensionValue"],
-                                        label: i["dimensionName"],
-                                        width: '150px',
-                                        formatter: v => {
-                                            return v[i["dimensionValue"]] ? v[i["dimensionValue"]] : 0;
+            //重置列数据
+            async resetColumns() {
+                let selected = this.DeepCopy(this.selected);
+                for (let i in selected) {
+                    let item = selected[i];
+                    if (item.constructor === Array) {
+                        selected[i] = [];
+                    }
+                }
+                this.param['companyID'] = '';
+                this.param['stationId'] = '';
+                this.selected = selected;
+                await this.addColumns();
+            },
+            //获取列表数据
+            async getTableData() {
+                this.loading = true;
+                this.param['selectYear'] = this.selected['选择年份'];
+                for (let i in this.selected) {
+                    let item = this.selected[i];
+                    if (item.constructor === Array) {
+                        item.forEach(j => {
+                            this.listParam[j] = j;
+                        })
+                    }
+                }
+                for (let i in this.param) {
+                    if (!!this.param[i]) {
+                        this.listParam[i] = this.param[i];
+                    }
+                }
+                const res = await this.$axios.get("/apidata/station/station_datas2", {params: this.listParam});
+                let data = res.data;
+                this.tableData = data;
+                await this.setECharts();
+                this.loading = false;
+            },
+            //添加列表的列
+            async addColumns() {
+                this.loading = true;
+                this.columns = [];
+                this.charts_title = [[], [], []];
+                for (let i in this.selected) {
+                    let item = this.selected[i];
+                    if (item.constructor === Array) {
+                        for (let j in this.query) {
+                            let jChild = this.query[j];
+                            if (jChild && jChild.length > 0) {
+                                jChild.forEach(k => {
+                                    item.forEach(s => {
+                                        if (k['dimensionValue'] === s) {
+                                            this.charts_title[2].push(k['dimensionName']);
+                                            this.columns.unshift({
+                                                prop: k['dimensionValue'],
+                                                label: k['dimensionName'],
+                                                formatter: v => {
+                                                    if (!v[k['dimensionValue']]) {
+                                                        return '暂无数据';
+                                                    }
+                                                    return v[k['dimensionValue']];
+                                                },
+                                                width: '120px'
+                                            })
                                         }
-                                    });
-                                }
+                                    })
+                                })
                             }
+                        }
+                    } else {
+                        for (let j in this.query) {
+                            this.query[j].forEach(i => {
+                                if (i['dimensionValue'] === item) {
+                                    if (i['dimensionType'] === 'pie1') {
+                                        this.charts_title[0].push(i.dimensionName);
+                                    }
+                                    if (i['dimensionType'] === 'pie2') {
+                                        this.charts_title[1].push(i.dimensionName);
+                                    }
+                                }
+                            })
                         }
                     }
                 }
+                this.columns.unshift({
+                    prop: 'name',
+                    label: '名称',
+                    width: '150px'
+                });
+                this.getTableData();
+            },
 
-            });
-            this.all = all;
-            this.$axios.get("/zyf/station/all_station_cop").then(res => {
+            //维度选择事件
+            selectDimension(i) {
+                let selected = this.DeepCopy(this.selected);
+                this.selected = selected;
+            },
+            //每一行的选择更多
+            seeMore(i) {
+                if (this.openMore.indexOf(i) === -1) {
+                    this.openMore.push(i);
+                } else {
+                    this.openMore.splice(this.openMore.indexOf(i), 1);
+                }
+            },
+            //展示 显示更多按钮
+            showMoreBtnType() {
+                let v = this.DeepCopy(this.showMore);
+                this.showMore = {};
+                let width = document.getElementsByClassName('row_select')[0].offsetWidth;
+                for (let i in v) {
+                    let child = document.getElementById(i).children;
+                    let sum = 0;
+                    for (let c in child) {
+                        if (child[c].offsetWidth) {
+                            sum += child[c].offsetWidth + 30;
+                        }
+                    }
+                    this.showMore[i] = (sum + 60) > (width - 200) ? true : false;
+                }
+                this.loading = false;
+            },
+            //展示维度
+            showOffDimension() {
+                this.showOff = this.showOff ? false : true;
+            },
+            //获取维度信息
+            async getDimensionData() {
+                const res = await this.$axios.get("/apidata/station/station_field");
+                let time = [];
+                for (let i = 0; i < 2; i++) {
+                    time.push({
+                        businessType: '选择年份',
+                        dimensionName: 2020 + i,
+                        dimensionValue: 2020 + i,
+                        templateType: 'radio',
+                        dimensionType: 'year'
+                    })
+                }
+                let query = {'选择年份': time};
+                this.selected['选择年份'] = 2021;
+                let data = this.DeepCopy(res.data.data);
+                let arr = this.mySet(data, "businessType");
+                arr.forEach(i => {
+                    query[i] = [];
+                    this.showMore[i] = false;
+                    data.forEach(j => {
+                        if (j['businessType'] === i) {
+                            j['templateType'] = j['dimensionType'] === 'tab' ? 'checkBox' : 'radio';
+                            query[i].push(j);
+                        }
+                        this.selected[j['businessType']] = j['dimensionType'] === 'tab' ? [] : ''
+                    })
+                });
+                data.forEach(j => {
+                    for (let i in this.selected) {
+                        if (i === j['businessType'] && this.selected[i].length === 0) {
+                            if (j['dimensionType'] === 'tab') {
+                                this.selected[i].push(j['dimensionValue'])
+                            } else {
+                                this.selected[i] = j['dimensionValue'];
+                            }
+                        }
+                    }
+                });
+                this.query = query;
+            },
+
+            //点击树节点
+            nodeClick(v, s) {
+                this.param["selectYear"] = this.year;
+                if (s["level"] === 1) {
+                    this.param["companyId"] = v.children[0]["companyId"];
+                    this.param["stationId"] = "";
+                }
+                if (s["level"] === 2) {
+                    this.param["companyId"] = v["companyId"];
+                    this.param["stationId"] = "";
+                }
+                if (s["level"] === 3) {
+                    this.param["companyId"] = "";
+                    this.param["stationId"] = v["stationId"];
+                }
+                this.addColumns();
+            },
+            //获取左侧组织架构树数据
+            async getTreeData() {
+                const res = await this.$axios.get("/apidata/station/all_station_cop");
                 let data = res.data.data;
                 let tree = [];
                 data.forEach(a => {
@@ -605,54 +580,39 @@
                         }
                     }
                 });
-                this.data = tree;
-            });
-            let param = new URLSearchParams();
-            for (let i in this.listParam) {
-                param.append(i, this.listParam[i]);
+                this.treeData = tree;
+            },
+            //过滤
+            filterNode(value, data) {
+                if (!value) return true;
+                return data.label.indexOf(value) !== -1;
+            },
+        },
+
+        async mounted() {
+            this.loading = true;
+            await this.getTreeData();
+            await this.getDimensionData();
+            this.showMoreBtnType();
+            await this.addColumns();
+            window.onresize = () => {
+                this.windowWidth = document.body.offsetWidth;
             }
-            param.append("selectYear", this.year);
-            param.append("companyId", this.param["companyId"]);
-            param.append("stationId", this.param["stationId"]);
-            this.$axios.get("/zyf/station/station_datas2", {params: this.listParam}).then(res => {
-                let data = res.data;
-                data.forEach(i => {
-                    let obj = {
-                        allOrderAmount: '',
-                        allOrderCount: '',
-                        allOrderMoney: ''
-                    }
-                    let obj_ = this.DeepCopy(obj);
-                    for (let j in obj) {
-                        let stationOrderDto92, stationOrderDto95, stationOrderDto98;
-                        if (!!i['stationOrderDto92']) {
-                            stationOrderDto92 = i["stationOrderDto92"]
-                        } else {
-                            stationOrderDto92 = {};
-                        }
-                        if (!!i['stationOrderDto95']) {
-                            stationOrderDto95 = i["stationOrderDto95"]
-                        } else {
-                            stationOrderDto95 = {};
-                        }
-                        if (!!i['stationOrderDto98']) {
-                            stationOrderDto98 = i["stationOrderDto98"]
-                        } else {
-                            stationOrderDto98 = {};
-                        }
-                        obj_[j] = (stationOrderDto92[j] ? stationOrderDto92[j] : 0) + ' : ' + (stationOrderDto95[j] ? stationOrderDto95[j] : 0) + ' : ' + (stationOrderDto98[j] ? stationOrderDto98[j] : 0);
-                    }
-                    Object.assign(i, obj_);
-                });
-                this.tableData = data;
-                this.loading = false;
-            });
-            this.initECharts();
         },
         watch: {
             filterText(val) {
                 this.$refs.tree.filter(val);
+            },
+            windowWidth: {
+                handler() {
+                    this.loading = true;
+                    this.showMoreBtnType();
+                }
             }
-        }
-    };
+        },
+    }
 </script>
+
+<style scoped>
+
+</style>
