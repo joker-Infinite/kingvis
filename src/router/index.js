@@ -117,6 +117,10 @@ const routes = [
         path: "/test",
         component: () => import( "../pages/testPlugin/test.vue")
     },
+    {
+        path: "/MonthlyReport",
+        component: () => import( "../pages/MonthlyReport/MonthlyReport.vue")
+    },
 ];
 
 const router = new VueRouter({

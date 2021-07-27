@@ -1,0 +1,41 @@
+
+.MonthlyReportTable {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border: 1px solid #05b2c2;
+
+  .vxe-table {
+    .vxe-table--render-wrapper {
+      .vxe-table--main-wrapper {
+        .vxe-table--header-wrapper {
+          background-color: #05b2c2;
+          color: white;
+        }
+
+        .vxe-table--body-wrapper {
+          background-color: rgba(0, 0, 0, 0);
+
+          .vxe-table--body {
+            tbody {
+              .vxe-body--row {
+                .vxe-body--column {
+                  border-bottom: 1px solid #05b2c2;
+                  color: #05b2c2;
+                }
+              }
+
+              .row--stripe {
+                background-color: rgba(5, 178, 194, 0.15);
+              }
+
+              .row--hover {
+                background-color: rgba(58, 92, 194, 0.69);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
