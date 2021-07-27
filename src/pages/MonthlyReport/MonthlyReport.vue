@@ -181,7 +181,7 @@
                                 normal: {
                                     color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
                                         {offset: 0, color: "#ba1919"},
-                                        {offset: 0.5, color: "#27b3b3"},
+                                        // {offset: 0.5, color: "#27b3b3"},
                                         {offset: 1, color: "#2836b5"}
                                     ]),
                                 }
