@@ -8,17 +8,18 @@
                         :tableData="tableData"
                         :columns="columns">
         </vxe-table-base>
-        <public_bar_line_double style="height: 400px" :show-type="['bar','bar']"></public_bar_line_double>
+        <public_bar_line_only style="height: 300px" layout="horizontal" show-type="bar"></public_bar_line_only>
     </div>
 </template>
 
 <script>
     import VxeTableBase from "./vxe/vxeTableBase";
     import Public_bar_line_double from "./public_bar_line_double/public_bar_line_double";
+    import Public_bar_line_only from "./public_bar_line_only/public_bar_line_only";
 
     export default {
         name: "test",
-        components: {Public_bar_line_double, VxeTableBase},
+        components: {Public_bar_line_only, Public_bar_line_double, VxeTableBase},
         data() {
             return {
                 tableData: [
@@ -37,7 +38,7 @@
                         c: 3,
                         d: 313,
                         e: 5,
-                        f: '<a href="https://github.com/x-extends/vxe-table">我是链接</a>',
+                        f: '<a href="/">我是链接</a>',
                         g: 9
                     },
                     {
@@ -46,7 +47,7 @@
                         c: 3,
                         d: 4,
                         e: 5,
-                        f: '<a href="https://github.com/x-extends/vxe-table">我是链接</a>',
+                        f: '<a href="/">我是链接</a>',
                         g: 9
                     },
                     {a: 2, b: 2, c: 3, d: 4, e: 5, f: '<span class="iconfont iconstart"></span>', g: 9},
@@ -66,7 +67,7 @@
                         }
                     },
                     {code: "d", value: "DDD", showOverflow: true},
-                    {code: "f", value: "DDD", type: "html"},
+                    {code: "f", value: "FFF", type: "html"},
                 ],
             }
         }

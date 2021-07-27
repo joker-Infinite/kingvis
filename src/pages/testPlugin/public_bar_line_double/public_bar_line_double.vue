@@ -32,7 +32,14 @@
                 default: () => {
                     return ["bar", "line"]
                 }
-            }
+            },
+            //horizontal 横 vertical 竖
+            layout: {
+                type: String,
+                default: () => {
+                    return "vertical"
+                }
+            },
         },
         components: {Public_title},
         data() {

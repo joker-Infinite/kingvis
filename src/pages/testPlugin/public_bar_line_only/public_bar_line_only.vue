@@ -26,6 +26,19 @@
                 default: () => {
                     return {}
                 }
+            },
+            //horizontal 横 vertical 竖
+            layout: {
+                type: String,
+                default: () => {
+                    return "vertical"
+                }
+            },
+            showType: {
+                type: String,
+                default: () => {
+                    return "line"
+                }
             }
         },
         components: {Public_title},
@@ -149,17 +162,26 @@
                                 right: 50,
                             },
                             xAxis: [{
-                                type: "category",
+                                type: th.layout === "horizontal" ? "value" : "category",
                                 name: d["XMeasure"],
-                                data: d["X"],
+                                data: th.layout === "horizontal" ? [] : d["X"],
+                                splitLine: {
+                                    show: true,
+                                    lineStyle: {
+                                        type: "dashed",
+                                        width: 1,
+                                        color: '#dadee2'
+                                    },
+                                },
                                 axisPointer: {
                                     type: "shadow"
                                 },
                             }],
                             yAxis: [
                                 {
-                                    type: "value",
+                                    type: th.layout === "horizontal" ? "category" : "value",
                                     name: d["YMeasure"],
+                                    data: th.layout === "horizontal" ? d["X"] : [],
                                     splitLine: {
                                         show: true,
                                         lineStyle: {
@@ -168,12 +190,15 @@
                                             color: '#dadee2'
                                         },
                                     },
+                                    axisPointer: {
+                                        type: "shadow"
+                                    },
                                 }
                             ],
                             series: [
                                 {
                                     data: d["Y"],
-                                    type: "line",
+                                    type: th.showType,
                                     yAxisIndex: 0,
                                     symbol: "circle",
                                     smooth: true,
