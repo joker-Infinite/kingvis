@@ -8,7 +8,7 @@
                         :tableData="tableData"
                         :columns="columns">
         </vxe-table-base>
-        <public_bar_line_only style="height: 300px" layout="horizontal" show-type="bar"></public_bar_line_only>
+        <public_bar_line_only style="height: 300px" show-type="bar"></public_bar_line_only>
     </div>
 </template>
 
