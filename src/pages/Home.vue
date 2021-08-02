@@ -342,7 +342,7 @@
                     window.open(routeData.href, "_blank");
                 } else if (k == "2") {
                     let routeData = this.$router.resolve({
-                        path: "/WorkReport".replace("#", "")
+                        path: "/MonthlyReport".replace("#", "")
                     });
                     window.open(routeData.href, "_blank");
                 } else if (k == "3") {

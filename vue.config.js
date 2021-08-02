@@ -4,26 +4,33 @@ module.exports = {
         port: 8080, // 端口号配置
         proxy: {
             "/apidata": {
-                target: "http://192.168.0.188:9080/",
+                target: "http://127.0.0.1:9080/",
                 changeOrigin: true,
                 pathRewrite: {
                     "^/apidata": ""
                 }
             },
             "/apibase": {
-                target: "http://192.168.0.188:9085/",
+                target: "http://127.0.0.1:9085/",
                 changeOrigin: true,
                 pathRewrite: {
                     "^/apibase": ""
                 }
             },
             "/apifin": {
-                target: "http://192.168.0.188:9086/",
+                target: "http://127.0.0.1:9086/",
                 changeOrigin: true,
                 pathRewrite: {
                     "^/apifin": ""
                 }
-            }
+            },
+            "/wj": {
+                target: "http://192.168.0.145:9080/",
+                changeOrigin: true,
+                pathRewrite: {
+                    "^/wj": ""
+                }
+            },
         }
     },
     configureWebpack: {

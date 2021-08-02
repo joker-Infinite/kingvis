@@ -49,6 +49,14 @@
           color: white;
           cursor: pointer;
         }
+
+        .activeBtn {
+          color: #EEA262;
+        }
+
+        .header_btn_item:hover {
+          color: #b7a088;
+        }
       }
 
       .header_title {
@@ -100,40 +108,72 @@
         justify-content: space-between;
 
         .unit_left {
-          width: 100px;
+          width: 50px;
           height: @container_title_height;
           line-height: @container_title_height;
           text-align: center;
           font-size: 20px;
           color: white;
+          position: relative;
 
           span {
             font-size: 20px;
           }
+
+          .iil {
+            position: absolute;
+            left: 5px;
+          }
         }
 
         .unit_right {
-          width: 100px;
+          width: 50px;
           height: @container_title_height;
           line-height: @container_title_height;
           text-align: center;
           color: white;
+          position: relative;
 
           span {
             display: inline-block;
             transform: rotate(180deg);
             font-size: 20px;
           }
+
+          .iir {
+            position: absolute;
+            right: 5px;
+          }
         }
 
-        .container_unit {
-          width: 200px;
+        .container_unit_box {
+          width: calc(100% - 200px);
           height: 100%;
-          line-height: @container_title_height;
-          text-align: center;
-          font-size: 20px;
-          color: white;
-          cursor: pointer;
+          overflow: hidden;
+
+          .container_unit_box_ {
+            height: 100%;
+            transition: linear .4s;
+
+            .container_unit {
+              float: left;
+              width: 133px;
+              height: 100%;
+              line-height: @container_title_height;
+              text-align: center;
+              font-size: 20px;
+              color: white;
+              cursor: pointer;
+            }
+
+            .activeUnit {
+              color: #EEA262;
+            }
+
+            .container_unit:hover {
+              color: #b7a088;
+            }
+          }
         }
       }
 
