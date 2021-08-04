@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import Finance from "../pages/Finance/Finance";
 
 Vue.use(Vuex);
 
@@ -23,6 +24,10 @@ export default new Vuex.Store({
                 oid: "",
                 nowPosition: []
             }
+        },
+        Finance: {
+            //切换财务页面主题
+            theme: 1
         }
     },
     mutations: {
@@ -42,6 +47,17 @@ export default new Vuex.Store({
                     state.homeState[i] = d[i];
                 }
             }
+        },
+        changeFinance: (state, v) => {
+            if (JSON.stringify(v) !== "{}") {
+                for (let i in Finance) {
+                    for (let m in v) {
+                        if (i === m) {
+                            Finance[i] = v[m];
+                        }
+                    }
+                }
+            }
         }
     },
     actions: {
@@ -49,6 +65,7 @@ export default new Vuex.Store({
             commit('newSearchValue');
             commit('setUserPages');
             commit('updateHomeSate');
+            commit('changeFinance');
         },
     },
     modules: {
@@ -63,6 +80,9 @@ export default new Vuex.Store({
         },
         getHomeSate: state => {
             return state.homeState;
+        },
+        getFinance: state => {
+            return state.Finance;
         }
     }
 });

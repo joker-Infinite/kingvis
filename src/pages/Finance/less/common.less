@@ -1,0 +1,95 @@
+@titleHeight: 50px;
+.title {
+  width: 100%;
+  height: @titleHeight;
+  line-height: @titleHeight;
+  font-size: 20px;
+  font-family: "幼圆";
+  font-weight: 800;
+  color: white;
+}
+
+.title_ {
+  width: 100%;
+  height: @titleHeight;
+  line-height: @titleHeight;
+  font-size: 20px;
+  font-family: "幼圆";
+  font-weight: 800;
+  color: #000;
+}
+
+.eChartsStyle {
+  width: 100%;
+  height: calc(100% - @titleHeight);
+  background: #1c2d61;
+  border-radius: 5px;
+
+  .money {
+    width: calc(100% - 20px);
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: right;
+    color: white;
+  }
+}
+
+.eChartsStyle_ {
+  width: 100%;
+  height: calc(100% - @titleHeight);
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+
+  .money {
+    width: calc(100% - 20px);
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: right;
+    color: #000;
+  }
+}
+
+.flexRowStart {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.flexRowSpaceBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.flexRowSpaceAround {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+.flexColumnStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.flexColumnSpaceBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.flexColumnSpaceAround {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}

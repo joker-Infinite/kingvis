@@ -45,7 +45,7 @@ const routes = [
     {
         path: "/login",
         component: () =>
-            import(/* webpackChunkName: "frame" */ "../../src/components/login.vue")
+            import("../../src/components/login.vue")
     },
     {
         path: "/homeKanBan",
@@ -54,66 +54,54 @@ const routes = [
     {
         path: "/temporary",
         component: () =>
-            import(
-                /* webpackChunkName: "frame" */ "../../src/components/common/temporary"
-                )
+            import("../../src/components/common/temporary")
     },
     {
         path: "/centerMapBase",
         component: () =>
-            import(
-                /* webpackChunkName: "frame" */ "../../src/pages/homeKanBan/children/centerMapBase"
-                )
+            import("../../src/pages/homeKanBan/children/centerMapBase")
     },
     {
         path: "/EChartsTest",
-        component: () =>
-            import(/* webpackChunkName: "frame" */ "../../src/components/EChartsTest")
+        component: () => import("../../src/components/EChartsTest")
     },
     {
         path: "/403",
-        component: () =>
-            import(/* webpackChunkName: "frame" */ "../../src/components/common/403")
+        component: () => import("../../src/components/common/403")
     },
     {
         path: "/imgParameter",
-        component: () =>
-            import(
-                /* webpackChunkName: "frame" */ "../../src/components/imgParameter"
-                )
+        component: () => import("../../src/components/imgParameter")
     },
     {
         path: "/myPage",
-        component: () =>
-            import(/* webpackChunkName: \"frame\" */ "../../src/components/myPage")
+        component: () => import("../../src/components/myPage")
     },
-    /* {
-          path: '/WorkReport',
-          component: () => import(/!* webpackChunkName: \"frame\" *!/"../components/WorkReport.vue")
-      }, */ {
+    {
         path: "/WorkReport",
-        component: () =>
-            import(/* webpackChunkName: \"frame\" */ "../pages/report/report")
+        component: () => import("../pages/report/report")
     },
     {
         path: "/serviceArea/latitudeStatistics",
-        component: () =>
-            import(
-                /* webpackChunkName: \"frame\" */ "../pages/latitudeStatistics/latitudeStatistics.vue"
-                )
-    }, {
+        component: () => import("../pages/latitudeStatistics/latitudeStatistics.vue")
+    },
+    {
         path: "/financeDimension",
         component: () => import( "../pages/financeDimension/financeDimension.vue")
-    }, {
+    },
+    {
         path: "/serviceAreaDimension",
         component: () => import( "../pages/serviceAreaDimension/serviceAreaDimension.vue")
-    }, {
+    },
+    {
         path: "/gas",
         component: () => import( "../pages/gas/gas.vue")
-    },{
+    },
+    {
         path: "/newFinanceDimension",
         component: () => import( "../pages/newFinanceDimension/newFinanceDimension.vue")
-    },{
+    },
+    {
         path: "/test",
         component: () => import( "../pages/testPlugin/test.vue")
     },
@@ -121,6 +109,14 @@ const routes = [
         path: "/MonthlyReport",
         component: () => import( "../pages/MonthlyReport/MonthlyReport.vue")
     },
+    {
+        path: "/Finance",
+        component: () => import( "../pages/Finance/Finance.vue")
+    },
+    {
+        path: "/report",
+        component: () => import( "../pages/report/report.vue")
+    }
 ];
 
 const router = new VueRouter({

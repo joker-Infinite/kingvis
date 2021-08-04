@@ -1,0 +1,109 @@
+.secondLevelPage {
+  width: 100%;
+  height: 100%;
+
+  .secondLevelPage_left {
+    width: calc(70% - 15px);
+    height: 100%;
+
+    .SLPLT {
+      width: 100%;
+      height: calc(50% - 7.5px);
+    }
+
+    .SLPLB {
+      width: 100%;
+      height: calc(50% - 7.5px);
+
+      .vxeTable {
+        width: 100%;
+        height: calc(100% - 30px);
+
+        .vxe-table {
+          .vxe-table--render-wrapper {
+            .vxe-table--main-wrapper {
+              .vxe-table--header-wrapper {
+                background-color: #304981;
+                color: white;
+
+                @borderW: 3px;
+
+                /*thead {
+                  .vxe-header--row {
+                    .col_2 {
+                      border-right: @borderW solid #1c2d61;
+                    }
+
+                    .col_3 {
+                      border-right: @borderW solid #1c2d61;
+                      border-bottom: @borderW solid #1c2d61;
+                    }
+
+                    .col_7 {
+                      border-right: @borderW solid #1c2d61;
+                      border-bottom: @borderW solid #1c2d61;
+                    }
+
+                    .col_12 {
+                      border-bottom: @borderW solid #1c2d61;
+                    }
+                  }
+                }*/
+              }
+
+              .vxe-table--body-wrapper {
+                background-color: rgba(0, 0, 0, 0);
+
+                .vxe-table--body {
+                  tbody {
+                    .vxe-body--row {
+                      .vxe-body--column {
+                        border-bottom: 1px solid #fff;
+                        color: #fff;
+                      }
+                    }
+
+                    .row--current {
+                      .vxe-body--column {
+                        color: #000;
+                        background: #fff;
+                      }
+                    }
+
+                    .row--stripe {
+                      background-color: rgba(5, 178, 194, 0.15);
+                    }
+
+                    .row--hover {
+                      background-color: #1f789d;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .secondLevelPage_right {
+    width: 30%;
+    height: 100%;
+
+    .SLPRT {
+      width: 100%;
+      height: calc(33.3% - 5px);
+    }
+
+    .SLPRC {
+      width: 100%;
+      height: calc(33.3% - 5px);
+    }
+
+    .SLPRB {
+      width: 100%;
+      height: calc(33.3% - 5px);
+    }
+  }
+}

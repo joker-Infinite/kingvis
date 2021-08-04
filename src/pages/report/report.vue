@@ -254,7 +254,7 @@
                 });
                 let reportTime = this.time_page + '-01 00:00:00';
                 //饼1 id:this.unitId
-                const ii = await this.$axios.get("/apidata/report/get_work_time", {
+                const ii = await this.$axios.get("/wj/report/get_work_time", {
                     params: {
                         tagType: this.unitId,
                         reportTime: reportTime
@@ -269,7 +269,7 @@
                     {value: wc.a, name: "85%+"}
                 ];
                 //饼2
-                const jj = await this.$axios.get("/apidata/report/get_situation_preview", {
+                const jj = await this.$axios.get("/wj/report/get_situation_preview", {
                     params: {
                         tagType: this.unitId,
                         reportTime: reportTime
@@ -284,7 +284,7 @@
                     {value: db.a, name: ">10%"}
                 ];
                 //年度绩效重点工作执行情况
-                /*const mm = await this.$axios.get("/apidata/report/get_executive_condition", {
+                /*const mm = await this.$axios.get("/wj/report/get_executive_condition", {
                     params: {
                         tagType: this.unitId,
                         reportTime: reportTime
@@ -614,7 +614,7 @@
                 const unitData = (await this.$axios["get"]("https://okr.hbjtsy.com:7080/jt/zt/getDeptList")).data.data;
                 let unit = [5, 6, 7, 8, 4, 11, 0, 10, 9, 1, 12, 13, 3, 2];
                 this.unitId = unitData[unit[this.thisImg - 1]]["tagValue"];
-                const d = await this.$axios["get"]("/apidata/report/getMonthReport", {
+                const d = await this.$axios["get"]("/wj/report/getMonthReport", {
                     params: {
                         reportType: unitData[unit[this.thisImg - 1]]["tagValue"],
                         reportTime: this.time_page + "-01 00:00:00"
@@ -622,7 +622,7 @@
                 });
                 let date = this.time_page.split("-");
                 let former = date[0] + "-" + (date[1] - 1 < 10 ? "0" + (date[1] - 1) : date[1] - 1);
-                const e = await this.$axios["get"]("/apidata/report/getMonthReport", {
+                const e = await this.$axios["get"]("/wj/report/getMonthReport", {
                     params: {
                         reportType: "TZJYB_ZN",
                         reportTime: former + "-01 00:00:00"

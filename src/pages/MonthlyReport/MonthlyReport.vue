@@ -59,7 +59,8 @@
                     </div>
                 </div>
                 <div class="container_content">
-                    <monthly-report-table ref="vxeTable" :tableData="tableData[currentNum]"></monthly-report-table>
+                    <monthly-report-table ref="vxeTable" :yearMonth="yearMonth"
+                                          :tableData="tableData[currentNum]"></monthly-report-table>
                 </div>
                 <div class="container_footer">
                     <el-pagination layout="prev, pager, next" @current-change="currentChange" :page-size="4"
@@ -231,7 +232,7 @@
                 firstUnit: 0,
                 activeBtn: 0,
                 time: "",
-                yearMonth: "2021-07",
+                yearMonth: "2021-08",
                 allData: [],
                 tableData: [],
                 currentNum: 0,
@@ -323,28 +324,32 @@
                 let type = this.headerBtn[this.activeBtn]["code"];
                 if (res_.data.data && res_.data.data.length > 0) {
                     let data_ = res_.data.data;
-                    data.forEach(i => {
-                        data_.forEach(j => {
-                            if (i["name"] == j["name"]) {
-                                i["changeValue"] = parseInt(i["progressRate"]) - parseInt(j["progressRate"])
+                    if (data && data.length) {
+                        data.forEach(i => {
+                            data_.forEach(j => {
+                                if (i["name"] == j["name"]) {
+                                    i["changeValue"] = parseInt(i["progressRate"]) - parseInt(j["progressRate"])
+                                }
+                            })
+                        })
+                    }
+                } else {
+                    if (data && data.length > 0) {
+                        data.forEach(i => {
+                            i["changeValue"] = parseInt(i["progressRate"]);
+                            if (type === "YJXM") {
+                                i["changeValue"] = 0;
+                            }
+                            if (type === "FZZ") {
+                                i["changeValue"] = -parseInt(i["progressRate"]);
+                            }
+                            if (type === "DTP") {
+                                i["changeValue"] = parseInt(i["progressRate"]);
                             }
                         })
-                    })
-                } else {
-                    data.forEach(i => {
-                        i["changeValue"] = parseInt(i["progressRate"]);
-                        if (type === "YJXM") {
-                            i["changeValue"] = 0;
-                        }
-                        if (type === "FZZ") {
-                            i["changeValue"] = -parseInt(i["progressRate"]);
-                        }
-                        if (type === "DTP") {
-                            i["changeValue"] = parseInt(i["progressRate"]);
-                        }
-                    })
+                    }
                 }
-                await this.getBarData(data);
+                await this.getBarData(res.data.data, res_.data.data);
                 await this.getPieThird(data);
             },
             async getDept() {
@@ -373,9 +378,34 @@
                         if (x % 4 === 0 && x !== 0) {
                             j++;
                         }
+                        let plans = i["plans"];
+                        let plans_ = [];
+                        plans.forEach(s => {
+                            if (JSON.stringify(s) !== "{}" && s["planDetail"]) {
+                                plans_.push(s)
+                            }
+                        })
+                        i["plans"] = plans_;
                         this.tableData[j].push(i)
                     })
                 }
+                //将上月计划放入表格
+                this.allData.forEach(i => {
+                    if (res_.data.data && res_.data.data.length > 0) {
+                        res_.data.data.forEach(j => {
+                            if (i["name"] == j["name"]) {
+                                let plans = j["plans"];
+                                let plans_ = [];
+                                plans.forEach(s => {
+                                    if (JSON.stringify(s) !== "{}" && s["planDetail"]) {
+                                        plans_.push(s)
+                                    }
+                                })
+                                i["planDetailLastMonth"] = plans_;
+                            }
+                        })
+                    }
+                })
                 if (res_.data.data && res_.data.data.length > 0 && type !== "YJXM" && type !== "FZZ" && type !== "DTP") {
                     let data = res_.data.data;
                     this.allData.forEach(i => {
@@ -407,13 +437,13 @@
             },
             getPageData() {
                 this.loading = true;
+                this.currentNum = 0;
                 let dateTime = this.yearMonth.split("-");
                 let time = dateTime[0] + dateTime[1];
                 let lastMonth = dateTime[0] + dateTime[1] - 1;
                 let tagValue = this.unitData[this.firstUnit]["tagValue"];
                 let type = this.headerBtn[this.activeBtn]["code"];
                 this.getTable({dataTime: time, deptName: tagValue, type: type}, lastMonth);
-
             },
             //年度重点工作完成情况预览
             async getPieSecond() {
@@ -428,12 +458,15 @@
                     }
                 });
                 let db = res.data.data
-                let jd = [
-                    {value: db.d, name: "<-20%"},
-                    {value: db.c, name: "-20%~-10%"},
-                    {value: db.b, name: "-10%~+10%"},
-                    {value: db.a, name: ">10%"}
-                ];
+                let jd = [];
+                if (db && db.d) {
+                    jd = [
+                        {value: db.d, name: "<-20%"},
+                        {value: db.c, name: "-20%~-10%"},
+                        {value: db.b, name: "-10%~+10%"},
+                        {value: db.a, name: ">10%"}
+                    ];
+                }
                 this.secondPie = jd;
                 this.initRing("ppp2", jd);
             },
@@ -450,12 +483,15 @@
                     }
                 });
                 let wc = res.data.data
-                let wc_pie = [
-                    {value: wc.d, name: "0 ~ 15%"},
-                    {value: wc.c, name: "15 ~ 50%"},
-                    {value: wc.b, name: "50 ~ 85%"},
-                    {value: wc.a, name: "85%+"}
-                ];
+                let wc_pie = [];
+                if (wc && wc.d) {
+                    wc_pie = [
+                        {value: wc.d, name: "0 ~ 15%"},
+                        {value: wc.c, name: "15 ~ 50%"},
+                        {value: wc.b, name: "50 ~ 85%"},
+                        {value: wc.a, name: "85%+"}
+                    ];
+                }
                 this.firstPie = wc_pie;
                 this.initRing("ppp1", wc_pie);
             },
@@ -465,22 +501,24 @@
                 let zc = 0;
                 let ytp = 0;
                 let zdtp = 0;
-                data.forEach(i => {
-                    let ss_ = i["changeValue"];
-                    if (ss_ < 0) {
-                        fzz++;
-                    }
-                    if (ss_ >= 0 && ss_ < 10) {
-                        zc++;
-                    }
-                    if (ss_ >= 10 && ss_ < 20) {
-                        ytp++;
-                    }
+                if (data && data.length > 0) {
+                    data.forEach(i => {
+                        let ss_ = i["changeValue"];
+                        if (ss_ < 0) {
+                            fzz++;
+                        }
+                        if (ss_ >= 0 && ss_ < 10) {
+                            zc++;
+                        }
+                        if (ss_ >= 10 && ss_ < 20) {
+                            ytp++;
+                        }
 
-                    if (ss_ >= 20) {
-                        zdtp++;
-                    }
-                })
+                        if (ss_ >= 20) {
+                            zdtp++;
+                        }
+                    })
+                }
                 let wc_pie = [
                     {value: fzz, name: "负增长"},
                     {value: zc, name: "正常"},
@@ -511,7 +549,7 @@
                             label: {
                                 show: false
                             },
-                            color: ["#75a8d8", "#6f608f", "#76d2d5", "#ffa180"],
+                            color: ["#006ced", "#1cb5fc", "#ffd302", "#00ffff"],
                             data: data,
                             labelLine: {
                                 show: false
@@ -521,28 +559,44 @@
                 }
                 this.$echarts.init(document.getElementById(id)).setOption(option);
             },
-            //月度计划完成情况统计
-            getBarData(data) {
+            /**
+             * 月度计划完成情况统计
+             * @param data 当月数据
+             * @param data_ 前一个月的计划
+             * */
+            getBarData(data, data_) {
                 let dy = 0;
                 let dy_ywc = 0;
                 let dy_wwc = 0;
                 let xy = 0;
                 let month = this.yearMonth.split("-")[1];
                 this.$echarts.init(document.getElementById("fffsss")).dispose();
-                if (data, data.length > 0) {
+                if (data && data.length > 0) {
                     data.forEach(i => {
-                        if (i.endTime) {
-                            let endTime = parseInt((i.startTime).split("-")[1]);
-                            if (endTime == month - 1) {
-                                dy++;
-                                if (i["state"] == "2") {
-                                    dy_ywc++;
-                                } else {
-                                    dy_wwc++;
+                        let plans = i["plans"]
+                        if (plans && plans.length > 0) {
+                            plans.forEach(j => {
+                                if (j && j.planDetail) {
+                                    xy++;
                                 }
-                            } else {
-                                xy++;
-                            }
+                            })
+                        }
+                    })
+                }
+                if (data_ && data_.length > 0) {
+                    data_.forEach(i => {
+                        let plans = i["plans"];
+                        if (plans && plans.length > 0) {
+                            plans.forEach(j => {
+                                if (j["planDetail"]) {
+                                    dy++;
+                                    if (j["state"] == "2") {
+                                        dy_ywc++;
+                                    } else {
+                                        dy_wwc++;
+                                    }
+                                }
+                            })
                         }
                     })
                 }
@@ -674,6 +728,8 @@
         async mounted() {
             this.loading = true;
             this.unitData = await this.getDept();
+            let date = new Date();
+            this.yearMonth = date.getFullYear() + "-" + ((this.addNumber(date.getMonth()) - 0) + 1);
             await this.getPageData();
             await this.getPieFirst();
             await this.getPieSecond();
